@@ -7490,3 +7490,70 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
     display: none;
   }
 }
+
+
+
+
+.restimo-price-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.restimo-price-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.restimo-price-menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.restimo-price-menu-image {
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.restimo-price-menu-image img {
+    max-width: 100px;
+    border-radius: 10px;
+}
+
+.restimo-price-menu-content {
+    flex-grow: 1;
+}
+
+.restimo-price-menu-title {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.restimo-price-menu-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.restimo-price-menu-description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.restimo-price-menu-price {
+    margin: 10px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+}
+
+.restimo-price-menu-price-discount {
+    text-decoration: line-through;
+    color: red;
+}

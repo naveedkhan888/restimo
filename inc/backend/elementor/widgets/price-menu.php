@@ -127,13 +127,111 @@ class Restimo_Price_Menu extends Widget_Base {
             ]
         );
 
-        // Title Style
-        $this->start_controls_tabs( 'tabs_title_style' );
-
-        $this->start_controls_tab(
-            'tab_title_normal',
+        // List Style
+        $this->add_control(
+            'list_background_color',
             [
-                'label' => __( 'Normal', 'restimo' ),
+                'label' => __( 'Background Color', 'restimo' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .restimo-price-menu' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'list_border',
+                'label' => __( 'Border', 'restimo' ),
+                'selector' => '{{WRAPPER}} .restimo-price-menu',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'list_box_shadow',
+                'label' => __( 'Box Shadow', 'restimo' ),
+                'selector' => '{{WRAPPER}} .restimo-price-menu',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'list_padding',
+            [
+                'label' => __( 'Padding', 'restimo' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
+                'selectors' => [
+                    '{{WRAPPER}} .restimo-price-menu' => 'padding: {{TOP}} {{RIGHT}} {{BOTTOM}} {{LEFT}};',
+                ],
+            ]
+        );
+
+        // Item Style
+        $this->add_control(
+            'item_background_color',
+            [
+                'label' => __( 'Item Background Color', 'restimo' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .restimo-price-menu-item' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'item_border',
+                'label' => __( 'Item Border', 'restimo' ),
+                'selector' => '{{WRAPPER}} .restimo-price-menu-item',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'item_box_shadow',
+                'label' => __( 'Item Box Shadow', 'restimo' ),
+                'selector' => '{{WRAPPER}} .restimo-price-menu-item',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'item_padding',
+            [
+                'label' => __( 'Item Padding', 'restimo' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
+                'selectors' => [
+                    '{{WRAPPER}} .restimo-price-menu-item' => 'padding: {{TOP}} {{RIGHT}} {{BOTTOM}} {{LEFT}};',
+                ],
+            ]
+        );
+
+        // Image Style
+        $this->add_control(
+            'image_border_radius',
+            [
+                'label' => __( 'Border Radius', 'restimo' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors' => [
+                    '{{WRAPPER}} .restimo-price-menu-image img' => 'border-radius: {{TOP}} {{RIGHT}} {{BOTTOM}} {{LEFT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Title Style
+        $this->start_controls_section(
+            'title_style_section',
+            [
+                'label' => __( 'Title', 'restimo' ),
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -148,30 +246,6 @@ class Restimo_Price_Menu extends Widget_Base {
             ]
         );
 
-        $this->end_controls_tab();
-
-        $this->start_controls_tab(
-            'tab_title_hover',
-            [
-                'label' => __( 'Hover', 'restimo' ),
-            ]
-        );
-
-        $this->add_control(
-            'title_hover_color',
-            [
-                'label' => __( 'Hover Color', 'restimo' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu-item:hover .restimo-price-menu-title' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_tab();
-
-        $this->end_controls_tabs();
-
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
@@ -180,7 +254,17 @@ class Restimo_Price_Menu extends Widget_Base {
             ]
         );
 
+        $this->end_controls_section();
+
         // Description Style
+        $this->start_controls_section(
+            'description_style_section',
+            [
+                'label' => __( 'Description', 'restimo' ),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
         $this->add_control(
             'description_color',
             [
@@ -200,7 +284,17 @@ class Restimo_Price_Menu extends Widget_Base {
             ]
         );
 
+        $this->end_controls_section();
+
         // Price Style
+        $this->start_controls_section(
+            'price_style_section',
+            [
+                'label' => __( 'Price', 'restimo' ),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
         $this->add_control(
             'price_color',
             [
@@ -217,19 +311,6 @@ class Restimo_Price_Menu extends Widget_Base {
             [
                 'name' => 'price_typography',
                 'selector' => '{{WRAPPER}} .restimo-price-menu-price',
-            ]
-        );
-
-        // Image Style
-        $this->add_control(
-            'image_border_radius',
-            [
-                'label' => __( 'Border Radius', 'restimo' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%' ],
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu-image img' => 'border-radius: {{TOP}} {{RIGHT}} {{BOTTOM}} {{LEFT}};',
-                ],
             ]
         );
 
