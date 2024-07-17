@@ -12,7 +12,7 @@ class Restimo_Price_List extends Widget_Base {
     }
 
     protected function get_widget_title() {
-        return esc_html__( 'Price List', 'restimo' );
+        return esc_html__( 'Price List New', 'restimo' );
     }
 
     public function get_icon() {
