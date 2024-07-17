@@ -7494,66 +7494,69 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 
 
 
+/* Container Style */
 .restimo-price-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.restimo-price-menu-item {
+/* Item Style */
+.restimo-price-menu .menu-item {
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
 }
 
-.restimo-price-menu-item:hover {
-    transform: translateY(-5px);
+/* Title Style */
+.restimo-price-menu .menu-item-title {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.restimo-price-menu-image {
+/* Description Style */
+.restimo-price-menu .menu-item-description {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Price Style */
+.restimo-price-menu .menu-item-price {
+    color: #ff9900;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Image Style */
+.restimo-price-menu .menu-item-image {
     margin-right: 20px;
-    flex-shrink: 0;
 }
 
-.restimo-price-menu-image img {
-    max-width: 100px;
-    border-radius: 10px;
+.restimo-price-menu .menu-item-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
 }
 
-.restimo-price-menu-content {
-    flex-grow: 1;
+/* Separator Style */
+.restimo-price-menu .menu-item-separator {
+    border-top: 1px solid #eaeaea;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.restimo-price-menu-title {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-}
-
-.restimo-price-menu-title a {
-    color: inherit;
+/* Link Style */
+.restimo-price-menu .menu-item-link a {
+    color: #0073aa;
     text-decoration: none;
 }
 
-.restimo-price-menu-description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #777;
-}
-
-.restimo-price-menu-price {
-    margin: 10px 0 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #111;
-}
-
-.restimo-price-menu-price-discount {
-    text-decoration: line-through;
-    color: red;
+.restimo-price-menu .menu-item-link a:hover {
+    text-decoration: underline;
 }
