@@ -7494,127 +7494,45 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 
 
 
-/* Container Style */
-.restimo-price-menu {
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #eaeaea;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Item Style */
-.restimo-price-menu .menu-item {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-
-/* Title Style */
-.restimo-price-menu .menu-item-title {
-    color: #333333;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Description Style */
-.restimo-price-menu .menu-item-description {
-    color: #666666;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Price Style */
-.restimo-price-menu .menu-item-price {
-    color: #ff9900;
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/* Image Style */
-.restimo-price-menu .menu-item-image {
-    margin-right: 20px;
-}
-
-.restimo-price-menu .menu-item-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-}
-
-/* Separator Style */
-.restimo-price-menu .menu-item-separator {
-    border-top: 1px solid #eaeaea;
-    margin-top: 10px;
+/* Title styles */
+.ha-price-menu .ha-price-menu-item .ha-price-menu-title {
     margin-bottom: 10px;
 }
 
-/* Link Style */
-.restimo-price-menu .menu-item-link a {
-    color: #0073aa;
-    text-decoration: none;
+.ha-price-menu .ha-price-menu-item .ha-price-menu-title-text {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.restimo-price-menu .menu-item-link a:hover {
-    text-decoration: underline;
+/* Separator styles */
+.ha-price-menu .ha-price-title-separator {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+    margin: 10px 0;
 }
 
+/* Price styles */
+.ha-price-menu .ha-price-menu-item .ha-price-menu-price {
+    font-size: 20px;
+    color: #ff6600;
+    font-weight: bold;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Description styles */
+.ha-price-menu .ha-price-menu-item .ha-price-menu-desc p {
+    margin-top: 10px;
+    color: #666;
+}
 
 /* Container styles */
-.restimo-price-menu {
+.ha-price-menu {
     display: flex;
     flex-wrap: wrap;
 }
 
-/* Item styles */
-.restimo-price-menu .menu-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Adjust as needed */
-}
-
-.restimo-price-menu .menu-item .menu-item-image {
-    margin-right: 20px; /* Adjust spacing between image and content */
-}
-
-.restimo-price-menu .menu-item .menu-item-title {
-    font-size: 18px; /* Example font size */
-    font-weight: bold; /* Example font weight */
-    margin-right: 10px; /* Adjust spacing between title and separator */
-}
-
-.restimo-price-menu .menu-item .menu-item-separator {
-    flex: 1;
-    border-top: 1px solid #ccc; /* Example separator styling */
-    margin: 0 10px; /* Adjust spacing around separator */
-}
-
-.restimo-price-menu .menu-item .menu-item-price {
-    font-size: 18px; /* Example font size */
-    font-weight: bold; /* Example font weight */
-    margin-left: 10px; /* Adjust spacing between separator and price */
-}
-
-.restimo-price-menu .menu-item .menu-item-description {
-    margin-top: 10px; /* Example spacing between price and description */
-}
-
-.restimo-price-menu .menu-item .menu-item-link {
-    margin-top: 10px; /* Example spacing between description and link */
+.ha-price-menu .ha-price-menu-item {
+    width: 100%;
+    margin-bottom: 30px;
 }
