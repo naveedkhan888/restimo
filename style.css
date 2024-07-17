@@ -7497,6 +7497,8 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 /* Title styles */
 .ha-price-menu .ha-price-menu-item .ha-price-menu-title {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Align items vertically */
 }
 
 .ha-price-menu .ha-price-menu-item .ha-price-menu-title-text {
@@ -7504,13 +7506,11 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
     font-weight: bold;
 }
 
-/* Separator styles */
-.ha-price-menu .ha-price-title-separator {
-    display: block;
+.ha-price-menu .ha-price-menu-item .ha-price-title-separator {
+    flex: 1; /* Flexible space between title and price */
     height: 1px;
-    width: 100%;
     background-color: #ccc;
-    margin: 10px 0;
+    margin: 0 10px; /* Adjust spacing as needed */
 }
 
 /* Price styles */
@@ -7530,9 +7530,13 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 .ha-price-menu {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around; /* Adjust alignment of items */
 }
 
 .ha-price-menu .ha-price-menu-item {
-    width: 100%;
+    width: calc(33.33% - 30px); /* Adjust item width */
     margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #eee; /* Example border */
+    border-radius: 5px; /* Example border radius */
 }
