@@ -202,4 +202,5 @@ class Restimo_Price_Menu_Widget extends Widget_Base {
     }
 }
 
+
 Plugin::instance()->widgets_manager->register_widget_type( new Restimo_Price_Menu_Widget() );
