@@ -1,34 +1,27 @@
 <?php
-namespace Elementor; // Custom widgets must be defined in the Elementor namespace
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measure)
+namespace Elementor;
 
-/**
- * Widget Name: Restimo Price Menu
- */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 class Restimo_Price_Menu extends Widget_Base {
 
-    // The get_name() method returns a widget name that will be used in the code.
     public function get_name() {
         return 'price_menu';
     }
 
-    // The get_title() method returns the widget title that will be displayed as the widget label.
     public function get_title() {
         return __( 'Restimo Price Menu', 'restimo' );
     }
 
-    // The get_icon() method lets you set the widget icon. Return the class name as a string.
     public function get_icon() {
         return 'eicon-menu-card';
     }
 
-    // The get_categories method lets you set the category of the widget, return the category name as a string.
     public function get_categories() {
         return [ 'category_restimo' ];
     }
 
     protected function register_controls() {
-
         $this->start_controls_section(
             'content_section',
             [
@@ -119,19 +112,19 @@ class Restimo_Price_Menu extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         ?>
-        <div class="price-menu-item" style="border: 1px solid <?php echo $settings['border_color']; ?>;">
+        <div class="price-menu-item" style="border: 1px solid <?php echo esc_attr( $settings['border_color'] ); ?>;">
             <div class="price-menu-item-image">
                 <?php echo wp_get_attachment_image( $settings['image']['id'], 'full' ); ?>
             </div>
             <div class="price-menu-item-content">
-                <h4 class="price-menu-item-title" style="color: <?php echo $settings['title_color']; ?>;">
-                    <?php echo $settings['title']; ?>
+                <h4 class="price-menu-item-title" style="color: <?php echo esc_attr( $settings['title_color'] ); ?>;">
+                    <?php echo esc_html( $settings['title'] ); ?>
                 </h4>
                 <p class="price-menu-item-description">
-                    <?php echo $settings['description']; ?>
+                    <?php echo esc_html( $settings['description'] ); ?>
                 </p>
                 <p class="price-menu-item-price">
-                    <?php echo $settings['price']; ?>
+                    <?php echo esc_html( $settings['price'] ); ?>
                 </p>
             </div>
         </div>
@@ -143,5 +136,4 @@ class Restimo_Price_Menu extends Widget_Base {
     }
 }
 
-// After the Restimo_Price_Menu class is defined, register the new widget class with Elementor:
 Plugin::instance()->widgets_manager->register( new Restimo_Price_Menu() );

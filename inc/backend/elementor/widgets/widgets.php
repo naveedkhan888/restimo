@@ -31,3 +31,6 @@ require_once( get_template_directory() . '/inc/backend/elementor/widgets/message
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/contact-form7.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/countdown.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/features-service.php' );
+// ... other widget includes
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/price-menu.php' );
+// ... other widget includes
