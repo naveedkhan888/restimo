@@ -1,7 +1,7 @@
 <?php
 namespace Elementor;
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measure)
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Restimo_Price_Menu extends Widget_Base {
 
@@ -14,7 +14,7 @@ class Restimo_Price_Menu extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-price-table';
+        return 'eicon-price-list';
     }
 
     public function get_categories() {
@@ -28,10 +28,10 @@ class Restimo_Price_Menu extends Widget_Base {
             'content_section',
             [
                 'label' => __( 'Price Menu', 'restimo' ),
+                'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
 
-        // Repeater Control for Menu Items
         $repeater = new Repeater();
 
         $repeater->add_control(
@@ -40,7 +40,6 @@ class Restimo_Price_Menu extends Widget_Base {
                 'label' => __( 'Title', 'restimo' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => __( 'Menu Item', 'restimo' ),
-                'label_block' => true,
             ]
         );
 
@@ -49,8 +48,7 @@ class Restimo_Price_Menu extends Widget_Base {
             [
                 'label' => __( 'Description', 'restimo' ),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => '',
-                'show_label' => false,
+                'default' => __( 'Menu item description', 'restimo' ),
             ]
         );
 
@@ -59,8 +57,7 @@ class Restimo_Price_Menu extends Widget_Base {
             [
                 'label' => __( 'Price', 'restimo' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => '',
-                'label_block' => true,
+                'default' => __( '$20', 'restimo' ),
             ]
         );
 
@@ -68,9 +65,11 @@ class Restimo_Price_Menu extends Widget_Base {
             'menu_item_discount',
             [
                 'label' => __( 'Discount', 'restimo' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => '',
-                'label_block' => true,
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __( 'Show', 'restimo' ),
+                'label_off' => __( 'Hide', 'restimo' ),
+                'return_value' => 'yes',
+                'default' => 'no',
             ]
         );
 
@@ -91,6 +90,12 @@ class Restimo_Price_Menu extends Widget_Base {
                 'label' => __( 'Link', 'restimo' ),
                 'type' => Controls_Manager::URL,
                 'placeholder' => __( 'https://your-link.com', 'restimo' ),
+                'default' => [
+                    'url' => '',
+                    'is_external' => false,
+                    'nofollow' => false,
+                ],
+                'show_external' => true,
             ]
         );
 
@@ -102,28 +107,12 @@ class Restimo_Price_Menu extends Widget_Base {
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'menu_item_title' => __( 'Menu Item 1', 'restimo' ),
+                        'menu_item_title' => __( 'Menu Item #1', 'restimo' ),
+                        'menu_item_description' => __( 'Description for menu item #1', 'restimo' ),
+                        'menu_item_price' => __( '$20', 'restimo' ),
                     ],
                 ],
                 'title_field' => '{{{ menu_item_title }}}',
-            ]
-        );
-
-        $this->add_control(
-            'title_price_connector',
-            [
-                'label' => __( 'Title-Price Connector', 'restimo' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => ' - ',
-            ]
-        );
-
-        $this->add_control(
-            'title_separator',
-            [
-                'label' => __( 'Title Separator', 'restimo' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => '',
             ]
         );
 
@@ -138,67 +127,13 @@ class Restimo_Price_Menu extends Widget_Base {
             ]
         );
 
-        // Menu Item Container
-        $this->start_controls_section(
-            'menu_item_style',
-            [
-                'label' => __( 'Menu Item', 'restimo' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'menu_item_background',
-            [
-                'label' => __( 'Background Color', 'restimo' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Border::get_type(),
-            [
-                'name' => 'menu_item_border',
-                'label' => __( 'Border', 'restimo' ),
-                'selector' => '{{WRAPPER}} .restimo-price-menu .menu-item',
-            ]
-        );
-
-        $this->add_control(
-            'menu_item_border_radius',
-            [
-                'label' => __( 'Border Radius', 'restimo' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'menu_item_padding',
-            [
-                'label' => __( 'Padding', 'restimo' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
         // Title Style
-        $this->start_controls_section(
-            'title_style',
+        $this->start_controls_tabs( 'tabs_title_style' );
+
+        $this->start_controls_tab(
+            'tab_title_normal',
             [
-                'label' => __( 'Title', 'restimo' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'Normal', 'restimo' ),
             ]
         );
 
@@ -208,37 +143,51 @@ class Restimo_Price_Menu extends Widget_Base {
                 'label' => __( 'Color', 'restimo' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .restimo-price-menu-title' => 'color: {{VALUE}};',
                 ],
             ]
         );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab(
+            'tab_title_hover',
+            [
+                'label' => __( 'Hover', 'restimo' ),
+            ]
+        );
+
+        $this->add_control(
+            'title_hover_color',
+            [
+                'label' => __( 'Hover Color', 'restimo' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .restimo-price-menu-item:hover .restimo-price-menu-title' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
 
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'selector' => '{{WRAPPER}} .restimo-price-menu .menu-item-title',
+                'selector' => '{{WRAPPER}} .restimo-price-menu-title',
             ]
         );
-
-        $this->end_controls_section();
 
         // Description Style
-        $this->start_controls_section(
-            'description_style',
-            [
-                'label' => __( 'Description', 'restimo' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
         $this->add_control(
             'description_color',
             [
                 'label' => __( 'Color', 'restimo' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-description' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .restimo-price-menu-description' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -247,28 +196,18 @@ class Restimo_Price_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'description_typography',
-                'selector' => '{{WRAPPER}} .restimo-price-menu .menu-item-description',
+                'selector' => '{{WRAPPER}} .restimo-price-menu-description',
             ]
         );
-
-        $this->end_controls_section();
 
         // Price Style
-        $this->start_controls_section(
-            'price_style',
-            [
-                'label' => __( 'Price', 'restimo' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
         $this->add_control(
             'price_color',
             [
                 'label' => __( 'Color', 'restimo' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-price' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .restimo-price-menu-price' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -277,81 +216,19 @@ class Restimo_Price_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'price_typography',
-                'selector' => '{{WRAPPER}} .restimo-price-menu .menu-item-price',
+                'selector' => '{{WRAPPER}} .restimo-price-menu-price',
             ]
         );
-
-        $this->end_controls_section();
-
-        // Discount Style
-        $this->start_controls_section(
-            'discount_style',
-            [
-                'label' => __( 'Discount', 'restimo' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'discount_color',
-            [
-                'label' => __( 'Color', 'restimo' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-discount' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'discount_typography',
-                'selector' => '{{WRAPPER}} .restimo-price-menu .menu-item-discount',
-            ]
-        );
-
-        $this->end_controls_section();
 
         // Image Style
-        $this->start_controls_section(
-            'image_style',
-            [
-                'label' => __( 'Image', 'restimo' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'image_size',
-            [
-                'label' => __( 'Size', 'restimo' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
-                'range' => [
-                    'px' => [
-                        'min' => 10,
-                        'max' => 500,
-                    ],
-                    '%' => [
-                        'min' => 10,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-image img' => 'width: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
         $this->add_control(
             'image_border_radius',
             [
                 'label' => __( 'Border Radius', 'restimo' ),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => [ 'px', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .restimo-price-menu-image img' => 'border-radius: {{TOP}} {{RIGHT}} {{BOTTOM}} {{LEFT}};',
                 ],
             ]
         );
@@ -363,30 +240,33 @@ class Restimo_Price_Menu extends Widget_Base {
         $settings = $this->get_settings_for_display();
 
         if ( $settings['menu_items'] ) {
-            ?>
-            <div class="restimo-price-menu">
-                <?php foreach ( $settings['menu_items'] as $index => $item ) : ?>
-                    <div class="menu-item">
-                        <?php if ( $item['menu_item_image']['url'] ) : ?>
-                            <div class="menu-item-image">
-                                <img src="<?php echo esc_url( $item['menu_item_image']['url'] ); ?>" alt="<?php echo esc_attr( $item['menu_item_title'] ); ?>">
-                            </div>
-                        <?php endif; ?>
-                        <div class="menu-item-content">
-                            <div class="menu-item-title"><?php echo esc_html( $item['menu_item_title'] ); ?></div>
-                            <?php if ( ! empty( $settings['title_price_connector'] ) ) : ?>
-                                <span class="title-price-connector"><?php echo esc_html( $settings['title_price_connector'] ); ?></span>
-                            <?php endif; ?>
-                            <div class="menu-item-price"><?php echo esc_html( $item['menu_item_price'] ); ?></div>
-                            <?php if ( ! empty( $item['menu_item_discount'] ) ) : ?>
-                                <div class="menu-item-discount"><?php echo esc_html( $item['menu_item_discount'] ); ?></div>
-                            <?php endif; ?>
-                            <div class="menu-item-description"><?php echo esc_html( $item['menu_item_description'] ); ?></div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <?php
+            echo '<div class="restimo-price-menu">';
+            foreach ( $settings['menu_items'] as $item ) {
+                $target = $item['menu_item_link']['is_external'] ? ' target="_blank"' : '';
+                $nofollow = $item['menu_item_link']['nofollow'] ? ' rel="nofollow"' : '';
+                echo '<div class="restimo-price-menu-item">';
+                if ( $item['menu_item_image']['url'] ) {
+                    echo '<div class="restimo-price-menu-image"><img src="' . esc_url( $item['menu_item_image']['url'] ) . '" alt="' . esc_attr( $item['menu_item_title'] ) . '"></div>';
+                }
+                echo '<div class="restimo-price-menu-content">';
+                if ( $item['menu_item_title'] ) {
+                    echo '<h3 class="restimo-price-menu-title"><a href="' . esc_url( $item['menu_item_link']['url'] ) . '" ' . $target . $nofollow . '>' . $item['menu_item_title'] . '</a></h3>';
+                }
+                if ( $item['menu_item_description'] ) {
+                    echo '<p class="restimo-price-menu-description">' . $item['menu_item_description'] . '</p>';
+                }
+                if ( $item['menu_item_price'] ) {
+                    echo '<div class="restimo-price-menu-price">';
+                    if ( $item['menu_item_discount'] === 'yes' ) {
+                        echo '<span class="restimo-price-menu-price-discount">' . $item['menu_item_price'] . '</span>';
+                    } else {
+                        echo $item['menu_item_price'];
+                    }
+                    echo '</div>';
+                }
+                echo '</div></div>';
+            }
+            echo '</div>';
         }
     }
 }
