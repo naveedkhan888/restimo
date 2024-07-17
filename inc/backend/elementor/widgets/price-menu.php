@@ -1,12 +1,12 @@
 <?php
-use Elementor\Controls_Manager;
-use Elementor\Repeater;
-use Elementor\Widget_Base;
+namespace Elementor;
+
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Custom_Price_Menu_Widget extends Widget_Base {
 
     public function get_name() {
-        return 'custom-price-menu';
+        return 'custom_price_menu';
     }
 
     public function get_title() {
@@ -14,26 +14,27 @@ class Custom_Price_Menu_Widget extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-price-table';
+        return 'eicon-price-list'; // You can choose a different icon if needed
     }
 
     public function get_categories() {
-        return [ 'general' ]; // Adjust category as needed
+        return [ 'general' ]; // Adjust category as per your needs
     }
 
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'section_menu_items',
+            'content_section',
             [
-                'label' => __( 'Menu Items', 'text-domain' ),
+                'label' => __( 'Price Menu Items', 'text-domain' ),
+                'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
 
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'menu_item_title',
+            'title',
             [
                 'label' => __( 'Title', 'text-domain' ),
                 'type' => Controls_Manager::TEXT,
@@ -43,44 +44,73 @@ class Custom_Price_Menu_Widget extends Widget_Base {
         );
 
         $repeater->add_control(
-            'menu_item_description',
+            'price',
+            [
+                'label' => __( 'Price', 'text-domain' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => '$0.00',
+            ]
+        );
+
+        $repeater->add_control(
+            'description',
             [
                 'label' => __( 'Description', 'text-domain' ),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __( 'Item Description', 'text-domain' ),
-                'rows' => 5,
+            ]
+        );
+
+        $repeater->add_control(
+            'image',
+            [
+                'label' => __( 'Image', 'text-domain' ),
+                'type' => Controls_Manager::MEDIA,
                 'label_block' => true,
             ]
         );
 
         $repeater->add_control(
-            'menu_item_price',
+            'link',
             [
-                'label' => __( 'Price', 'text-domain' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => '$10.00',
-                'label_block' => true,
+                'label' => __( 'Link', 'text-domain' ),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __( 'https://your-link.com', 'text-domain' ),
+                'show_external' => true,
+                'default' => [
+                    'url' => '',
+                ],
             ]
         );
 
         $this->add_control(
-            'menu_items',
+            'price_menu_items',
             [
-                'label' => __( 'Menu Items', 'text-domain' ),
+                'label' => __( 'Price Menu Items', 'text-domain' ),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
-                'title_field' => '{{{ menu_item_title }}}',
+                'default' => [
+                    [
+                        'title' => __( 'Item 1', 'text-domain' ),
+                        'price' => '$10.00',
+                        'description' => __( 'Description for Item 1', 'text-domain' ),
+                    ],
+                    [
+                        'title' => __( 'Item 2', 'text-domain' ),
+                        'price' => '$15.00',
+                        'description' => __( 'Description for Item 2', 'text-domain' ),
+                    ],
+                ],
+                'title_field' => '{{{ title }}}',
             ]
         );
 
         $this->end_controls_section();
 
-        // Style Controls
-
         $this->start_controls_section(
-            'section_style_title',
+            'style_section',
             [
-                'label' => __( 'Title', 'text-domain' ),
+                'label' => __( 'Style', 'text-domain' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -88,85 +118,51 @@ class Custom_Price_Menu_Widget extends Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label' => __( 'Color', 'text-domain' ),
+                'label' => __( 'Title Color', 'text-domain' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ha-price-menu .ha-price-menu-item .ha-price-menu-title-text' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .custom-price-menu .price-menu-item .price-menu-title' => 'color: {{VALUE}};',
                 ],
-            ]
-        );
-
-        $this->add_control(
-            'title_typography',
-            [
-                'label' => __( 'Typography', 'text-domain' ),
-                'type' => Controls_Manager::TYPOGRAPHY,
-                'selectors' => [
-                    '{{WRAPPER}} .ha-price-menu .ha-price-menu-item .ha-price-menu-title-text' => '{{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_style_price',
-            [
-                'label' => __( 'Price', 'text-domain' ),
-                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
             'price_color',
             [
-                'label' => __( 'Color', 'text-domain' ),
+                'label' => __( 'Price Color', 'text-domain' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ha-price-menu .ha-price-menu-item .ha-price-menu-price' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .custom-price-menu .price-menu-item .price-menu-price' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'price_typography',
+            'separator_style',
             [
-                'label' => __( 'Typography', 'text-domain' ),
-                'type' => Controls_Manager::TYPOGRAPHY,
-                'selectors' => [
-                    '{{WRAPPER}} .ha-price-menu .ha-price-menu-item .ha-price-menu-price' => '{{VALUE}}',
+                'label' => __( 'Separator Style', 'text-domain' ),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'solid' => __( 'Solid', 'text-domain' ),
+                    'dotted' => __( 'Dotted', 'text-domain' ),
+                    'dashed' => __( 'Dashed', 'text-domain' ),
+                    'double' => __( 'Double', 'text-domain' ),
+                    'none' => __( 'None', 'text-domain' ),
                 ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_style_description',
-            [
-                'label' => __( 'Description', 'text-domain' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'description_color',
-            [
-                'label' => __( 'Color', 'text-domain' ),
-                'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ha-price-menu .ha-price-menu-item .ha-price-menu-desc p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .custom-price-menu .price-menu-item .price-menu-title-separator' => 'border-style: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'description_typography',
+            'item_spacing',
             [
-                'label' => __( 'Typography', 'text-domain' ),
-                'type' => Controls_Manager::TYPOGRAPHY,
+                'label' => __( 'Item Spacing', 'text-domain' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .ha-price-menu .ha-price-menu-item .ha-price-menu-desc p' => '{{VALUE}}',
+                    '{{WRAPPER}} .custom-price-menu .price-menu-item' => 'margin-bottom: {{TOP}}{{UNIT}};',
                 ],
             ]
         );
@@ -178,23 +174,21 @@ class Custom_Price_Menu_Widget extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        if ( $settings['menu_items'] ) {
+        if ( $settings['price_menu_items'] ) {
             ?>
-            <div class="ha-price-menu">
-                <?php foreach ( $settings['menu_items'] as $index => $item ) : ?>
-                    <div class="ha-price-menu-item">
-                        <div class="ha-price-menu-content">
-                            <div class="ha-price-menu-header">
-                                <h4 class="ha-price-menu-title">
-                                    <span class="ha-price-menu-title-text"><?php echo esc_html( $item['menu_item_title'] ); ?></span>
-                                </h4>
-                                <span class="ha-price-title-separator"></span>
-                                <div class="ha-price-menu-price-wrap">
-                                    <span class="ha-price-menu-price"><?php echo esc_html( $item['menu_item_price'] ); ?></span>
+            <div class="custom-price-menu">
+                <?php foreach ( $settings['price_menu_items'] as $index => $item ) : ?>
+                    <div class="price-menu-item">
+                        <div class="price-menu-content">
+                            <div class="price-menu-header">
+                                <h4 class="price-menu-title"><?php echo $item['title']; ?></h4>
+                                <span class="price-menu-title-separator"></span>
+                                <div class="price-menu-price-wrap">
+                                    <span class="price-menu-price"><?php echo $item['price']; ?></span>
                                 </div>
                             </div>
-                            <div class="ha-price-menu-desc">
-                                <p><?php echo esc_html( $item['menu_item_description'] ); ?></p>
+                            <div class="price-menu-desc">
+                                <p><?php echo $item['description']; ?></p>
                             </div>
                         </div>
                     </div>
@@ -205,33 +199,7 @@ class Custom_Price_Menu_Widget extends Widget_Base {
     }
 
     protected function _content_template() {
-        ?>
-        <div class="ha-price-menu">
-            <#
-            _.each( settings.menu_items, function( item ) {
-            #>
-            <div class="ha-price-menu-item">
-                <div class="ha-price-menu-content">
-                    <div class="ha-price-menu-header">
-                        <h4 class="ha-price-menu-title">
-                            <span class="ha-price-menu-title-text">{{{ item.menu_item_title }}}</span>
-                        </h4>
-                        <span class="ha-price-title-separator"></span>
-                        <div class="ha-price-menu-price-wrap">
-                            <span class="ha-price-menu-price">{{{ item.menu_item_price }}}</span>
-                        </div>
-                    </div>
-                    <div class="ha-price-menu-desc">
-                        <p>{{{ item.menu_item_description }}}</p>
-                    </div>
-                </div>
-            </div>
-            <#
-            });
-            #>
-        </div>
-        <?php
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Custom_Price_Menu_Widget() );
+Plugin::instance()->widgets_manager->register_widget_type( new Custom_Price_Menu_Widget() );
