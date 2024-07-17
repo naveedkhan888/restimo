@@ -7560,3 +7560,61 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 .restimo-price-menu .menu-item-link a:hover {
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container styles */
+.restimo-price-menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Item styles */
+.restimo-price-menu .menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.restimo-price-menu .menu-item .menu-item-image {
+    margin-right: 20px; /* Adjust spacing between image and content */
+}
+
+.restimo-price-menu .menu-item .menu-item-title {
+    font-size: 18px; /* Example font size */
+    font-weight: bold; /* Example font weight */
+    margin-right: 10px; /* Adjust spacing between title and separator */
+}
+
+.restimo-price-menu .menu-item .menu-item-separator {
+    flex: 1;
+    border-top: 1px solid #ccc; /* Example separator styling */
+    margin: 0 10px; /* Adjust spacing around separator */
+}
+
+.restimo-price-menu .menu-item .menu-item-price {
+    font-size: 18px; /* Example font size */
+    font-weight: bold; /* Example font weight */
+    margin-left: 10px; /* Adjust spacing between separator and price */
+}
+
+.restimo-price-menu .menu-item .menu-item-description {
+    margin-top: 10px; /* Example spacing between price and description */
+}
+
+.restimo-price-menu .menu-item .menu-item-link {
+    margin-top: 10px; /* Example spacing between description and link */
+}

@@ -146,150 +146,12 @@ class Restimo_Price_Menu_Widget extends Widget_Base {
         );
 
         $this->add_control(
-            'title_color',
+            'rows_gap',
             [
-                'label' => __( 'Title Color', 'restimo' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item .menu-item-title' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Typography::get_type(),
-            [
-                'name' => 'title_typography',
-                'label' => __( 'Typography', 'restimo' ),
-                'selector' => '{{WRAPPER}} .restimo-price-menu .menu-item .menu-item-title',
-            ]
-        );
-
-        $this->add_control(
-            'price_color',
-            [
-                'label' => __( 'Price Color', 'restimo' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item .menu-item-price' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Typography::get_type(),
-            [
-                'name' => 'price_typography',
-                'label' => __( 'Typography', 'restimo' ),
-                'selector' => '{{WRAPPER}} .restimo-price-menu .menu-item .menu-item-price',
-            ]
-        );
-
-        $this->add_control(
-            'separator_style',
-            [
-                'label' => __( 'Separator Style', 'restimo' ),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'solid' => __( 'Solid', 'restimo' ),
-                    'dotted' => __( 'Dotted', 'restimo' ),
-                    'dashed' => __( 'Dashed', 'restimo' ),
-                    'double' => __( 'Double', 'restimo' ),
-                    'none' => __( 'None', 'restimo' ),
-                ],
-                'default' => 'solid',
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item .menu-item-separator' => 'border-style: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'separator_color',
-            [
-                'label' => __( 'Separator Color', 'restimo' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item .menu-item-separator' => 'border-color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'separator_style!' => 'none',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'separator_spacing',
-            [
-                'label' => __( 'Separator Spacing', 'restimo' ),
+                'label' => __( 'Rows Gap', 'restimo' ),
                 'type' => Controls_Manager::SLIDER,
                 'selectors' => [
                     '{{WRAPPER}} .restimo-price-menu .menu-item' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_style_image',
-            [
-                'label' => __( 'Image Style', 'restimo' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'image_resolution',
-            [
-                'label' => __( 'Image Resolution', 'restimo' ),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'thumbnail' => __( 'Thumbnail', 'restimo' ),
-                    'medium' => __( 'Medium', 'restimo' ),
-                    'large' => __( 'Large', 'restimo' ),
-                    'full' => __( 'Full', 'restimo' ),
-                    'custom' => __( 'Custom', 'restimo' ),
-                ],
-                'default' => 'thumbnail',
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-image img' => 'object-fit: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'image_custom_size',
-            [
-                'label' => __( 'Custom Image Size', 'restimo' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-image img' => 'width: {{WIDTH}}{{UNIT}}; height: {{HEIGHT}}{{UNIT}};',
-                ],
-                'condition' => [
-                    'image_resolution' => 'custom',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'image_border_radius',
-            [
-                'label' => __( 'Image Border Radius', 'restimo' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'image_spacing',
-            [
-                'label' => __( 'Image Spacing', 'restimo' ),
-                'type' => Controls_Manager::SLIDER,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item .menu-item-content' => 'margin-left: calc({{SIZE}}{{UNIT}} / 2); margin-right: calc({{SIZE}}{{UNIT}} / 2);',
                 ],
             ]
         );
@@ -301,17 +163,6 @@ class Restimo_Price_Menu_Widget extends Widget_Base {
             [
                 'label' => __( 'Item Style', 'restimo' ),
                 'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_responsive_control(
-            'rows_gap',
-            [
-                'label' => __( 'Rows Gap', 'restimo' ),
-                'type' => Controls_Manager::SLIDER,
-                'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
             ]
         );
 
@@ -336,7 +187,7 @@ class Restimo_Price_Menu_Widget extends Widget_Base {
                 ],
                 'default' => 'top',
                 'selectors' => [
-                    '{{WRAPPER}} .restimo-price-menu .menu-item' => 'vertical-align: {{VALUE}};',
+                    '{{WRAPPER}} .restimo-price-menu .menu-item' => 'align-items: {{VALUE}};',
                 ],
             ]
         );
@@ -360,15 +211,15 @@ class Restimo_Price_Menu_Widget extends Widget_Base {
                         <?php endif; ?>
                         <div class="menu-item-content">
                             <<?php echo esc_attr( $item['menu_item_title_html_tag'] ); ?> class="menu-item-title"><?php echo esc_html( $item['menu_item_title'] ); ?></<?php echo esc_attr( $item['menu_item_title_html_tag'] ); ?>>
-                            <<?php echo esc_attr( $item['menu_item_description_html_tag'] ); ?> class="menu-item-description"><?php echo esc_html( $item['menu_item_description'] ); ?></<?php echo esc_attr( $item['menu_item_description_html_tag'] ); ?>>
+                            <div class="menu-item-separator"></div>
                             <div class="menu-item-price"><?php echo esc_html( $item['menu_item_price'] ); ?></div>
+                            <<?php echo esc_attr( $item['menu_item_description_html_tag'] ); ?> class="menu-item-description"><?php echo esc_html( $item['menu_item_description'] ); ?></<?php echo esc_attr( $item['menu_item_description_html_tag'] ); ?>>
                             <?php if ( ! empty( $item['menu_item_link']['url'] ) ) : ?>
                                 <div class="menu-item-link">
                                     <a href="<?php echo esc_url( $item['menu_item_link']['url'] ); ?>" <?php echo ( $item['menu_item_link']['is_external'] ? 'target="_blank"' : '' ); ?> <?php echo ( $item['menu_item_link']['nofollow'] ? 'rel="nofollow"' : '' ); ?>><?php _e( 'Read More', 'restimo' ); ?></a>
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="menu-item-separator"></div>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -397,8 +248,9 @@ class Restimo_Price_Menu_Widget extends Widget_Base {
                 #>
                 <div class="menu-item-content">
                     <<?php echo '{{ item.menu_item_title_html_tag }}'; ?> class="menu-item-title">{{{ item.menu_item_title }}}</<?php echo '{{ item.menu_item_title_html_tag }}'; ?>>
-                    <<?php echo '{{ item.menu_item_description_html_tag }}'; ?> class="menu-item-description">{{{ item.menu_item_description }}}</<?php echo '{{ item.menu_item_description_html_tag }}'; ?>>
+                    <div class="menu-item-separator"></div>
                     <div class="menu-item-price">{{{ item.menu_item_price }}}</div>
+                    <<?php echo '{{ item.menu_item_description_html_tag }}'; ?> class="menu-item-description">{{{ item.menu_item_description }}}</<?php echo '{{ item.menu_item_description_html_tag }}'; ?>>
                     <#
                     if ( item.menu_item_link && item.menu_item_link.url ) {
                     #>
@@ -409,7 +261,6 @@ class Restimo_Price_Menu_Widget extends Widget_Base {
                     }
                     #>
                 </div>
-                <div class="menu-item-separator"></div>
             </div>
             <#
             });
