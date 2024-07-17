@@ -10,8 +10,6 @@ namespace Stratum;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
-use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Utils;
 use Elementor\Plugin;
 
@@ -37,7 +35,7 @@ class Custom_Price_Menu_Widget extends Widget_Base {
         return [ 'general' ]; // Adjust category as per your needs
     }
 
-    protected function register_controls() {
+    protected function _register_controls() {
 
         $this->start_controls_section(
             'content_section',
@@ -74,6 +72,28 @@ class Custom_Price_Menu_Widget extends Widget_Base {
                 'label' => __( 'Description', 'text-domain' ),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __( 'Item Description', 'text-domain' ),
+            ]
+        );
+
+        $repeater->add_control(
+            'menu_image',
+            [
+                'label' => __( 'Image', 'text-domain' ),
+                'type' => Controls_Manager::MEDIA,
+                'label_block' => true,
+            ]
+        );
+
+        $repeater->add_control(
+            'menu_link',
+            [
+                'label' => __( 'Link', 'text-domain' ),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __( 'https://your-link.com', 'text-domain' ),
+                'show_external' => true,
+                'default' => [
+                    'url' => '',
+                ],
             ]
         );
 
@@ -131,6 +151,36 @@ class Custom_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'separator_style',
+            [
+                'label' => __( 'Separator Style', 'text-domain' ),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'solid' => __( 'Solid', 'text-domain' ),
+                    'dotted' => __( 'Dotted', 'text-domain' ),
+                    'dashed' => __( 'Dashed', 'text-domain' ),
+                    'double' => __( 'Double', 'text-domain' ),
+                    'none' => __( 'None', 'text-domain' ),
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .custom-price-menu .price-menu-item' => 'border-style: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'item_spacing',
+            [
+                'label' => __( 'Item Spacing', 'text-domain' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
+                'selectors' => [
+                    '{{WRAPPER}} .custom-price-menu .price-menu-item' => 'margin-bottom: {{TOP}}{{UNIT}};',
+                ],
+            ]
+        );
+
         // Add more styling controls as needed
 
         $this->end_controls_section();
@@ -148,6 +198,12 @@ class Custom_Price_Menu_Widget extends Widget_Base {
                         <h4 class="menu-title"><?php echo $item['menu_title']; ?></h4>
                         <div class="menu-price"><?php echo $item['menu_price']; ?></div>
                         <div class="menu-description"><?php echo $item['menu_description']; ?></div>
+                        <?php if ( ! empty( $item['menu_image']['url'] ) ) : ?>
+                            <img src="<?php echo esc_url( $item['menu_image']['url'] ); ?>" alt="<?php echo esc_attr( Utils::get_image_alt( $item['menu_image'] ) ); ?>" class="menu-image" />
+                        <?php endif; ?>
+                        <?php if ( ! empty( $item['menu_link']['url'] ) ) : ?>
+                            <a href="<?php echo esc_url( $item['menu_link']['url'] ); ?>" class="menu-link" target="<?php echo esc_attr( $item['menu_link']['is_external'] ? '_blank' : '_self' ); ?>"><?php echo esc_html( $item['menu_link']['title'] ); ?></a>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -158,4 +214,6 @@ class Custom_Price_Menu_Widget extends Widget_Base {
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register_widget_type( new Custom_Price_Menu_Widget() );
+add_action( 'elementor/widgets/widgets_registered', function() {
+    Plugin::instance()->widgets_manager->register_widget_type( new Custom_Price_Menu_Widget() );
+} );
