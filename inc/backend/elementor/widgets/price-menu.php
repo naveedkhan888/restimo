@@ -3,14 +3,14 @@ namespace Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Custom_Price_Menu_Widget extends Widget_Base {
+class Restimo_Price_Menu_Widget extends Widget_Base {
 
     public function get_name() {
-        return 'custom_price_menu';
+        return 'restimo_price_menu';
     }
 
     public function get_title() {
-        return __( 'Custom Price Menu', 'text-domain' );
+        return __( 'Restimo Price Menu', 'text-domain' );
     }
 
     public function get_icon() {
@@ -121,7 +121,7 @@ class Custom_Price_Menu_Widget extends Widget_Base {
                 'label' => __( 'Title Color', 'text-domain' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .custom-price-menu .price-menu-item .price-menu-title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .restimo-price-menu .price-menu-item .price-menu-title' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -132,7 +132,7 @@ class Custom_Price_Menu_Widget extends Widget_Base {
                 'label' => __( 'Price Color', 'text-domain' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .custom-price-menu .price-menu-item .price-menu-price' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .restimo-price-menu .price-menu-item .price-menu-price' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -150,7 +150,7 @@ class Custom_Price_Menu_Widget extends Widget_Base {
                     'none' => __( 'None', 'text-domain' ),
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .custom-price-menu .price-menu-item .price-menu-title-separator' => 'border-style: {{VALUE}};',
+                    '{{WRAPPER}} .restimo-price-menu .price-menu-item .price-menu-title-separator' => 'border-style: {{VALUE}};',
                 ],
             ]
         );
@@ -162,7 +162,7 @@ class Custom_Price_Menu_Widget extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .custom-price-menu .price-menu-item' => 'margin-bottom: {{TOP}}{{UNIT}};',
+                    '{{WRAPPER}} .restimo-price-menu .price-menu-item' => 'margin-bottom: {{TOP}}{{UNIT}};',
                 ],
             ]
         );
@@ -176,7 +176,7 @@ class Custom_Price_Menu_Widget extends Widget_Base {
 
         if ( $settings['price_menu_items'] ) {
             ?>
-            <div class="custom-price-menu">
+            <div class="restimo-price-menu">
                 <?php foreach ( $settings['price_menu_items'] as $index => $item ) : ?>
                     <div class="price-menu-item">
                         <div class="price-menu-content">
@@ -202,4 +202,4 @@ class Custom_Price_Menu_Widget extends Widget_Base {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new Custom_Price_Menu_Widget() );
+Plugin::instance()->widgets_manager->register_widget_type( new Restimo_Price_Menu_Widget() );
