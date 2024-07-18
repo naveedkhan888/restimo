@@ -6322,14 +6322,6 @@ object {
   display: flex;
   background: #262832;
 }
-.features-service-wrapper .features-service-item::before {
-  content: '';
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgb(0, 0, 0) 100%);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-}
 .features-service-wrapper .features-service-item {
   height: 745px;
   position: relative;
@@ -7493,50 +7485,3 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 
 
 
-
-/* Title styles */
-.ha-price-menu .ha-price-menu-item .ha-price-menu-title {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center; /* Align items vertically */
-}
-
-.ha-price-menu .ha-price-menu-item .ha-price-menu-title-text {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.ha-price-menu .ha-price-menu-item .ha-price-title-separator {
-    flex: 1; /* Flexible space between title and price */
-    height: 1px;
-    background-color: #ccc;
-    margin: 0 10px; /* Adjust spacing as needed */
-}
-
-/* Price styles */
-.ha-price-menu .ha-price-menu-item .ha-price-menu-price {
-    font-size: 20px;
-    color: #ff6600;
-    font-weight: bold;
-}
-
-/* Description styles */
-.ha-price-menu .ha-price-menu-item .ha-price-menu-desc p {
-    margin-top: 10px;
-    color: #666;
-}
-
-/* Container styles */
-.ha-price-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Adjust alignment of items */
-}
-
-.ha-price-menu .ha-price-menu-item {
-    width: calc(33.33% - 30px); /* Adjust item width */
-    margin-bottom: 30px;
-    padding: 15px;
-    border: 1px solid #eee; /* Example border */
-    border-radius: 5px; /* Example border radius */
-}
