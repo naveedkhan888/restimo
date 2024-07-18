@@ -6312,6 +6312,67 @@ object {
     
 }
 
+
+
+
+/* Style the calendar popup */
+.ui-datepicker {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+.ui-datepicker-header {
+    background-color: #007cba;
+    color: #ffffff;
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.ui-datepicker-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+    color: #cccccc;
+}
+
+.ui-datepicker-calendar {
+    margin: 10px;
+}
+
+.ui-datepicker-calendar th {
+    color: #007cba;
+    font-weight: bold;
+}
+
+.ui-datepicker-calendar td {
+    padding: 5px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.ui-datepicker-calendar td:hover {
+    background-color: #f0f0f0;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    background-color: #007cba;
+    color: #ffffff;
+}
+
 /*--------------------------------------------------------------
 ## Background List
 --------------------------------------------------------------*/
