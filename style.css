@@ -3386,6 +3386,16 @@ object {
 }
 
 /*--------------------------------------------------------------
+# Elementor icons and other
+--------------------------------------------------------------*/
+
+.elementor-widget-icon.elementor-view-framed .elementor-icon,
+.elementor-widget-icon.elementor-view-default .elementor-icon, {
+  fill: #C19977;
+  color: #C19977;
+}
+
+/*--------------------------------------------------------------
 ## Icon Box
 --------------------------------------------------------------*/
 .icon-box {
