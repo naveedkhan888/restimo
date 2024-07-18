@@ -141,7 +141,7 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce .widget_price_filter .price_slider_amount button.button,
 			.elementor-widget-icon.elementor-view-framed .elementor-icon,
 			.elementor-widget-icon.elementor-view-default .elementor-icon,
-			.xp-counter-2 .c-number span.num + span,
+			.xp-counter-2.icounter .c-number.font-second span.num + span,
 			.woocommerce div.product p.price,.woocommerce div.product span.price{ color: '.restimo_get_option('main_color').'; }
 
 			/*Other*/
