@@ -7263,6 +7263,9 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
   .admin-bar section:not(.is-stuck) .mmenu-wrapper {
     top: 32px;
   }
+  h2 {
+  font-size: 32px;
+  }
 }
 @media only screen and (max-width: 782px) {
   .admin-bar section:not(.is-stuck) .mmenu-wrapper {
