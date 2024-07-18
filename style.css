@@ -3390,7 +3390,8 @@ object {
 --------------------------------------------------------------*/
 
 .elementor-widget-icon.elementor-view-framed .elementor-icon-wrapper .elementor-icon, 
-.elementor-widget-icon.elementor-view-default .elementor-icon-wrapper .elementor-icon {
+.elementor-widget-icon.elementor-view-default .elementor-icon-wrapper .elementor-icon, 
+.elementor-68 .elementor-element.elementor-element-bb89324 .xp-counter-2 span + span {
   fill: #C19977;
   color: #C19977;
 }
