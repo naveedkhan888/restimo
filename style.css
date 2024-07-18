@@ -3391,8 +3391,8 @@ object {
 
 .elementor-widget-icon.elementor-view-framed .elementor-icon-wrapper .elementor-icon, 
 .elementor-widget-icon.elementor-view-default .elementor-icon-wrapper .elementor-icon {
-  fill: #C19977 !important;
-  color: #C19977 !important;
+  fill: #C19977;
+  color: #C19977;
 }
 
 /*--------------------------------------------------------------
