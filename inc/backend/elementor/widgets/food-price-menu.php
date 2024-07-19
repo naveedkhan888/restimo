@@ -178,6 +178,27 @@ class Food_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
+        // Description Style
+        $this->add_control(
+            'description_color',
+            [
+                'label' => __( 'Description Color', 'plugin-name' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .description' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'description_typography',
+                'label' => __( 'Description Typography', 'plugin-name' ),
+                'selector' => '{{WRAPPER}} .description',
+            ]
+        );
+
         // Price Style
         $this->add_control(
             'price_color',
@@ -291,6 +312,24 @@ class Food_Price_Menu_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .item-separator' => 'border-top-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        // Item Spacing
+        $this->add_responsive_control(
+            'item_spacing',
+            [
+                'label' => __( 'Item Spacing', 'plugin-name' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 50,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .menu-item' => 'margin-bottom: {{SIZE}}{{UNIT}}; margin-top: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
