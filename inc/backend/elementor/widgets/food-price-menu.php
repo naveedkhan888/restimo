@@ -299,7 +299,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
     }
 
     protected function render() {
-        $settings = $this->get_settings_for_display();
+    $settings = $this->get_settings_for_display();
 
         if ( ! empty( $settings['list'] ) ) {
             echo '<div class="food-price-menu">';
@@ -309,26 +309,27 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     echo '<div class="image"><img src="' . esc_url( $item['image']['url'] ) . '" alt="' . esc_attr( $item['title'] ) . '"></div>';
                 }
                 echo '<div class="content">';
-                echo '<' . $item['title_tag'] . ' class="title">' . esc_html( $item['title'] ) . '</' . $item['title_tag'] . '>';
-                echo '<' . $item['description_tag'] . ' class="description">' . esc_html( $item['description'] ) . '</' . $item['description_tag'] . '>';
+                echo '<' . esc_attr( $item['description_tag'] ) . ' class="description">' . esc_html( $item['description'] ) . '</' . esc_attr( $item['description_tag'] ) . '>';
+                echo '<div class="new_menu_wrappppper">';
+                echo '<' . esc_attr( $item['title_tag'] ) . ' class="title">' . esc_html( $item['title'] ) . '</' . esc_attr( $item['title_tag'] ) . '>';
+                // Add separator between items, except after the last item
+                if ( $index < count( $settings['list'] ) - 1 ) {
+                    echo '<div class="item-separator"></div>';
+                }
                 echo '<div class="price">' . esc_html( $item['price'] ) . '</div>';
+                echo '</div>';
                 if ( ! empty( $item['link']['url'] ) ) {
                     $target = $item['link']['is_external'] ? ' target="_blank"' : '';
                     $nofollow = $item['link']['nofollow'] ? ' rel="nofollow"' : '';
                     echo '<a href="' . esc_url( $item['link']['url'] ) . '"' . $target . $nofollow . '>' . esc_html( $item['title'] ) . '</a>';
                 }
-                echo '</div>';
-                // Add item separator within the item
-                echo '<div class="item-separator"></div>';
-                echo '</div>';
-                // Add separator between items, except after the last item
-                if ( $index < count( $settings['list'] ) - 1 ) {
-                    echo '<div class="separator"></div>';
-                }
+                echo '</div>'; // Close content
+                echo '</div>'; // Close menu-item
             }
-            echo '</div>';
+            echo '</div>'; // Close food-price-menu
         }
     }
+
 
     protected function _content_template() {
         ?>
@@ -340,7 +341,6 @@ class Food_Price_Menu_Widget extends Widget_Base {
                             <div class="image"><img src="{{ item.image.url }}" alt="{{ item.title }}"></div>
                         <# } #>
                         <div class="content">
-                            
                             <{{{ item.description_tag }}} class="description">{{{ item.description }}}</{{{ item.description_tag }}}>
                             <div class="new_menu_wrappppper">
                                 <{{{ item.title_tag }}} class="title">{{{ item.title }}}</{{{ item.title_tag }}}>
