@@ -348,7 +348,9 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     echo '<div class="image"><img src="' . esc_url( $item['image']['url'] ) . '" alt="' . esc_attr( $item['title'] ) . '"></div>';
                 }
                 echo '<div class="content">';
+                echo '<div class="title_priccce">'; 
                 echo '<' . $item['title_tag'] . ' class="title">' . esc_html( $item['title'] ) . '</' . $item['title_tag'] . '>';
+                echo '</div>';
                 echo '<' . $item['description_tag'] . ' class="description">' . esc_html( $item['description'] ) . '</' . $item['description_tag'] . '>';
                 echo '<div class="price">' . esc_html( $item['price'] ) . '</div>';
                 if ( ! empty( $item['link']['url'] ) ) {
