@@ -5533,7 +5533,7 @@ object {
   height: 40px;
   line-height: 40px;
   font-size: 14px;
-  background: #262832;
+  background: #131E30;
   color: #fff;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -5542,7 +5542,7 @@ object {
 .team-1 .team-social span, .team-1 .team-social a:hover {
   cursor: pointer;
   background: #fff;
-  color: #262832;
+  color: #131E30;
   font-weight: bold;
 }
 .team-1 .team-social span:before {
@@ -5574,7 +5574,7 @@ object {
   transform: rotate(45deg);
 }
 .team-1:hover .team-info {
-  background: #262832;
+  background: #131E30;
 }
 .team-1:hover .team-info h6,
 .team-1:hover .team-info h6 a {
