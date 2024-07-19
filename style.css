@@ -7571,23 +7571,26 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 
 
 
-/* Container styling */
-.content {
+.food-price-menu .menu-item:first-child {
+  margin-top: 0 !important;
+}
+.food-price-menu .menu-item:last-child {
+  margin-bottom: 0 !important;
 }
 
 /* Title, separator, and price container */
-.title_priccce {
+.food-price-menu .menu-item .content .title_priccce {
     display: flex;
     align-items: center;
 }
 
 /* Title styling */
-.title_priccce .title {
+.food-price-menu .menu-item .content .title_priccce .title {
     margin: 0;
 }
 
 /* Separator styling */
-.item-separator {
+.food-price-menu .menu-item .content .item-separator {
     flex-grow: 1;
     height: 1px;
     background-color: #ddd;
@@ -7595,7 +7598,7 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 }
 
 /* Price styling */
-.title_priccce .price {
+.food-price-menu .menu-item .content .title_priccce .price {
     flex-grow: 0;
   flex-shrink: 0;
   display: flex;
@@ -7607,7 +7610,7 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 }
 
 /* Description styling */
-.description {
+.food-price-menu .menu-item .content .description {
     margin-top: 10px;
     margin-bottom: 0;
 }
