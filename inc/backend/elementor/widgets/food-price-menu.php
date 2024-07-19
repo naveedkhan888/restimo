@@ -279,14 +279,32 @@ class Food_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'item_spacing',
+            [
+                'label' => __( 'Item Spacing', 'plugin-name' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 50,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .menu-item' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
     }
 
     protected function render() {
         $settings = $this->get_settings_for_display();
-        if ( $settings['list'] ) {
+
+        if ( ! empty( $settings['list'] ) ) {
             echo '<div class="food-price-menu">';
-            foreach (  $settings['list'] as $item ) {
+            foreach ( $settings['list'] as $item ) {
                 echo '<div class="menu-item">';
                 if ( ! empty( $item['image']['url'] ) ) {
                     echo '<div class="image"><img src="' . esc_url( $item['image']['url'] ) . '" alt="' . esc_attr( $item['title'] ) . '"></div>';
