@@ -7592,8 +7592,6 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 /* Separator styling */
 .food-price-menu .menu-item .content .item-separator {
     flex-grow: 1;
-    height: 1px;
-    background-color: #ddd;
     margin: 0 10px;
 }
 
@@ -7611,6 +7609,6 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 
 /* Description styling */
 .food-price-menu .menu-item .content .description {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 0;
 }
