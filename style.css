@@ -7582,18 +7582,16 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 .title_priccce {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 /* Title styling */
 .title_priccce .title {
-    flex: 1;
     margin: 0;
 }
 
 /* Separator styling */
 .item-separator {
-    flex: 1;
+    flex-grow: 1;
     height: 1px;
     background-color: #ddd;
     margin: 0 10px;
@@ -7601,9 +7599,14 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 
 /* Price styling */
 .title_priccce .price {
-    flex: 0;
+    flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
     margin: 0;
-    white-space: nowrap;
+    
 }
 
 /* Description styling */
