@@ -360,14 +360,12 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     echo '<a href="' . esc_url( $item['link']['url'] ) . '"' . $target . $nofollow . '>' . esc_html( $item['title'] ) . '</a>';
                 }
                 echo '</div>';
-                
-                // Add item separator after each item, except the last one
                 if ( $index < count( $settings['list'] ) - 1 ) {
                     echo '<div class="item-separator"></div>';
                 }
+                echo '</div>';
             }
-            // Remove the following line if you don't need an overall separator
-            // echo '<div class="separator"></div>';
+            echo '<div class="separator"></div>';
             echo '</div>';
         }
     }
