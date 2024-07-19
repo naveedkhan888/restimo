@@ -158,6 +158,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
+        // Title Style
         $this->add_control(
             'title_color',
             [
@@ -178,6 +179,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
+        // Price Style
         $this->add_control(
             'price_color',
             [
@@ -198,6 +200,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
+        // Separator Style
         $this->add_control(
             'separator_style',
             [
@@ -245,40 +248,55 @@ class Food_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
+        // Item Separator Style
         $this->add_control(
-            'image_spacing',
+            'item_separator_style',
             [
-                'label' => __( 'Image Spacing', 'plugin-name' ),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 50,
-                    ],
+                'label' => __( 'Item Separator Style', 'plugin-name' ),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'solid' => __( 'Solid', 'plugin-name' ),
+                    'dotted' => __( 'Dotted', 'plugin-name' ),
+                    'dashed' => __( 'Dashed', 'plugin-name' ),
+                    'double' => __( 'Double', 'plugin-name' ),
+                    'none' => __( 'None', 'plugin-name' ),
                 ],
+                'default' => 'solid',
                 'selectors' => [
-                    '{{WRAPPER}} .image' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .item-separator' => 'border-top-style: {{VALUE}}',
                 ],
             ]
         );
 
         $this->add_control(
-            'image_border_radius',
+            'item_separator_weight',
             [
-                'label' => __( 'Image Border Radius', 'plugin-name' ),
+                'label' => __( 'Item Separator Weight', 'plugin-name' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
-                        'min' => 0,
-                        'max' => 50,
+                        'min' => 1,
+                        'max' => 10,
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .image img' => 'border-radius: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .item-separator' => 'border-top-width: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
 
+        $this->add_control(
+            'item_separator_color',
+            [
+                'label' => __( 'Item Separator Color', 'plugin-name' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .item-separator' => 'border-top-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        // Item Spacing
         $this->add_control(
             'item_spacing',
             [
@@ -287,11 +305,40 @@ class Food_Price_Menu_Widget extends Widget_Base {
                 'range' => [
                     'px' => [
                         'min' => 0,
-                        'max' => 50,
+                        'max' => 100,
                     ],
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .menu-item' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                ],
+            ]
+        );
+
+        // Image Style
+        $this->add_control(
+            'image_border_radius',
+            [
+                'label' => __( 'Image Border Radius', 'plugin-name' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'selectors' => [
+                    '{{WRAPPER}} .image img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'image_spacing',
+            [
+                'label' => __( 'Image Spacing', 'plugin-name' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .image' => 'margin-right: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -304,7 +351,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
 
         if ( ! empty( $settings['list'] ) ) {
             echo '<div class="food-price-menu">';
-            foreach ( $settings['list'] as $item ) {
+            foreach ( $settings['list'] as $index => $item ) {
                 echo '<div class="menu-item">';
                 if ( ! empty( $item['image']['url'] ) ) {
                     echo '<div class="image"><img src="' . esc_url( $item['image']['url'] ) . '" alt="' . esc_attr( $item['title'] ) . '"></div>';
@@ -318,10 +365,13 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     $nofollow = $item['link']['nofollow'] ? ' rel="nofollow"' : '';
                     echo '<a href="' . esc_url( $item['link']['url'] ) . '"' . $target . $nofollow . '>' . esc_html( $item['title'] ) . '</a>';
                 }
-                echo '<div class="separator"></div>';
                 echo '</div>';
+                if ($index < count($settings['list']) - 1) {
+                    echo '<div class="item-separator"></div>';
+                }
                 echo '</div>';
             }
+            echo '<div class="separator"></div>';
             echo '</div>';
         }
     }
@@ -330,7 +380,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
         ?>
         <# if ( settings.list.length ) { #>
             <div class="food-price-menu">
-                <# _.each( settings.list, function( item ) { #>
+                <# _.each( settings.list, function( item, index ) { #>
                     <div class="menu-item">
                         <# if ( item.image.url ) { #>
                             <div class="image"><img src="{{ item.image.url }}" alt="{{ item.title }}"></div>
@@ -345,10 +395,13 @@ class Food_Price_Menu_Widget extends Widget_Base {
                             #>
                                 <a href="{{ item.link.url }}"{{ target }}{{ nofollow }}>{{{ item.title }}}</a>
                             <# } #>
-                            <div class="separator"></div>
                         </div>
+                        <# if ( index < settings.list.length - 1 ) { #>
+                            <div class="item-separator"></div>
+                        <# } #>
                     </div>
                 <# }); #>
+                <div class="separator"></div>
             </div>
         <# } #>
         <?php
