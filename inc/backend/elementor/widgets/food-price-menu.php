@@ -350,17 +350,17 @@ class Food_Price_Menu_Widget extends Widget_Base {
                 echo '<div class="content">';
                 echo '<div class="title_priccce">'; 
                 echo '<' . $item['title_tag'] . ' class="title">' . esc_html( $item['title'] ) . '</' . $item['title_tag'] . '>';
+                // Add item separator within the item
+                echo '<div class="item-separator"></div>';
+                echo '<div class="price">' . esc_html( $item['price'] ) . '</div>';
                 echo '</div>';
                 echo '<' . $item['description_tag'] . ' class="description">' . esc_html( $item['description'] ) . '</' . $item['description_tag'] . '>';
-                echo '<div class="price">' . esc_html( $item['price'] ) . '</div>';
                 if ( ! empty( $item['link']['url'] ) ) {
                     $target = $item['link']['is_external'] ? ' target="_blank"' : '';
                     $nofollow = $item['link']['nofollow'] ? ' rel="nofollow"' : '';
                     echo '<a href="' . esc_url( $item['link']['url'] ) . '"' . $target . $nofollow . '>' . esc_html( $item['title'] ) . '</a>';
                 }
                 echo '</div>';
-                // Add item separator within the item
-                echo '<div class="item-separator"></div>';
                 echo '</div>';
                 // Add separator between items, except after the last item
                 if ( $index < count( $settings['list'] ) - 1 ) {
@@ -381,9 +381,14 @@ class Food_Price_Menu_Widget extends Widget_Base {
                             <div class="image"><img src="{{ item.image.url }}" alt="{{ item.title }}"></div>
                         <# } #>
                         <div class="content">
-                            <{{{ item.title_tag }}} class="title">{{{ item.title }}}</{{{ item.title_tag }}}>
+                            <div class="title_priccce">
+                                <{{{ item.title_tag }}} class="title">{{{ item.title }}}</{{{ item.title_tag }}}>
+                                <# if ( index < settings.list.length - 1 ) { #>
+                                    <div class="item-separator"></div>
+                                <# } #>
+                                <div class="price">{{{ item.price }}}</div>
+                            </div>
                             <{{{ item.description_tag }}} class="description">{{{ item.description }}}</{{{ item.description_tag }}}>
-                            <div class="price">{{{ item.price }}}</div>
                             <# if ( item.link.url ) { 
                                 var target = item.link.is_external ? ' target="_blank"' : '';
                                 var nofollow = item.link.nofollow ? ' rel="nofollow"' : '';
@@ -391,9 +396,6 @@ class Food_Price_Menu_Widget extends Widget_Base {
                                 <a href="{{ item.link.url }}"{{ target }}{{ nofollow }}>{{{ item.title }}}</a>
                             <# } #>
                         </div>
-                        <# if ( index < settings.list.length - 1 ) { #>
-                            <div class="item-separator"></div>
-                        <# } #>
                     </div>
                 <# }); #>
                 <div class="separator"></div>
