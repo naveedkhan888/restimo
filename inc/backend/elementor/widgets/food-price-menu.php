@@ -340,9 +340,15 @@ class Food_Price_Menu_Widget extends Widget_Base {
                             <div class="image"><img src="{{ item.image.url }}" alt="{{ item.title }}"></div>
                         <# } #>
                         <div class="content">
-                            <{{{ item.title_tag }}} class="title">{{{ item.title }}}</{{{ item.title_tag }}}>
+                            
                             <{{{ item.description_tag }}} class="description">{{{ item.description }}}</{{{ item.description_tag }}}>
-                            <div class="price">{{{ item.price }}}</div>
+                            <div class="new_menu_wrappppper">
+                                <{{{ item.title_tag }}} class="title">{{{ item.title }}}</{{{ item.title_tag }}}>
+                                <# if ( index < settings.list.length - 1 ) { #>
+                                <div class="item-separator"></div>
+                                <# } #>
+                                <div class="price">{{{ item.price }}}</div>
+                            </div>
                             <# if ( item.link.url ) { 
                                 var target = item.link.is_external ? ' target="_blank"' : '';
                                 var nofollow = item.link.nofollow ? ' rel="nofollow"' : '';
@@ -350,9 +356,6 @@ class Food_Price_Menu_Widget extends Widget_Base {
                                 <a href="{{ item.link.url }}"{{ target }}{{ nofollow }}>{{{ item.title }}}</a>
                             <# } #>
                         </div>
-                        <# if ( index < settings.list.length - 1 ) { #>
-                            <div class="item-separator"></div>
-                        <# } #>
                     </div>
                 <# }); #>
                 <div class="separator"></div>
