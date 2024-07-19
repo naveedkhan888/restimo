@@ -3,7 +3,7 @@ namespace Elementor; // Custom widgets must be defined in the Elementor namespac
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measure)
 
 /**
- * Price_List Widget
+ * Widget Name: Price List
  */
 class Restimo_Price_List extends Widget_Base {
 
@@ -17,6 +17,11 @@ class Restimo_Price_List extends Widget_Base {
 
     public function get_icon() {
         return 'eicon-price-list';
+    }
+
+    // The get_categories method, lets you set the category of the widget, return the category name as a string.
+    public function get_categories() {
+        return [ 'category_restimo' ];
     }
 
     protected function register_controls() {
@@ -1146,3 +1151,6 @@ class Restimo_Price_List extends Widget_Base {
     }
 
 }
+
+// After the Restimo_Price_List class is defined, I must register the new widget class with Elementor:
+Plugin::instance()->widgets_manager->register( new Restimo_Price_List() );
