@@ -22,7 +22,6 @@ class Food_Price_Menu_Widget extends Widget_Base {
     }
 
     protected function register_controls() {
-
         // Content Controls
         $this->start_controls_section(
             'content_section',
@@ -301,15 +300,10 @@ class Food_Price_Menu_Widget extends Widget_Base {
             'item_spacing',
             [
                 'label' => __( 'Item Spacing', 'plugin-name' ),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
-                    '{{WRAPPER}} .menu-item' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .menu-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
                 ],
             ]
         );
@@ -338,7 +332,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .image' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .image' => 'margin-right: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -366,7 +360,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     echo '<a href="' . esc_url( $item['link']['url'] ) . '"' . $target . $nofollow . '>' . esc_html( $item['title'] ) . '</a>';
                 }
                 echo '</div>';
-                if ($index < count($settings['list']) - 1) {
+                if ( $index < count( $settings['list'] ) - 1 ) {
                     echo '<div class="item-separator"></div>';
                 }
                 echo '</div>';
