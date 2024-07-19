@@ -352,7 +352,7 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 20px;
@@ -405,7 +405,7 @@ dfn, cite, em, i {
 blockquote {
   position: relative;
   margin: 30px 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #131E30;
@@ -500,7 +500,7 @@ mark, ins {
 }
 
 .font-second {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
 }
 
 .clear-both {
@@ -615,7 +615,7 @@ mark, ins {
 
 .link-details {
   display: inline-block;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -753,7 +753,7 @@ mark, ins {
 }
 
 .slide-rev-subtitle {
-  font-family: "Inter", sans-serif !important;
+  font-family: "Merienda", sans-serif !important;
   font-weight: 600 !important;
   font-size: 11px !important;
   text-transform: uppercase;
@@ -905,7 +905,7 @@ td {
   text-transform: uppercase;
   white-space: nowrap;
   vertical-align: middle;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   text-align: center;
   background: #C19977;
@@ -1023,7 +1023,7 @@ textarea:focus {
 }
 
 select {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 14px;
   border: 1px solid #dbdbdb;
   outline: none;
@@ -1225,7 +1225,7 @@ a:hover, a:active {
 }
 
 .main-navigation ul {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   font-size: 14px;
   list-style: none;
@@ -1804,7 +1804,7 @@ a:hover, a:active {
 .page-header {
   width: 100%;
   height: 400px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 700;
   background: #131E30 center center no-repeat;
   background-size: cover;
@@ -2030,7 +2030,7 @@ a:hover, a:active {
   margin-bottom: 25px;
 }
 .post-box .post-cat a {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 700;
@@ -2051,7 +2051,7 @@ a:hover, a:active {
 .post-box .entry-meta {
   position: relative;
   text-transform: uppercase;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   font-size: 13px;
   color: #818181;
@@ -2128,7 +2128,7 @@ a:hover, a:active {
 .post-box .link-box a {
   font-size: 22px;
   font-weight: 600;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   color: #131E30;
 }
 .post-box .link-box a:hover {
@@ -2159,7 +2159,7 @@ a:hover, a:active {
   padding-left: 52px;
   font-size: 20px;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   line-height: 36px;
   color: #131E30;
 }
@@ -2215,7 +2215,7 @@ a:hover, a:active {
   display: inline-block;
 }
 .page-pagination li a, .page-pagination li span {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 16px;
   color: #131E30;
   background: #fff;
@@ -2280,7 +2280,7 @@ a:hover, a:active {
   color: #717171;
   background: #f5f5f5;
   font-size: 12px !important;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   padding: 8px 12px;
@@ -2397,7 +2397,7 @@ a:hover, a:active {
 }
 
 .drop-cap {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   float: left;
   text-align: center;
   background: #131E30;
@@ -2419,7 +2419,7 @@ a:hover, a:active {
 }
 
 .post-nav {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   margin-bottom: 30px;
   overflow: hidden;
   padding-bottom: 5px;
@@ -2774,7 +2774,7 @@ a:hover, a:active {
 .comments-area .comment-item .comment-meta .comment-time {
   display: block;
   color: #bdbdbd;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -2785,7 +2785,7 @@ a:hover, a:active {
   position: absolute;
   top: 0;
   right: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -2864,7 +2864,7 @@ a:hover, a:active {
   margin-bottom: 36px;
 }
 .comment-form .logged-in-as {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 14px;
   margin-bottom: 35px;
 }
@@ -2912,7 +2912,7 @@ a:hover, a:active {
   color: #717171;
   background: #f5f5f5;
   font-size: 12px !important;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   padding: 8px 12px;
@@ -2932,7 +2932,7 @@ a:hover, a:active {
   border-color: #C19977;
 }
 .widget table {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
 }
 .widget table td#today {
   font-weight: 600;
@@ -3091,7 +3091,7 @@ a:hover, a:active {
   color: #131E30;
 }
 .widget .recent-news .post-on {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 13px;
   font-weight: 600;
   display: block;
@@ -3350,7 +3350,7 @@ object {
 ## Heading
 --------------------------------------------------------------*/
 .xp-heading {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
 }
 .xp-heading > span {
   position: relative;
@@ -4096,7 +4096,7 @@ object {
   line-height: 42px;
 }
 .xp-flip-box .number-title span {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 24px;
 }
 .xp-flip-box .number-title span:before {
@@ -4175,11 +4175,11 @@ object {
 ## Counter
 --------------------------------------------------------------*/
 .xp-counter {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   display: block;
 }
 .xp-counter span {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 700;
   font-size: 48px;
   color: #C19977;
@@ -4266,7 +4266,7 @@ object {
 }
 .xp-countdown li span {
   font-size: 100px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 800;
   display: block;
   margin-bottom: 18px;
@@ -4360,7 +4360,7 @@ object {
   padding: 4px 5px;
   font-size: 14px;
   font-weight: 600;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   line-height: 1;
   background: #262832;
   color: #fff;
@@ -4777,7 +4777,7 @@ object {
 .project_filters li a {
   font-size: 14px;
   font-weight: 700;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   text-transform: uppercase;
 }
 .project_filters li a:before {
@@ -4939,7 +4939,7 @@ object {
 }
 .projects-grid .projects-box .portfolio-info .portfolio-cates {
   color: #fff;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
@@ -5212,7 +5212,7 @@ object {
 }
 .project-slider .projects-box .portfolio-info .portfolio-cates {
   color: #e9e9e9;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
@@ -5507,7 +5507,7 @@ object {
   font-weight: 600;
 }
 .xp-team .team-info span {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -5756,7 +5756,7 @@ object {
 }
 .member-info li span {
   color: #131E30;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
 }
 
@@ -5794,7 +5794,7 @@ object {
   cursor: pointer;
   justify-content: space-between;
   overflow: hidden;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #131E30;
@@ -5845,7 +5845,7 @@ object {
 }
 .xp-tabs .tab-link {
   cursor: pointer;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 14px;
   font-weight: 600;
   min-width: 170px;
@@ -5912,7 +5912,7 @@ object {
 ## Testimonials
 --------------------------------------------------------------*/
 .xp-testimonials .t-head {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
 }
 .xp-testimonials .t-head h6 {
   font-size: 22px;
@@ -6403,7 +6403,7 @@ object {
   flex-grow: 1;
 }
 .features-service-wrapper .features-service-item .features-service-content {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -6639,7 +6639,7 @@ body .elementor-widget:not(:last-child) {
 div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
   color: #131E30;
   font-weight: 700;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   line-height: 1.2;
 }
 
@@ -6680,7 +6680,7 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 }
 
 .elementor-element .elementor-widget-button .elementor-button {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   font-size: 13px;
   line-height: 1;
@@ -6705,7 +6705,7 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
   margin-bottom: 0;
 }
 .elementor-default .elementor-widget-text-editor .elementor-drop-cap {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 20px;
   font-weight: 900;
   padding: 10px 13px;
@@ -7086,14 +7086,14 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
   margin: 0 7px;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
 }
 
 #lang_choice_wp-widget-polylang {
   border: none;
   background: transparent;
   font-size: 14px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   padding: 2px 10px 2px 0;
@@ -7172,7 +7172,7 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 .mmenu-wrapper .mobile_mainmenu {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
 }
 .mmenu-wrapper .mobile-nav {
   min-width: 240px;

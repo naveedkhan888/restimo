@@ -71,7 +71,7 @@ WooCommerce styles override
 }
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
   list-style: none;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   text-align: center;
   margin-bottom: 35px;
   padding: 30px 20px;
@@ -173,7 +173,7 @@ WooCommerce styles override
   text-transform: uppercase;
   white-space: nowrap;
   vertical-align: middle;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   text-align: center;
   background: #C19977;
@@ -463,7 +463,7 @@ WooCommerce styles override
 }
 
 .woocommerce table.shop_table {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   color: #131E30;
   border: none;
@@ -532,7 +532,7 @@ WooCommerce styles override
   width: 85px;
   height: 46px;
   line-height: 46px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
@@ -585,7 +585,7 @@ WooCommerce styles override
 
 .cart_totals h2 {
   font-size: 24px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 700;
 }
 
@@ -593,7 +593,7 @@ WooCommerce styles override
 .woocommerce-cart .cart-collaterals .cart_totals table td, .woocommerce-cart .cart-collaterals .cart_totals table th,
 .woocommerce-checkout .cart-collaterals .cart_totals table td, .woocommerce-checkout .cart-collaterals .cart_totals table th {
   font-size: 18px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   line-height: 24px;
   color: #1a1b1e;
@@ -775,7 +775,7 @@ WooCommerce styles override
 }
 .woocommerce .site ul.product_list_widget li a:not(.remove) {
   display: block;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 15px;
   color: #1a1b1e;
   font-weight: 600;
@@ -810,7 +810,7 @@ WooCommerce styles override
 /* widget cart */
 .woocommerce .widget_shopping_cart .cart_list .quantity {
   color: #707f96;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 500;
   font-size: 14px;
 }
@@ -845,13 +845,13 @@ WooCommerce styles override
 .woocommerce .widget_shopping_cart .total strong,
 .woocommerce.widget_shopping_cart .total strong {
   color: #1a1b1e;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
 }
 .woocommerce .widget_shopping_cart .total .woocommerce-Price-amount,
 .woocommerce.widget_shopping_cart .total .woocommerce-Price-amount {
   float: right;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   font-size: 16px;
 }
@@ -862,7 +862,7 @@ WooCommerce styles override
 
 .woocommerce-mini-cart__buttons a.button.wc-forward {
   color: #fff;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 13px;
   font-weight: 600;
   border-radius: 0;
@@ -887,7 +887,7 @@ WooCommerce styles override
 
 /* widget filter */
 .woocommerce .woocommerce-widget-layered-nav-list {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 700;
   font-size: 14px;
   position: relative;
@@ -925,7 +925,7 @@ WooCommerce styles override
   top: -4px;
 }
 .woocommerce .widget_price_filter .price_slider_amount {
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
   color: #1a1b1e;
@@ -937,7 +937,7 @@ WooCommerce styles override
 }
 .woocommerce .widget_price_filter .price_slider_amount button.button {
   padding: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-size: 14px;
   letter-spacing: 0.5px;
   background: none;
@@ -953,7 +953,7 @@ WooCommerce styles override
   display: block;
   color: #1a1b1e;
   font-size: 16px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
   font-weight: 600;
   letter-spacing: 0.5px;
   margin-bottom: 15px;
@@ -981,7 +981,7 @@ WooCommerce styles override
 .woocommerce div.product .entry-summary p.price,
 .woocommerce div.product .entry-summary span.price {
   font-size: 26px;
-  font-family: "Inter", sans-serif;
+  font-family: "Merienda", sans-serif;
 }
 .woocommerce div.product .entry-summary p.price .woocommerce-Price-amount,
 .woocommerce div.product .entry-summary span.price .woocommerce-Price-amount {
