@@ -7573,9 +7573,6 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 
 /* Container styling */
 .content {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
 }
 
 /* Title, separator, and price container */
@@ -7612,5 +7609,5 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 /* Description styling */
 .description {
     margin-top: 10px;
-    color: #555;
+    margin-bottom: 0;
 }
