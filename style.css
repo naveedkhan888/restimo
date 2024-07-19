@@ -3413,7 +3413,7 @@ object {
   height: 90px;
   line-height: 90px;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 17px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -3585,6 +3585,7 @@ object {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-bottom: 0;
 }
 .icon-box-2 .icon-main i {
   line-height: 75px;
@@ -7614,7 +7615,7 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 }
 
 
-.menu-item .image img {
+.food-price-menu .menu-item .image img {
   height: 80px;
   overflow: ;
   border-radius: 50%;
@@ -7623,17 +7624,17 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
   object-position: center;
 }
 
-.menu-item .image {
+.food-price-menu .menu-item .image {
   margin-right: 20px;
 }
 
-.menu-item {
+.food-price-menu .menu-item {
   display: flex;
   width: 100%;
   align-content: center;
   align-items: center;
 }
 
-.menu-item .content {
+.food-price-menu .menu-item .content {
   flex-grow: 1;
 }
