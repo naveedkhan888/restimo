@@ -338,7 +338,7 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .image' => 'margin-right: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .image' => 'margin-bottom: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
