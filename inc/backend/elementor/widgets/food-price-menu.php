@@ -295,48 +295,6 @@ class Food_Price_Menu_Widget extends Widget_Base {
             ]
         );
 
-        // Item Spacing
-        $this->add_control(
-            'item_spacing',
-            [
-                'label' => __( 'Item Spacing', 'plugin-name' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
-                'selectors' => [
-                    '{{WRAPPER}} .menu-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
-                ],
-            ]
-        );
-
-        // Image Style
-        $this->add_control(
-            'image_border_radius',
-            [
-                'label' => __( 'Image Border Radius', 'plugin-name' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'selectors' => [
-                    '{{WRAPPER}} .image img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'image_spacing',
-            [
-                'label' => __( 'Image Spacing', 'plugin-name' ),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .image' => 'margin-right: {{SIZE}}{{UNIT}}',
-                ],
-            ]
-        );
-
         $this->end_controls_section();
     }
 
@@ -360,12 +318,14 @@ class Food_Price_Menu_Widget extends Widget_Base {
                     echo '<a href="' . esc_url( $item['link']['url'] ) . '"' . $target . $nofollow . '>' . esc_html( $item['title'] ) . '</a>';
                 }
                 echo '</div>';
-                if ( $index < count( $settings['list'] ) - 1 ) {
-                    echo '<div class="item-separator"></div>';
-                }
+                // Add item separator within the item
+                echo '<div class="item-separator"></div>';
                 echo '</div>';
+                // Add separator between items, except after the last item
+                if ( $index < count( $settings['list'] ) - 1 ) {
+                    echo '<div class="separator"></div>';
+                }
             }
-            echo '<div class="separator"></div>';
             echo '</div>';
         }
     }
