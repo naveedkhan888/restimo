@@ -7612,3 +7612,28 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
     margin-top: 5px;
     margin-bottom: 0;
 }
+
+
+.menu-item .image img {
+  height: 80px;
+  overflow: ;
+  border-radius: 50%;
+  width: 80px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu-item .image {
+  margin-right: 20px;
+}
+
+.menu-item {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+}
+
+.menu-item .content {
+  flex-grow: 1;
+}
