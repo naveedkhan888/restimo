@@ -254,6 +254,3 @@ require get_template_directory() . '/inc/frontend/builder.php';
 if ( class_exists( 'woocommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce/woocommerce.php';
 }
-
-
-add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
