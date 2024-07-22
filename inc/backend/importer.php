@@ -52,61 +52,6 @@ function restimo_importer() {
 				'primary'   => 'main-menu',
 			)
 		),
-		array(
-			'name'       => 'Home Business',
-			'preview'    => get_template_directory_uri().'/inc/backend/data/business/home3.jpg',
-			'content'    => get_template_directory_uri().'/inc/backend/data/business/demo-content.xml',
-			'customizer' => get_template_directory_uri().'/inc/backend/data/business/customizer.dat',
-			'widgets'    => get_template_directory_uri().'/inc/backend/data/business/widgets.wie',
-			//'sliders'    => get_template_directory_uri().'/inc/backend/data/business/sliders.zip',
-			'pages'      => array(
-				'front_page' => 'Home',
-				'blog'       => 'Blog',
-				'shop'       => 'Shop',
-				'cart'       => 'Cart',
-				'checkout'   => 'Checkout',
-				'my_account' => 'My Account',
-			),
-			'menus'      => array(
-				'primary'   => 'main-menu',
-			)
-		),
-		array(
-			'name'       => 'Home Corporate',
-			'preview'    => get_template_directory_uri().'/inc/backend/data/corporate/home4.jpg',
-			'content'    => get_template_directory_uri().'/inc/backend/data/corporate/demo-content.xml',
-			'customizer' => get_template_directory_uri().'/inc/backend/data/corporate/customizer.dat',
-			'widgets'    => get_template_directory_uri().'/inc/backend/data/corporate/widgets.wie',
-			'pages'      => array(
-				'front_page' => 'Home',
-				'blog'       => 'Blog',
-				'shop'       => 'Shop',
-				'cart'       => 'Cart',
-				'checkout'   => 'Checkout',
-				'my_account' => 'My Account',
-			),
-			'menus'      => array(
-				'primary'   => 'main-menu',
-			)
-		),
-		array(
-			'name'       => 'Home Finance',
-			'preview'    => get_template_directory_uri().'/inc/backend/data/finance/home5.jpg',
-			'content'    => get_template_directory_uri().'/inc/backend/data/finance/demo-content.xml',
-			'customizer' => get_template_directory_uri().'/inc/backend/data/finance/customizer.dat',
-			'widgets'    => get_template_directory_uri().'/inc/backend/data/finance/widgets.wie',
-			'pages'      => array(
-				'front_page' => 'Home',
-				'blog'       => 'Blog',
-				'shop'       => 'Shop',
-				'cart'       => 'Cart',
-				'checkout'   => 'Checkout',
-				'my_account' => 'My Account',
-			),
-			'menus'      => array(
-				'primary'   => 'main-menu',
-			)
-		),
 	);
 }
 

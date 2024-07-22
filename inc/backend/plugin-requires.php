@@ -28,31 +28,36 @@ function restimo_register_required_plugins() {
 		array(
             'name'               => esc_html__( 'Contact Form 7', 'restimo' ),
             'slug'               => 'contact-form-7',
-            'required'           => false,
+            'required'           => true,
 		),
 		array(
             'name'               => esc_html__( 'MailChimp for WordPress', 'restimo' ),
             'slug'               => 'mailchimp-for-wp',
-            'required'           => false,
+            'required'           => true,
 		),
 		array(
             'name'               => esc_html__( 'XP Portfolio', 'restimo' ), // The plugin name.
             'slug'               => 'xp_portfolio', // The plugin slug (typically the folder name).
             'source'             => esc_url($protocol.'://dpsample.com/xp_portfolio.zip'), // The plugin source.
-            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
         ),
         array(            
             'name'               => esc_html__( 'XP One Click Demo Content', 'restimo' ), // The plugin name.
             'slug'               => 'soo-demo-importer', // The plugin slug (typically the folder name).
             'source'             => esc_url($protocol.'://dpsample.com/soo-demo-importer.zip'), // The plugin source.
-            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
         ),
         array(            
             'name'               => esc_html__( 'Restimo Icons', 'restimo' ), // The plugin name.
             'slug'               => 'icon-plugin', // The plugin slug (typically the folder name).
             'source'             => esc_url($protocol.'://dpsample.com/icon-plugin.zip'), // The plugin source.
-            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
         ),
+        array(
+            'name'               => esc_html__( 'WooCommerce', 'restimo' ),
+            'slug'               => 'woocommerce',
+            'required'           => true,
+		),
         
 	);
 	$config  = array(
