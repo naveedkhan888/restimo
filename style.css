@@ -3164,6 +3164,7 @@ a:hover, a:active {
 }
 .author-widget_wrapper .author-widget_image-wrapper img {
   width: 150px;
+  border-radius: 50%;
 }
 .author-widget_wrapper .author-widget_title {
   margin-bottom: 10px;
@@ -3176,10 +3177,11 @@ a:hover, a:active {
 .author-widget_wrapper:before {
   content: "";
   position: absolute;
-  top: -10px;
-  left: 31px;
-  width: 80%;
-  height: 113%;
+  top: 90px;
+  left: -240px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
   background-image: linear-gradient(230deg, #C19977 -150%, #fff 80%);
   z-index: -1;
   -webkit-transform: rotate(35deg) translateY(-14%) translateX(22%);
