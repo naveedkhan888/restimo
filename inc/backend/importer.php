@@ -33,25 +33,6 @@ function restimo_importer() {
 				'primary'   => 'main-menu',
 			)
 		),
-		array(
-			'name'       => 'Home Consulting',
-			'preview'    => get_template_directory_uri().'/inc/backend/data/consulting/home2.jpg',
-			'content'    => get_template_directory_uri().'/inc/backend/data/consulting/demo-content.xml',
-			'customizer' => get_template_directory_uri().'/inc/backend/data/consulting/customizer.dat',
-			'widgets'    => get_template_directory_uri().'/inc/backend/data/consulting/widgets.wie',
-			//'sliders'    => get_template_directory_uri().'/inc/backend/data/consulting/sliders.zip',
-			'pages'      => array(
-				'front_page' => 'Home',
-				'blog'       => 'Blog',
-				'shop'       => 'Shop',
-				'cart'       => 'Cart',
-				'checkout'   => 'Checkout',
-				'my_account' => 'My Account',
-			),
-			'menus'      => array(
-				'primary'   => 'main-menu',
-			)
-		),
 	);
 }
 
