@@ -3984,7 +3984,7 @@ object {
   top: 20px;
   right: 30px;
 }
-.xp-image-box .image-box-price {
+.xp-image-box .content-box.image-box-price {
   background: transparent;
 }
 
