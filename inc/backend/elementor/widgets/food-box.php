@@ -1,34 +1,30 @@
 <?php
-namespace Elementor; // Custom widgets must be defined in the Elementor namespace
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measure)
+namespace Elementor;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Widget Name: Image Box Food
+ * Widget Name: XP Image Box Food
  */
-class Restimo_Image_Box_Food extends Widget_Base {
+class XP_Image_Box_Food extends Widget_Base {
 
-    // The get_name() method is a simple one, you just need to return a widget name that will be used in the code.
     public function get_name() {
-        return 'Restimo_Image_Box_Food';
+        return 'xp_image_box_food';
     }
 
-    // The get_title() method, which again, is a very simple one, you need to return the widget title that will be displayed as the widget label.
     public function get_title() {
         return __( 'XP Image Box Food', 'restimo' );
     }
 
-    // The get_icon() method, is an optional but recommended method, it lets you set the widget icon. you can use any of the eicon or font-awesome icons, simply return the class name as a string.
     public function get_icon() {
         return 'eicon-image-box';
     }
 
-    // The get_categories method, lets you set the category of the widget, return the category name as a string.
     public function get_categories() {
         return [ 'category_restimo' ];
     }
 
     protected function register_controls() {
-        // Content Image box
         $this->start_controls_section(
             'content_section',
             [
@@ -94,7 +90,7 @@ class Restimo_Image_Box_Food extends Widget_Base {
         $this->add_control(
             'header_size',
             [
-                'label' => __( 'Title HTML Tag', 'elementor' ),
+                'label' => __( 'Title HTML Tag', 'restimo' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -331,7 +327,19 @@ class Restimo_Image_Box_Food extends Widget_Base {
                 'default' => '',
                 'selectors' => [
                     '{{WRAPPER}} .price-box' => 'color: {{VALUE}};',
-                ],
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'price_bg_color',
+            [
+                'label' => __( 'Background Color', 'restimo' ),
+                'type' => Controls_Manager::COLOR,
+                'default' => '',
+                'selectors' => [
+                    '{{WRAPPER}} .price-box' => 'background-color: {{VALUE}};',
+                ]
             ]
         );
 
@@ -345,102 +353,77 @@ class Restimo_Image_Box_Food extends Widget_Base {
 
         $this->end_controls_section();
 
-        /*** Advanced ***/
-
-        $this->start_controls_section(
-            'advanced_section',
-            [
-                'label' => __( 'Advanced', 'restimo' ),
-                'tab' => Controls_Manager::TAB_ADVANCED,
-            ]
-        );
-
-        $this->add_control(
-            'custom_class',
-            [
-                'label' => __( 'CSS Classes', 'restimo' ),
-                'type' => Controls_Manager::TEXT,
-                'placeholder' => __( 'Enter your custom CSS class', 'restimo' ),
-            ]
-        );
-
-        $this->end_controls_section();
     }
 
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        ?>
-        <div class="xp-image-box <?php echo esc_attr($settings['custom_class']); ?>">
-            <div class="image-box">
-                <?php if ( ! empty( $settings['image_box']['url'] ) ) : ?>
-                    <img src="<?php echo esc_url( $settings['image_box']['url'] ); ?>" alt="<?php esc_attr_e( 'Image', 'restimo' ); ?>" />
-                <?php endif; ?>
-            </div>
-            <div class="content-box">
-                <<?php echo tag_escape($settings['header_size']); ?> class="title-box">
-                    <?php if ( ! empty( $settings['link']['url'] ) ) : ?>
-                        <a href="<?php echo esc_url( $settings['link']['url'] ); ?>" target="<?php echo esc_attr( $settings['link']['is_external'] ? '_blank' : '' ); ?>" rel="<?php echo esc_attr( $settings['link']['nofollow'] ? 'nofollow' : '' ); ?>">
-                            <?php echo esc_html( $settings['title'] ); ?>
-                        </a>
-                    <?php else : ?>
-                        <?php echo esc_html( $settings['title'] ); ?>
-                    <?php endif; ?>
-                </<?php echo tag_escape($settings['header_size']); ?>>
-                <div class="description-box">
-                    <?php echo esc_html( $settings['des'] ); ?>
-                </div>
-                <?php if ( ! empty( $settings['price'] ) ) : ?>
-                    <div class="price-box">
-                        <?php echo esc_html( $settings['price'] ); ?>
-                    </div>
-                <?php endif; ?>
-                <?php if ( ! empty( $settings['label_link'] ) && ! empty( $settings['link']['url'] ) ) : ?>
-                    <a href="<?php echo esc_url( $settings['link']['url'] ); ?>" class="button" target="<?php echo esc_attr( $settings['link']['is_external'] ? '_blank' : '' ); ?>" rel="<?php echo esc_attr( $settings['link']['nofollow'] ? 'nofollow' : '' ); ?>">
-                        <?php echo esc_html( $settings['label_link'] ); ?>
-                    </a>
-                <?php endif; ?>
-            </div>
-        </div>
+        // Ensure that we have necessary data
+        if ( empty( $settings['image_box']['url'] ) || empty( $settings['title'] ) ) {
+            return;
+        }
 
-        <?php
+        $target = $settings['link']['is_external'] ? ' target="_blank"' : '';
+        $nofollow = $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
+
+        echo '<div class="xp-image-box ' . esc_attr($settings['custom_class']) . '">';
+        echo '<div class="image-box">';
+        echo '<img src="' . esc_url($settings['image_box']['url']) . '" alt="' . esc_attr__('Image', 'restimo') . '" />';
+        echo '</div>';
+        echo '<div class="content-box">';
+        echo '<' . esc_html($settings['header_size']) . ' class="title-box">';
+        if ( ! empty( $settings['link']['url'] ) ) {
+            echo '<a href="' . esc_url($settings['link']['url']) . '"' . $target . $nofollow . '>';
+            echo esc_html($settings['title']);
+            echo '</a>';
+        } else {
+            echo esc_html($settings['title']);
+        }
+        echo '</' . esc_html($settings['header_size']) . '>';
+        echo '<div class="description-box">' . esc_html($settings['des']) . '</div>';
+        if ( ! empty( $settings['price'] ) ) {
+            echo '<div class="price-box">' . esc_html($settings['price']) . '</div>';
+        }
+        if ( ! empty( $settings['label_link'] ) && ! empty( $settings['link']['url'] ) ) {
+            echo '<a href="' . esc_url($settings['link']['url']) . '" class="button"' . $target . $nofollow . '>';
+            echo esc_html($settings['label_link']);
+            echo '</a>';
+        }
+        echo '</div>';
+        echo '</div>';
     }
 
     protected function _content_template() {
         ?>
-        <# if ( settings.image_box.url ) { #>
-            <div class="xp-image-box {{ settings.custom_class }}">
-                <div class="image-box">
-                    <img src="{{ settings.image_box.url }}" alt="<?php esc_attr_e( 'Image', 'restimo' ); ?>" />
-                </div>
-                <div class="content-box">
-                    <{{ settings.header_size }} class="title-box">
-                        <# if ( settings.link.url ) { #>
-                            <a href="{{ settings.link.url }}" target="{{ settings.link.is_external ? '_blank' : '' }}" rel="{{ settings.link.nofollow ? 'nofollow' : '' }}">
-                                {{ settings.title }}
-                            </a>
-                        <# } else { #>
-                            {{ settings.title }}
-                        </#>
-                    </{{ settings.header_size }}>
-                    <div class="description-box">
-                        {{ settings.des }}
-                    </div>
-                    <# if ( settings.price ) { #>
-                        <div class="price-box">
-                            {{ settings.price }}
-                        </div>
-                    <# } #>
-                    <# if ( settings.label_link && settings.link.url ) { #>
-                        <a href="{{ settings.link.url }}" class="button" target="{{ settings.link.is_external ? '_blank' : '' }}" rel="{{ settings.link.nofollow ? 'nofollow' : '' }}">
-                            {{ settings.label_link }}
-                        </a>
-                    <# } #>
-                </div>
+        <# var link = settings.link.url ? settings.link.url : '#'; #>
+        <div class="xp-image-box {{{ settings.custom_class }}}">
+            <div class="image-box">
+                <img src="{{{ settings.image_box.url }}}" alt="<?php esc_attr_e( 'Image', 'restimo' ); ?>">
             </div>
-        <# } #>
+            <div class="content-box">
+                <<?php echo tag_escape($settings['header_size']); ?> class="title-box">
+                    <# if ( settings.link.url ) { #>
+                        <a href="{{{ link }}}" target="{{{ settings.link.is_external ? '_blank' : '' }}}" rel="{{{ settings.link.nofollow ? 'nofollow' : '' }}}">
+                            {{{ settings.title }}}
+                        </a>
+                    <# } else { #>
+                        {{{ settings.title }}}
+                    <# } #>
+                </<?php echo tag_escape($settings['header_size']); ?>>
+                <div class="description-box">{{{ settings.des }}}</div>
+                <# if ( settings.price ) { #>
+                    <div class="price-box">{{{ settings.price }}}</div>
+                <# } #>
+                <# if ( settings.label_link && settings.link.url ) { #>
+                    <a href="{{{ link }}}" class="button" target="{{{ settings.link.is_external ? '_blank' : '' }}}" rel="{{{ settings.link.nofollow ? 'nofollow' : '' }}}">
+                        {{{ settings.label_link }}}
+                    </a>
+                <# } #>
+            </div>
+        </div>
         <?php
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new Restimo_Image_Box_Food() );
+Plugin::instance()->widgets_manager->register_widget_type( new XP_Image_Box_Food() );
+?>
