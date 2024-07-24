@@ -33,3 +33,4 @@ require_once( get_template_directory() . '/inc/backend/elementor/widgets/countdo
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/features-service.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/food-price-menu.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/custom-template.php' );
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/lottie-files.php' );
