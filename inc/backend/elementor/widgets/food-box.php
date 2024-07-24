@@ -402,6 +402,7 @@ class Restimo_Image_Box_Food extends Widget_Base {
                 <?php endif; ?>
             </div>
         </div>
+
         <?php
     }
 
