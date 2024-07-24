@@ -3975,6 +3975,19 @@ object {
 /*--------------------------------------------------------------
 ## Image Box
 --------------------------------------------------------------*/
+.image-box-price .price-box {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+.xp-image-box .image-box-price {
+  background: transparent;
+}
+
 .xp-image-box {
   text-align: center;
   overflow: hidden;
