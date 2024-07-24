@@ -367,10 +367,10 @@ class XP_Image_Box_Food extends Widget_Base {
         $nofollow = $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
 
         echo '<div class="xp-image-box ' . esc_attr($settings['custom_class']) . '">';
-        echo '<div class="image-box image-box-price">';
+        echo '<div class="image-box">';
         echo '<img src="' . esc_url($settings['image_box']['url']) . '" alt="' . esc_attr__('Image', 'restimo') . '" />';
         echo '</div>';
-        echo '<div class="content-box">';
+        echo '<div class="content-box image-box-price">';
         echo '<' . esc_html($settings['header_size']) . ' class="title-box">';
         if ( ! empty( $settings['link']['url'] ) ) {
             echo '<a href="' . esc_url($settings['link']['url']) . '"' . $target . $nofollow . '>';
@@ -402,10 +402,10 @@ class XP_Image_Box_Food extends Widget_Base {
     var header_tag = settings.header_size ? settings.header_size : 'h5';
     #>
     <div class="xp-image-box {{{ settings.custom_class }}}">
-        <div class="image-box image-box-price">
+        <div class="image-box">
             <img src="{{{ settings.image_box.url }}}" alt="<?php esc_attr_e( 'Image', 'restimo' ); ?>">
         </div>
-        <div class="content-box">
+        <div class="content-box image-box-price">
             <{{ header_tag }} class="title-box">
                 <# if ( settings.link.url ) { #>
                     <a href="{{{ link }}}"{{ target }}{{ nofollow }}>
