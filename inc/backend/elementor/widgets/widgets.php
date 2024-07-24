@@ -32,3 +32,4 @@ require_once( get_template_directory() . '/inc/backend/elementor/widgets/contact
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/countdown.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/features-service.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/food-price-menu.php' );
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/custom-template.php' );
