@@ -3,7 +3,7 @@ namespace Elementor; // Custom widgets must be defined in the Elementor namespac
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measure)
 
 /**
- * Widget Name: Image Box
+ * Widget Name: Image Box Food
  */
 class Restimo_Image_Box_Food extends Widget_Base {
 
