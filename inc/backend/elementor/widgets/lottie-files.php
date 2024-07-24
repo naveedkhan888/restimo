@@ -1,17 +1,16 @@
 <?php
 namespace Elementor;
 
-// Ensure this file is only accessed via WordPress
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class Lottie_Files_Widget extends Widget_Base {
+class Lottie_Animation_Widget extends Widget_Base {
 
     public function get_name() {
-        return 'lottie_files_widget';
+        return 'lottie_animation';
     }
 
     public function get_title() {
-        return __( 'Lottie Files Widget', 'plugin-name' );
+        return __( 'Lottie Animation', 'plugin-name' );
     }
 
     public function get_icon() {
@@ -23,7 +22,6 @@ class Lottie_Files_Widget extends Widget_Base {
     }
 
     protected function register_controls() {
-        // Content Controls
         $this->start_controls_section(
             'content_section',
             [
@@ -39,7 +37,6 @@ class Lottie_Files_Widget extends Widget_Base {
                 'type' => Controls_Manager::TEXT,
                 'input_type' => 'url',
                 'placeholder' => __( 'https://example.com/animation.json', 'plugin-name' ),
-                'label_block' => true,
             ]
         );
 
@@ -67,137 +64,56 @@ class Lottie_Files_Widget extends Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'speed',
-            [
-                'label' => __( 'Speed', 'plugin-name' ),
-                'type' => Controls_Manager::SLIDER,
-                'default' => [
-                    'size' => 1,
-                    'unit' => 'px',
-                ],
-                'range' => [
-                    'px' => [
-                        'min' => 0.1,
-                        'max' => 3,
-                        'step' => 0.1,
-                    ],
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        // Style Controls
-        $this->start_controls_section(
-            'style_section',
-            [
-                'label' => __( 'Style', 'plugin-name' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'width',
-            [
-                'label' => __( 'Width', 'plugin-name' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
-                'range' => [
-                    'px' => [
-                        'min' => 100,
-                        'max' => 1000,
-                        'step' => 10,
-                    ],
-                    '%' => [
-                        'min' => 10,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .lottie-container' => 'width: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'height',
-            [
-                'label' => __( 'Height', 'plugin-name' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
-                'range' => [
-                    'px' => [
-                        'min' => 100,
-                        'max' => 1000,
-                        'step' => 10,
-                    ],
-                    '%' => [
-                        'min' => 10,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .lottie-container' => 'height: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
         $this->end_controls_section();
     }
 
     protected function render() {
         $settings = $this->get_settings_for_display();
+        $lottie_url = $settings['lottie_url'];
+        $loop = $settings['loop'] === 'yes' ? 'true' : 'false';
+        $autoplay = $settings['autoplay'] === 'yes' ? 'true' : 'false';
 
-        if ( ! empty( $settings['lottie_url'] ) ) {
-            $loop = $settings['loop'] === 'yes' ? 'true' : 'false';
-            $autoplay = $settings['autoplay'] === 'yes' ? 'true' : 'false';
-            $speed = ! empty( $settings['speed']['size'] ) ? $settings['speed']['size'] : 1;
+        if ( ! empty( $lottie_url ) ) {
             ?>
-            <div class="lottie-container" style="width: 100%; height: 100%;">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
-                <script>
-                    lottie.loadAnimation({
-                        container: document.querySelector('.lottie-container'), // the dom element
-                        renderer: 'svg',
-                        loop: <?php echo $loop; ?>,
-                        autoplay: <?php echo $autoplay; ?>,
-                        path: '<?php echo esc_url( $settings['lottie_url'] ); ?>', // the path to the animation json
-                        rendererSettings: {
-                            progressiveLoad: true,
-                        },
-                        animationSpeed: <?php echo $speed; ?>,
-                    });
-                </script>
+            <div class="lottie-animation">
+                <lottie-player src="<?php echo esc_url( $lottie_url ); ?>" 
+                               background="transparent" 
+                               speed="1" 
+                               loop="<?php echo esc_attr( $loop ); ?>" 
+                               autoplay="<?php echo esc_attr( $autoplay ); ?>" 
+                               style="width: 100%; height: auto;">
+                </lottie-player>
             </div>
             <?php
+        } else {
+            echo '<p style="color: red;">' . __( 'Lottie URL is required.', 'plugin-name' ) . '</p>';
         }
     }
 
     protected function _content_template() {
         ?>
         <# if ( settings.lottie_url ) { #>
-            <div class="lottie-container" style="width: 100%; height: 100%;">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
-                <script>
-                    lottie.loadAnimation({
-                        container: document.querySelector('.lottie-container'), // the dom element
-                        renderer: 'svg',
-                        loop: {{ settings.loop === 'yes' ? 'true' : 'false' }},
-                        autoplay: {{ settings.autoplay === 'yes' ? 'true' : 'false' }},
-                        path: '{{ settings.lottie_url }}', // the path to the animation json
-                        rendererSettings: {
-                            progressiveLoad: true,
-                        },
-                        animationSpeed: {{ settings.speed.size || 1 }},
-                    });
-                </script>
+            <div class="lottie-animation">
+                <lottie-player src="{{{ settings.lottie_url }}}" 
+                               background="transparent" 
+                               speed="1" 
+                               loop="{{ settings.loop ? 'true' : 'false' }}" 
+                               autoplay="{{ settings.autoplay ? 'true' : 'false' }}" 
+                               style="width: 100%; height: auto;">
+                </lottie-player>
             </div>
+        <# } else { #>
+            <p style="color: red;"><?php _e( 'Lottie URL is required.', 'plugin-name' ); ?></p>
         <# } #>
         <?php
     }
 }
 
-// Register the widget with Elementor
-Plugin::instance()->widgets_manager->register_widget_type( new Lottie_Files_Widget() );
-?>
+// Register the widget
+Plugin::instance()->widgets_manager->register_widget_type( new Lottie_Animation_Widget() );
+
+// Ensure the Lottie player library is loaded
+function enqueue_lottie_player() {
+    wp_enqueue_script( 'lottie-player', 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', [], null, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_lottie_player' );
