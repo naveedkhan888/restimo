@@ -394,35 +394,41 @@ class XP_Image_Box_Food extends Widget_Base {
     }
 
     protected function _content_template() {
-        ?>
-        <# var link = settings.link.url ? settings.link.url : '#'; #>
-        <div class="xp-image-box {{{ settings.custom_class }}}">
-            <div class="image-box">
-                <img src="{{{ settings.image_box.url }}}" alt="<?php esc_attr_e( 'Image', 'restimo' ); ?>">
-            </div>
-            <div class="content-box">
-                <<?php echo tag_escape($settings['header_size']); ?> class="title-box">
-                    <# if ( settings.link.url ) { #>
-                        <a href="{{{ link }}}" target="{{{ settings.link.is_external ? '_blank' : '' }}}" rel="{{{ settings.link.nofollow ? 'nofollow' : '' }}}">
-                            {{{ settings.title }}}
-                        </a>
-                    <# } else { #>
-                        {{{ settings.title }}}
-                    <# } #>
-                </<?php echo tag_escape($settings['header_size']); ?>>
-                <div class="description-box">{{{ settings.des }}}</div>
-                <# if ( settings.price ) { #>
-                    <div class="price-box">{{{ settings.price }}}</div>
-                <# } #>
-                <# if ( settings.label_link && settings.link.url ) { #>
-                    <a href="{{{ link }}}" class="button" target="{{{ settings.link.is_external ? '_blank' : '' }}}" rel="{{{ settings.link.nofollow ? 'nofollow' : '' }}}">
-                        {{{ settings.label_link }}}
-                    </a>
-                <# } #>
-            </div>
+    ?>
+    <#
+    var link = settings.link.url ? settings.link.url : '#';
+    var target = settings.link.is_external ? ' target="_blank"' : '';
+    var nofollow = settings.link.nofollow ? ' rel="nofollow"' : '';
+    var header_tag = settings.header_size ? settings.header_size : 'h5';
+    #>
+    <div class="xp-image-box {{{ settings.custom_class }}}">
+        <div class="image-box">
+            <img src="{{{ settings.image_box.url }}}" alt="<?php esc_attr_e( 'Image', 'restimo' ); ?>">
         </div>
-        <?php
-    }
+        <div class="content-box">
+            <{{ header_tag }} class="title-box">
+                <# if ( settings.link.url ) { #>
+                    <a href="{{{ link }}}"{{ target }}{{ nofollow }}>
+                        {{{ settings.title }}}
+                    </a>
+                <# } else { #>
+                    {{{ settings.title }}}
+                <# } #>
+            </{{ header_tag }}>
+            <div class="description-box">{{{ settings.des }}}</div>
+            <# if ( settings.price ) { #>
+                <div class="price-box">{{{ settings.price }}}</div>
+            <# } #>
+            <# if ( settings.label_link && settings.link.url ) { #>
+                <a href="{{{ link }}}" class="button"{{ target }}{{ nofollow }}>
+                    {{{ settings.label_link }}}
+                </a>
+            <# } #>
+        </div>
+    </div>
+    <?php
+}
+
 }
 
 Plugin::instance()->widgets_manager->register_widget_type( new XP_Image_Box_Food() );
