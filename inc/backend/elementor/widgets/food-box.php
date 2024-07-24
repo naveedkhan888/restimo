@@ -5,16 +5,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measu
 /**
  * Widget Name: Image Box
  */
-class Restimo_Image_Box extends Widget_Base {
+class Restimo_Image_Box_Food extends Widget_Base {
 
     // The get_name() method is a simple one, you just need to return a widget name that will be used in the code.
     public function get_name() {
-        return 'restimo_image_box';
+        return 'Restimo_Image_Box_Food';
     }
 
     // The get_title() method, which again, is a very simple one, you need to return the widget title that will be displayed as the widget label.
     public function get_title() {
-        return __( 'XP Image Box', 'restimo' );
+        return __( 'XP Image Box Food', 'restimo' );
     }
 
     // The get_icon() method, is an optional but recommended method, it lets you set the widget icon. you can use any of the eicon or font-awesome icons, simply return the class name as a string.
@@ -442,4 +442,4 @@ class Restimo_Image_Box extends Widget_Base {
     }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new Restimo_Image_Box() );
+Plugin::instance()->widgets_manager->register_widget_type( new Restimo_Image_Box_Food() );
