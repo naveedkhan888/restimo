@@ -5,16 +5,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measu
 /**
  * Widget Name: Image Box
  */
-class Restimo_Image_Box_Food extends Widget_Base{
+class Restimo_Image_Box extends Widget_Base{
 
  	// The get_name() method is a simple one, you just need to return a widget name that will be used in the code.
 	public function get_name() {
-		return 'iimage_box_Food';
+		return 'iimage_box';
 	}
 
 	// The get_title() method, which again, is a very simple one, you need to return the widget title that will be displayed as the widget label.
 	public function get_title() {
-		return __( 'XP Image Box Food', 'restimo' );
+		return __( 'XP Image Box', 'restimo' );
 	}
 
 	// The get_icon() method, is an optional but recommended method, it lets you set the widget icon. you can use any of the eicon or font-awesome icons, simply return the class name as a string.
@@ -108,60 +108,6 @@ class Restimo_Image_Box_Food extends Widget_Base{
 				'default' => 'h5',
 			]
 		);
-
-		/ Add Price Control
-    $this->add_control(
-        'price',
-        [
-            'label' => __( 'Price', 'restimo' ),
-            'type' => Controls_Manager::TEXT,
-            'default' => __( '99.99', 'restimo' ),
-            'label_block' => true,
-        ]
-    );
-
-    // Add Price Styling Controls
-    $this->start_controls_section(
-        'style_price_section',
-        [
-            'label' => __( 'Price', 'restimo' ),
-            'tab'   => Controls_Manager::TAB_STYLE,
-        ]
-    );
-
-    $this->add_control(
-        'price_color',
-        [
-            'label' => __( 'Color', 'restimo' ),
-            'type' => Controls_Manager::COLOR,
-            'default' => '',
-            'selectors' => [
-                '{{WRAPPER}} .price-box' => 'color: {{VALUE}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'price_bg_color',
-        [
-            'label' => __( 'Background Color', 'restimo' ),
-            'type' => Controls_Manager::COLOR,
-            'default' => '',
-            'selectors' => [
-                '{{WRAPPER}} .price-box' => 'background-color: {{VALUE}};',
-            ],
-        ]
-    );
-
-    $this->add_group_control(
-        Group_Control_Typography::get_type(),
-        [
-            'name' => 'price_typography',
-            'selector' => '{{WRAPPER}} .price-box',
-        ]
-    );
-
-    
 
 		$this->add_control(
 			'des',
@@ -472,8 +418,6 @@ class Restimo_Image_Box_Food extends Widget_Base{
 		$title_html = sprintf( '<%1$s %2$s>%3$s</%1$s>', $settings['header_size'], $this->get_render_attribute_string( 'heading' ), $title );
 		$image_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'image_box_size', 'image_box' );
 
-		$price_html = ! empty( $settings['price'] ) ? '<div class="price-box">' . esc_html( $settings['price'] ) . '</div>' : '';
-
 		if ( ! empty( $settings['link']['url'] ) ) {
 			$this->add_link_attributes( 'button', $settings['link'] );
 
@@ -489,7 +433,6 @@ class Restimo_Image_Box_Food extends Widget_Base{
 			<div class="content-box">
 				<?php if( $settings['title'] ) { echo $title_html; } ?>
 				<?php if( $settings['des'] ) { echo '<p>' .$settings['des']. '</p>'; } ?>
-				<?php if( $settings['price'] ) { echo $price_html; } ?>
 			</div>
 			<?php if( $settings['label_link'] ){ echo '<a ' .$this->get_render_attribute_string( 'button' ). '><span>' .$settings['label_link']. '</span><i class="xp-flaticon-trajectory"></i></a>'; } ?>
 	    </div>
@@ -501,5 +444,5 @@ class Restimo_Image_Box_Food extends Widget_Base{
 		return [ 'service' ];
 	}
 }
-// After the Restimo_Image_Box_Food class is defined, I must register the new widget class with Elementor:
-Plugin::instance()->widgets_manager->register( new Restimo_Image_Box_Food() );
+// After the Restimo_Image_Box class is defined, I must register the new widget class with Elementor:
+Plugin::instance()->widgets_manager->register( new Restimo_Image_Box() );
