@@ -367,7 +367,7 @@ class XP_Image_Box_Food extends Widget_Base {
         $nofollow = $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
 
         echo '<div class="xp-image-box ' . esc_attr($settings['custom_class']) . '">';
-        echo '<div class="image-box">';
+        echo '<div class="image-box image-box-price">';
         echo '<img src="' . esc_url($settings['image_box']['url']) . '" alt="' . esc_attr__('Image', 'restimo') . '" />';
         echo '</div>';
         echo '<div class="content-box">';
