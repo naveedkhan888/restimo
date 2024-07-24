@@ -402,7 +402,7 @@ class XP_Image_Box_Food extends Widget_Base {
     var header_tag = settings.header_size ? settings.header_size : 'h5';
     #>
     <div class="xp-image-box {{{ settings.custom_class }}}">
-        <div class="image-box">
+        <div class="image-box image-box-price">
             <img src="{{{ settings.image_box.url }}}" alt="<?php esc_attr_e( 'Image', 'restimo' ); ?>">
         </div>
         <div class="content-box">
