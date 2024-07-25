@@ -3976,13 +3976,13 @@ object {
 ## Image Box
 --------------------------------------------------------------*/
 .image-box-price .price-box {
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   border-radius: 50%;
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 0;
+  right: 0;
   background: #fff;
 }
 .xp-image-box .content-box.image-box-price {
@@ -3992,9 +3992,6 @@ object {
   box-shadow: none !important;
 }
 .xp_bx_price .image-box img {
-  min-height: 300px;
-  max-width: 300px;
-  border-radius: 50%;
 }
 
 .xp-image-box {
