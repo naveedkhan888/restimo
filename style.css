@@ -3988,6 +3988,9 @@ object {
 .xp-image-box .content-box.image-box-price {
   background: transparent;
 }
+.xp_bx_price {
+  box-shadow: none;
+}
 
 .xp-image-box {
   text-align: center;
