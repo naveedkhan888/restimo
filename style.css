@@ -3981,8 +3981,9 @@ object {
   line-height: 70px;
   border-radius: 50%;
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 30px;
+  background: #fff;
 }
 .xp-image-box .content-box.image-box-price {
   background: transparent;
