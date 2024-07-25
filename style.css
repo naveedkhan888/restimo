@@ -3991,6 +3991,11 @@ object {
 .xp_bx_price {
   box-shadow: none !important;
 }
+.xp_bx_price .image-box img {
+  min-height: 300px;
+  max-width: 300px;
+  border-radius: 50%;
+}
 
 .xp-image-box {
   text-align: center;
