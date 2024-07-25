@@ -3989,7 +3989,7 @@ object {
   background: transparent;
 }
 .xp_bx_price {
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .xp-image-box {
