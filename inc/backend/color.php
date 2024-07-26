@@ -59,7 +59,6 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce-mini-cart__buttons a.button.wc-forward:hover{ background: '.restimo_get_option('main_color').'; }
 			.post-box .entry-meta .btn-details:hover, 
 			.widget .tagcloud a:hover,
-			.xp-heading > span.is_highlight,
 			.icon-box-1 .icon-main{background: '.hex2rgba(restimo_get_option('main_color'), 0.1).';}
 			.team-3 .team-thumb a:before{background: '.hex2rgba(restimo_get_option('main_color'), 0.8).';}
 			.projects-grid .projects-box .portfolio-info,
