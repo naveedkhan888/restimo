@@ -27,11 +27,6 @@ class Restimo_Switcher extends Widget_Base{
 		return [ 'category_restimo' ];
 	}
 
-	// The get_description method provides a brief description for the widget.
-	public function get_description() {
-		return __( 'A switcher widget for toggling between pricing plans or any other content.', 'restimo' );
-	}
-
 	protected function register_controls() {
 
 		$this->start_controls_section(
