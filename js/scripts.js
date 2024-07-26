@@ -236,19 +236,19 @@
 	* switcher
 	* --------------------------------------------------*/
 	var swt = $('.xp-switcher').find('.switch input');
-	$('div.yearly').hide();
+	$('.restimo_block_hidden').hide();
 	swt.on( 'change', function() {
 		var parent = $(this).parents('.e-parent');
 		if(this.checked) {
 			parent.find('.r-switch').addClass('active');
 			parent.find('.l-switch').removeClass('active');
-			parent.find('div.monthly').hide();
-			parent.find('div.yearly').show();
+			parent.find('.restimo_block_show').hide();
+			parent.find('.restimo_block_hidden').show();
 		}else{
 			parent.find('.l-switch').addClass('active');
 			parent.find('.r-switch').removeClass('active');
-			parent.find('div.yearly').hide();
-			parent.find('div.monthly').show();
+			parent.find('.restimo_block_hidden').hide();
+			parent.find('.restimo_block_show').show();
 		}
 	});
 
