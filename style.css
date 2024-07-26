@@ -886,12 +886,10 @@ td {
 .elementor-widget-divider--view-line_icon .elementor-divider-separator::after, 
 .elementor-widget-divider--view-line_icon .elementor-divider-separator::before, 
 .elementor-widget-divider--view-line_text .elementor-divider-separator::after,
-.elementor-widget-divider--view-line_text .elementor-divider-separator::after, 
 .elementor-widget-divider--view-line_text .elementor-divider-separator::before {
   border-block-color: #C19977;
 }
 .elementor-widget-divider.elementor-view-framed .elementor-icon,
-.elementor-widget-divider.elementor-view-framed .elementor-icon, 
 .elementor-widget-divider.elementor-view-default .elementor-icon svg {
   fill: #C19977;
 }
