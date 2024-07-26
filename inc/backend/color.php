@@ -67,6 +67,11 @@ if(!function_exists('restimo_color_scheme')){
 			/*Background Image*/
 			.author-widget_wrapper:before{ background-image: linear-gradient(230deg, '.restimo_get_option('main_color').' -150%, #fff 80%); }
 
+			/*Color Global element*/
+			.elementor-kit-9 {
+			  --e-global-color-secondary: '.restimo_get_option('main_color').';
+			}
+
 			/*Border Color*/
 			.octf-btn.octf-btn-border,
 			.post-box .entry-meta .btn-details:hover,
