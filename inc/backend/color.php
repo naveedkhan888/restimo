@@ -67,12 +67,6 @@ if(!function_exists('restimo_color_scheme')){
 			/*Background Image*/
 			.author-widget_wrapper:before{ background-image: linear-gradient(230deg, '.restimo_get_option('main_color').' -150%, #fff 80%); }
 
-			/*Border Block Color*/
-			.elementor-widget-divider--view-line_icon .elementor-divider-separator::after,
-			.elementor-widget-divider--view-line_icon .elementor-divider-separator::before,
-			.elementor-widget-divider--view-line_text .elementor-divider-separator::after,
-			.elementor-widget-divider--view-line_text .elementor-divider-separator::before{ border-block-color: '.restimo_get_option('main_color').'; }
-
 			/*Border Color*/
 			.octf-btn.octf-btn-border,
 			.post-box .entry-meta .btn-details:hover,
@@ -153,8 +147,6 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Other*/
 			.icon-box .icon-main svg,
-			.elementor-widget-divider.elementor-view-framed .elementor-icon,
-			.elementor-widget-divider.elementor-view-default .elementor-icon svg,
 			.icon-box-grid .icon-box .icon-main svg,
 			.xp-counter-2 svg{ fill: '.restimo_get_option('main_color').'; }
 				';
