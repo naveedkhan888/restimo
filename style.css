@@ -881,18 +881,6 @@ th,
 td {
   padding: 0.4375em;
 }
-:root {
-  --custom-divider-color: #C19977; /* Default color */
-}
-.elementor-widget-divider--view-line_icon .elementor-divider-separator::after, 
-.elementor-widget-divider--view-line_icon .elementor-divider-separator::before, 
-.elementor-widget-divider--view-line_text .elementor-divider-separator::after, 
-.elementor-widget-divider--view-line_text .elementor-divider-separator::before {
-  border-block-color: var(--custom-divider-color); 
-}
-.elementor-kit-9 {
-  --e-global-color-secondary: #C19977; 
-}
 
 /*--------------------------------------------------------------
 # Forms
