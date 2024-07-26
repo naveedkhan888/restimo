@@ -13,6 +13,8 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Background Color*/
 			.bg-primary,
+			.xp-heading > span.is_highlight,
+			.tab-titles .title-item a.tab-active, .tab-titles .title-item a:hover,
 			.list-primary li:before,
 			.btn-details:hover,
 			.owl-carousel .owl-dots button.owl-dot.active span,
