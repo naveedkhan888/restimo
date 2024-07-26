@@ -35,12 +35,12 @@ function restimo_register_required_plugins() {
             'slug'               => 'mailchimp-for-wp',
             'required'           => true,
 		),
-		array(
-            'name'               => esc_html__( 'XP Portfolio', 'restimo' ), // The plugin name.
-            'slug'               => 'xp_portfolio', // The plugin slug (typically the folder name).
-            'source'             => esc_url($protocol.'://dpsample.com/xp_portfolio.zip'), // The plugin source.
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-        ),
+		//array(
+            //'name'               => esc_html__( 'XP Portfolio', 'restimo' ), // The plugin name.
+            //'slug'               => 'xp_portfolio', // The plugin slug (typically the folder name).
+            //'source'             => esc_url($protocol.'://dpsample.com/xp_portfolio.zip'), // The plugin source.
+            //'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+        //),
         array(            
             'name'               => esc_html__( 'XP One Click Demo Content', 'restimo' ), // The plugin name.
             'slug'               => 'soo-demo-importer', // The plugin slug (typically the folder name).
@@ -51,6 +51,12 @@ function restimo_register_required_plugins() {
             'name'               => esc_html__( 'Restimo Icons', 'restimo' ), // The plugin name.
             'slug'               => 'icon-plugin', // The plugin slug (typically the folder name).
             'source'             => esc_url($protocol.'://dpsample.com/icon-plugin.zip'), // The plugin source.
+            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+        ),
+        array(            
+            'name'               => esc_html__( 'Revolution Slider', 'restimo' ), // The plugin name.
+            'slug'               => 'revslider', // The plugin slug (typically the folder name).
+            'source'             => esc_url($protocol.'://dpsample.com/revslider.zip'), // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
         ),
         array(
