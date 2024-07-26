@@ -881,10 +881,14 @@ th,
 td {
   padding: 0.4375em;
 }
-
-
-.elementor-widget-divider {
-  --divider-color: #c19977; 
+:root {
+  --custom-divider-color: #C19977; /* Default color */
+}
+.elementor-widget-divider--view-line_icon .elementor-divider-separator::after, 
+.elementor-widget-divider--view-line_icon .elementor-divider-separator::before, 
+.elementor-widget-divider--view-line_text .elementor-divider-separator::after, 
+.elementor-widget-divider--view-line_text .elementor-divider-separator::before {
+  border-block-color: var(--custom-divider-color); 
 }
 .elementor-kit-9 {
   --e-global-color-secondary: #C19977; 
