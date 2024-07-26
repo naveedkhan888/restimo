@@ -238,7 +238,7 @@
 	var swt = $('.xp-switcher').find('.switch input');
 	$('div.yearly').hide();
 	swt.on( 'change', function() {
-		var parent = $(this).parents('.elementor-top-section');
+		var parent = $(this).parents('.e-parent');
 		if(this.checked) {
 			parent.find('.r-switch').addClass('active');
 			parent.find('.l-switch').removeClass('active');
