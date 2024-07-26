@@ -882,6 +882,14 @@ td {
   padding: 0.4375em;
 }
 
+
+.elementor-divider-separator::before {
+  border-block-color: #C19977;
+}
+.elementor-icon svg {
+  fill: #C19977;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
