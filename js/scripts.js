@@ -236,19 +236,19 @@
 	* switcher
 	* --------------------------------------------------*/
 	var swt = $('.xp-switcher').find('.switch input');
-	$('section.yearly').hide();
+	$('div.yearly').hide();
 	swt.on( 'change', function() {
 		var parent = $(this).parents('.elementor-top-section');
 		if(this.checked) {
 			parent.find('.r-switch').addClass('active');
 			parent.find('.l-switch').removeClass('active');
-			parent.find('section.monthly').hide();
-			parent.find('section.yearly').show();
+			parent.find('div.monthly').hide();
+			parent.find('div.yearly').show();
 		}else{
 			parent.find('.l-switch').addClass('active');
 			parent.find('.r-switch').removeClass('active');
-			parent.find('section.yearly').hide();
-			parent.find('section.monthly').show();
+			parent.find('div.yearly').hide();
+			parent.find('div.monthly').show();
 		}
 	});
 
