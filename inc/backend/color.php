@@ -68,10 +68,11 @@ if(!function_exists('restimo_color_scheme')){
 			.author-widget_wrapper:before{ background-image: linear-gradient(230deg, '.restimo_get_option('main_color').' -150%, #fff 80%); }
 
 			/*Border Block Color*/
-			.elementor-widget-divider--view-line_icon span.elementor-divider-separator::after,
-			.elementor-widget-divider--view-line_icon span.elementor-divider-separator::before,
-			.elementor-widget-divider--view-line_text span.elementor-divider-separator::after,
-			.elementor-widget-divider--view-line_text span.elementor-divider-separator::before{ border-block-color: '.restimo_get_option('main_color').'; }
+			.elementor-widget-divider--view-line_icon .elementor-divider-separator::after,
+			.elementor-widget-divider--view-line_icon .elementor-divider-separator::before,
+			.elementor-widget-divider--view-line_text .elementor-divider-separator::after,
+			.elementor-widget-divider--view-line_text .elementor-divider-separator::after,
+			.elementor-widget-divider--view-line_text .elementor-divider-separator::before{ border-block-color: '.restimo_get_option('main_color').'; }
 
 			/*Border Color*/
 			.octf-btn.octf-btn-border,
@@ -153,8 +154,9 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Other*/
 			.icon-box .icon-main svg,
-			.elementor-widget-divider.elementor-view-framed div.elementor-icon,
-			.elementor-widget-divider.elementor-view-default div.elementor-icon svg,
+			.elementor-widget-divider.elementor-view-framed .elementor-icon,
+			.elementor-widget-divider.elementor-view-framed .elementor-icon,
+			.elementor-widget-divider.elementor-view-default .elementor-icon svg,
 			.icon-box-grid .icon-box .icon-main svg,
 			.xp-counter-2 svg{ fill: '.restimo_get_option('main_color').'; }
 				';
