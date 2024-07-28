@@ -918,6 +918,12 @@ td {
 .octf-btn:hover, .octf-btn:focus {
   background: #131E30;
 }
+.octf-btn.octf-btn-dark {
+  background: #131E30;
+}
+.octf-btn.octf-btn-dark:hover, .octf-btn.octf-btn-dark:focus {
+  background: #C19977;
+}
 .octf-btn i {
   margin-right: 12px;
 }

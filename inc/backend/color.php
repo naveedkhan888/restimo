@@ -13,6 +13,9 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Background Color*/
 			.bg-primary,
+			.octf-btn.octf-btn-dark:hover,
+			.octf-btn.octf-btn-dark:focus,
+			.features-service-wrapper .btn-details:hover,
 			.xp-heading > span.is_highlight,
 			.tab-titles .title-item a.tab-active, .tab-titles .title-item a:hover,
 			.list-primary li:before,
@@ -57,6 +60,9 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce button.button,
 			.woocommerce-mini-cart__buttons a.button.wc-forward,
 			.woocommerce-mini-cart__buttons a.button.wc-forward:hover{ background: '.restimo_get_option('main_color').'; }
+			.tab-titles .title-item a.tab-active, .tab-titles .title-item a:hover {
+				background: '.restimo_get_option('main_color').' !important;
+			}
 			.post-box .entry-meta .btn-details:hover, 
 			.widget .tagcloud a:hover,
 			.icon-box-1 .icon-main{background: '.hex2rgba(restimo_get_option('main_color'), 0.1).';}
@@ -88,6 +94,7 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Color*/
 			blockquote:before,
+			.features-service-wrapper .features-service-item:hover .features-service-number,
 			blockquote cite,
 			.text-primary,
 			.link-details,
