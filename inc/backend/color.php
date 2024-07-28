@@ -75,6 +75,7 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Border Color*/
 			.octf-btn.octf-btn-border,
+			.features-service-wrapper .btn-details:hover,
 			.post-box .entry-meta .btn-details:hover,
 			.post-box .btn-play:hover i,
 			.page-pagination li span, .page-pagination li a:hover,
