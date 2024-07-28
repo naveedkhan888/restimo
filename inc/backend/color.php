@@ -155,6 +155,12 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce div.product p.price,.woocommerce div.product span.price{ color: '.restimo_get_option('main_color').'; }
 
 			/*Other*/
+			.border_clr.elementor-widget-divider.elementor-view-framed .elementor-icon, 
+			.border_clr.elementor-widget-divider.elementor-view-default .elementor-icon svg {
+			  fill: '.restimo_get_option('main_color').';
+			}
+			.border_clr.elementor-widget-divider {
+			  --divider-color: '.restimo_get_option('main_color').'; }
 			.icon-box .icon-main svg,
 			.icon-box-grid .icon-box .icon-main svg,
 			.xp-counter-2 svg{ fill: '.restimo_get_option('main_color').'; }
