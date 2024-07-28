@@ -171,20 +171,6 @@ function restimo_customize_modify( $wp_customize ) {
 
 add_action( 'customize_register', 'restimo_customize_modify' );
 
-add_action( 'customize_save_after', 'sync_elementor_global_colors', 20 );
-function sync_elementor_global_colors() {
-    if ( \Elementor\Plugin::$instance ) {
-        $colors = array(
-            'primary'   => get_theme_mod( 'primary_color', '#FF0000' ),
-            'secondary' => get_theme_mod( 'secondary_color', '#00FF00' ),
-            // Add other colors as needed
-        );
-        
-        foreach ( $colors as $key => $color ) {
-            \Elementor\Plugin::$instance->kits_manager->set_color( $key, $color );
-        }
-    }
-}
 
 /**
  * Get customize settings
@@ -221,13 +207,6 @@ function restimo_customize_settings() {
 	);
 
 	$sections = array(
-        // Add new section for Elementor colors
-        'elementor_colors' => array(
-            'title'       => esc_html__( 'Elementor Colors', 'restimo' ),
-            'description' => esc_html__( 'Customize the colors used in Elementor', 'restimo' ),
-            'priority'    => 30,
-            'capability'  => 'edit_theme_options',
-        ),
         /* header */
         'main_header'     => array(
             'title'       => esc_html__( 'Header', 'restimo' ),
@@ -305,36 +284,6 @@ function restimo_customize_settings() {
 	);
 
 	$fields = array(
-        // New fields for Elementor colors
-        'primary_color' => array(
-            'type'        => 'color',
-            'label'       => esc_attr__( 'Primary Color', 'restimo' ),
-            'description' => esc_attr__( 'Choose the primary color for Elementor.', 'restimo' ),
-            'section'     => 'elementor_colors',
-            'default'     => '#FF0000',
-            'priority'    => 1,
-            'output'      => array(
-                array(
-                    'element'  => ':root',
-                    'property' => '--e-global-color-primary',
-                ),
-            ),
-        ),
-
-        'secondary_color' => array(
-            'type'        => 'color',
-            'label'       => esc_attr__( 'Secondary Color', 'restimo' ),
-            'description' => esc_attr__( 'Choose the secondary color for Elementor.', 'restimo' ),
-            'section'     => 'elementor_colors',
-            'default'     => '#00FF00',
-            'priority'    => 2,
-            'output'      => array(
-                array(
-                    'element'  => ':root',
-                    'property' => '--e-global-color-secondary',
-                ),
-            ),
-        ),
         /* header settings */
 		'header_layout'   => array(
 			'type'        => 'select',  
