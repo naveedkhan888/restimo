@@ -94,6 +94,7 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Color*/
 			blockquote:before,
+			.food-price-menu .menu-item .content .title_priccce .price,
 			.features-service-wrapper .features-service-item:hover .features-service-number,
 			blockquote cite,
 			.text-primary,
