@@ -125,20 +125,84 @@ class Restimo_Divider extends Widget_Base {
         );
 
         $this->end_controls_section();
+
+        // Icon Section
+        $this->start_controls_section(
+            'icon_section',
+            [
+                'label' => __( 'Icon', 'restimo' ),
+            ]
+        );
+
+        $this->add_control(
+            'divider_icon',
+            [
+                'label' => __( 'Icon', 'restimo' ),
+                'type' => Controls_Manager::ICONS,
+                'fa4compatibility' => 'icon',
+            ]
+        );
+
+        $this->add_control(
+            'icon_color',
+            [
+                'label' => __( 'Icon Color', 'restimo' ),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#333',
+                'selectors' => [
+                    '{{WRAPPER}} .divider-icon i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .divider-icon svg' => 'fill: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'icon_size',
+            [
+                'label' => __( 'Icon Size', 'restimo' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 10,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .divider-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
     }
 
     protected function render() {
+        $settings = $this->get_settings_for_display();
         ?>
-        <div class="divider" style="border-style: solid; border-top-width: 1px; width: 100%;"></div>
+        <div class="divider" style="border-style: <?php echo esc_attr($settings['divider_style']); ?>; border-width: <?php echo esc_attr($settings['divider_weight']['size']); ?>px; border-color: <?php echo esc_attr($settings['divider_color']); ?>; width: <?php echo esc_attr($settings['divider_width']['size']); ?>%; text-align: <?php echo esc_attr($settings['divider_alignment']); ?>;">
+            <?php if ( ! empty( $settings['divider_icon']['value'] ) ) : ?>
+                <span class="divider-icon">
+                    <?php Icons_Manager::render_icon( $settings['divider_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                </span>
+            <?php endif; ?>
+        </div>
         <?php
     }
 
     protected function _content_template() {
         ?>
-        <div class="divider" style="border-style: solid; border-top-width: 1px; width: 100%;"></div>
+        <div class="divider" style="border-style: {{{ settings.divider_style }}}; border-width: {{{ settings.divider_weight.size }}}px; border-color: {{{ settings.divider_color }}}; width: {{{ settings.divider_width.size }}}%; text-align: {{{ settings.divider_alignment }}};">
+            <# if ( settings.divider_icon.value ) { #>
+                <span class="divider-icon">
+                    <i class="{{{ settings.divider_icon.value }}}"></i>
+                </span>
+            <# } #>
+        </div>
         <?php
     }
 }
 
 // Register the widget
 Plugin::instance()->widgets_manager->register( new Restimo_Divider() );
+
