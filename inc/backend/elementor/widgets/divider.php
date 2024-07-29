@@ -26,6 +26,7 @@ class Custom_Divider extends Widget_Base {
 
     protected function register_controls() {
 
+        // Content Tab: Divider Section
         $this->start_controls_section(
             'section_divider',
             [
@@ -45,9 +46,6 @@ class Custom_Divider extends Widget_Base {
                     'dotted' => __( 'Dotted', 'custom-elementor' ),
                     'dashed' => __( 'Dashed', 'custom-elementor' ),
                 ],
-                'selectors' => [
-                    '{{WRAPPER}} .divider' => 'border-top-style: {{VALUE}};',
-                ],
             ]
         );
 
@@ -65,9 +63,6 @@ class Custom_Divider extends Widget_Base {
                         'max' => 10,
                     ],
                 ],
-                'selectors' => [
-                    '{{WRAPPER}} .divider' => 'border-top-width: {{SIZE}}{{UNIT}};',
-                ],
             ]
         );
 
@@ -77,9 +72,6 @@ class Custom_Divider extends Widget_Base {
                 'label' => __( 'Color', 'custom-elementor' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333',
-                'selectors' => [
-                    '{{WRAPPER}} .divider' => 'border-top-color: {{VALUE}};',
-                ],
             ]
         );
 
@@ -99,8 +91,9 @@ class Custom_Divider extends Widget_Base {
                     ],
                 ],
                 'size_units' => [ '%', 'px', 'vw' ],
-                'selectors' => [
-                    '{{WRAPPER}} .divider' => 'width: {{SIZE}}{{UNIT}};',
+                'default' => [
+                    'unit' => '%',
+                    'size' => 100,
                 ],
             ]
         );
@@ -124,11 +117,7 @@ class Custom_Divider extends Widget_Base {
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
-                'selectors' => [
-                    '{{WRAPPER}} .divider' => 'margin-left: auto; margin-right: auto;',
-                    '{{WRAPPER}}.elementor-align-left .divider' => 'margin-left: 0; margin-right: auto;',
-                    '{{WRAPPER}}.elementor-align-right .divider' => 'margin-right: 0; margin-left: auto;',
-                ],
+                'default' => 'center',
             ]
         );
 
@@ -159,22 +148,6 @@ class Custom_Divider extends Widget_Base {
         );
 
         $this->add_control(
-            'icon_color',
-            [
-                'label' => __( 'Icon Color', 'custom-elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#333',
-                'selectors' => [
-                    '{{WRAPPER}} .divider-icon i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .divider-icon svg' => 'fill: {{VALUE}};',
-                ],
-                'condition' => [
-                    'divider_icon[value]!' => '',
-                ],
-            ]
-        );
-
-        $this->add_control(
             'icon_size',
             [
                 'label' => __( 'Icon Size', 'custom-elementor' ),
@@ -188,6 +161,100 @@ class Custom_Divider extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .divider-icon' => 'font-size: {{SIZE}}{{UNIT}};',
                     '{{WRAPPER}} .divider-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'divider_icon[value]!' => '',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Style Tab: Divider Style Section
+        $this->start_controls_section(
+            'section_divider_style',
+            [
+                'label' => __( 'Divider', 'custom-elementor' ),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'divider_color',
+            [
+                'label' => __( 'Color', 'custom-elementor' ),
+                'type' => Controls_Manager::COLOR,
+                'default' => '',
+                'selectors' => [
+                    '{{WRAPPER}} .divider-line' => 'border-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'divider_gap',
+            [
+                'label' => __( 'Gap', 'custom-elementor' ),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => 15,
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 50,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider' => 'margin: {{SIZE}}{{UNIT}} 0;',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'icon_style_heading',
+            [
+                'label' => __( 'Icon', 'custom-elementor' ),
+                'type' => Controls_Manager::HEADING,
+                'condition' => [
+                    'divider_icon[value]!' => '',
+                ],
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'icon_color',
+            [
+                'label' => __( 'Color', 'custom-elementor' ),
+                'type' => Controls_Manager::COLOR,
+                'default' => '',
+                'selectors' => [
+                    '{{WRAPPER}} .divider-icon' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .divider-icon svg' => 'fill: {{VALUE}};',
+                ],
+                'condition' => [
+                    'divider_icon[value]!' => '',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'icon_spacing',
+            [
+                'label' => __( 'Spacing', 'custom-elementor' ),
+                'type' => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => 15,
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 50,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider-icon' => 'padding: 0 {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'divider_icon[value]!' => '',
@@ -215,11 +282,11 @@ class Custom_Divider extends Widget_Base {
             <?php if ( $settings['icon_position'] === 'left' ) : ?>
                 <?php echo $icon_html; ?>
             <?php endif; ?>
-            <span class="divider-line"></span>
+            <span class="divider-line" style="border-top-style: <?php echo $settings['style']; ?>; border-top-width: <?php echo $settings['weight']['size']; ?>px; border-color: <?php echo $settings['color']; ?>; width: <?php echo $settings['width']['size']; ?>%;"></span>
             <?php if ( $settings['icon_position'] === 'center' ) : ?>
                 <?php echo $icon_html; ?>
             <?php endif; ?>
-            <span class="divider-line"></span>
+            <span class="divider-line" style="border-top-style: <?php echo $settings['style']; ?>; border-top-width: <?php echo $settings['weight']['size']; ?>px; border-color: <?php echo $settings['color']; ?>; width: <?php echo $settings['width']['size']; ?>%;"></span>
             <?php if ( $settings['icon_position'] === 'right' ) : ?>
                 <?php echo $icon_html; ?>
             <?php endif; ?>
@@ -234,11 +301,11 @@ class Custom_Divider extends Widget_Base {
             <# if ( settings.icon_position === 'left' && settings.divider_icon.value ) { #>
                 {{{ iconHTML.value }}}
             <# } #>
-            <span class="divider-line"></span>
+            <span class="divider-line" style="border-top-style: {{ settings.style }}; border-top-width: {{ settings.weight.size }}px; border-color: {{ settings.color }}; width: {{ settings.width.size }}{{ settings.width.unit }};"></span>
             <# if ( settings.icon_position === 'center' && settings.divider_icon.value ) { #>
                 {{{ iconHTML.value }}}
             <# } #>
-            <span class="divider-line"></span>
+            <span class="divider-line" style="border-top-style: {{ settings.style }}; border-top-width: {{ settings.weight.size }}px; border-color: {{ settings.color }}; width: {{ settings.width.size }}{{ settings.width.unit }};"></span>
             <# if ( settings.icon_position === 'right' && settings.divider_icon.value ) { #>
                 {{{ iconHTML.value }}}
             <# } #>
