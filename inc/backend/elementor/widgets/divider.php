@@ -1,7 +1,7 @@
 <?php
-namespace Elementor;
+namespace Elementor; // Custom widgets must be defined in the Elementor namespace
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly (security measure)
 
 /**
  * Widget Name: Custom Divider
@@ -13,7 +13,7 @@ class Custom_Divider extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Custom Divider', 'custom-elementor' );
+        return __( 'Custom Divider', 'custom' );
     }
 
     public function get_icon() {
@@ -21,128 +21,224 @@ class Custom_Divider extends Widget_Base {
     }
 
     public function get_categories() {
-        return [ 'general' ];
+        return [ 'basic' ];
     }
 
     protected function register_controls() {
 
-        // Content Tab: Divider Section
+        // Content Section
         $this->start_controls_section(
-            'section_divider',
+            'content_section',
             [
-                'label' => __( 'Divider', 'custom-elementor' ),
+                'label' => __( 'Content', 'custom' ),
             ]
         );
 
         $this->add_control(
             'style',
             [
-                'label' => __( 'Style', 'custom-elementor' ),
+                'label' => __( 'Style', 'custom' ),
                 'type' => Controls_Manager::SELECT,
-                'default' => 'solid',
                 'options' => [
-                    'solid' => __( 'Solid', 'custom-elementor' ),
-                    'double' => __( 'Double', 'custom-elementor' ),
-                    'dotted' => __( 'Dotted', 'custom-elementor' ),
-                    'dashed' => __( 'Dashed', 'custom-elementor' ),
+                    'solid' => __( 'Solid', 'custom' ),
+                    'dotted' => __( 'Dotted', 'custom' ),
+                    'dashed' => __( 'Dashed', 'custom' ),
+                    'double' => __( 'Double', 'custom' ),
+                    'groove' => __( 'Groove', 'custom' ),
                 ],
+                'default' => 'solid',
             ]
         );
 
         $this->add_control(
-            'weight',
-            [
-                'label' => __( 'Weight', 'custom-elementor' ),
-                'type' => Controls_Manager::SLIDER,
-                'default' => [
-                    'size' => 1,
-                ],
-                'range' => [
-                    'px' => [
-                        'min' => 1,
-                        'max' => 10,
-                    ],
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'color',
-            [
-                'label' => __( 'Color', 'custom-elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'default' => '#333',
-            ]
-        );
-
-        $this->add_responsive_control(
             'width',
             [
-                'label' => __( 'Width', 'custom-elementor' ),
+                'label' => __( 'Width', 'custom' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
-                        'min' => 1,
-                        'max' => 100,
-                    ],
-                    'vw' => [
-                        'min' => 1,
-                        'max' => 100,
+                        'min' => 0,
+                        'max' => 1000,
                     ],
                 ],
-                'size_units' => [ '%', 'px', 'vw' ],
                 'default' => [
-                    'unit' => '%',
+                    'unit' => 'px',
                     'size' => 100,
                 ],
             ]
         );
 
-        $this->add_responsive_control(
+        $this->add_control(
             'alignment',
             [
-                'label' => __( 'Alignment', 'custom-elementor' ),
+                'label' => __( 'Alignment', 'custom' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'custom-elementor' ),
+                        'title' => __( 'Left', 'custom' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'custom-elementor' ),
+                        'title' => __( 'Center', 'custom' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'custom-elementor' ),
+                        'title' => __( 'Right', 'custom' ),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
                 'default' => 'center',
+                'selectors' => [
+                    '{{WRAPPER}} .divider' => 'text-align: {{VALUE}};',
+                ],
             ]
         );
 
         $this->add_control(
-            'divider_icon',
+            'add_element',
             [
-                'label' => __( 'Icon', 'custom-elementor' ),
+                'label' => __( 'Add Element', 'custom' ),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'none' => __( 'None', 'custom' ),
+                    'text' => __( 'Text', 'custom' ),
+                    'icon' => __( 'Icon', 'custom' ),
+                ],
+                'default' => 'none',
+            ]
+        );
+
+        $this->add_control(
+            'text_content',
+            [
+                'label' => __( 'Text Content', 'custom' ),
+                'type' => Controls_Manager::TEXT,
+                'condition' => [
+                    'add_element' => 'text',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'icon',
+            [
+                'label' => __( 'Icon', 'custom' ),
                 'type' => Controls_Manager::ICONS,
-                'fa4compatibility' => 'icon',
+                'condition' => [
+                    'add_element' => 'icon',
+                ],
             ]
         );
 
         $this->add_control(
             'icon_position',
             [
-                'label' => __( 'Icon Position', 'custom-elementor' ),
-                'type' => Controls_Manager::SELECT,
-                'default' => 'center',
+                'label' => __( 'Icon Position', 'custom' ),
+                'type' => Controls_Manager::CHOOSE,
                 'options' => [
-                    'left' => __( 'Left', 'custom-elementor' ),
-                    'center' => __( 'Center', 'custom-elementor' ),
-                    'right' => __( 'Right', 'custom-elementor' ),
+                    'left' => [
+                        'title' => __( 'Left', 'custom' ),
+                        'icon' => 'eicon-arrow-left',
+                    ],
+                    'center' => [
+                        'title' => __( 'Center', 'custom' ),
+                        'icon' => 'eicon-arrow-right',
+                    ],
+                    'right' => [
+                        'title' => __( 'Right', 'custom' ),
+                        'icon' => 'eicon-arrow-right',
+                    ],
+                ],
+                'default' => 'center',
+                'condition' => [
+                    'add_element' => 'icon',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Style Section
+        $this->start_controls_section(
+            'style_section',
+            [
+                'label' => __( 'Style', 'custom' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'color',
+            [
+                'label' => __( 'Color', 'custom' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .divider-line' => 'border-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'size',
+            [
+                'label' => __( 'Size', 'custom' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 2,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider-line' => 'border-top-width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'gap',
+            [
+                'label' => __( 'Gap', 'custom' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 50,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 10,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider' => 'margin-top: {{SIZE}}{{UNIT}}; margin-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->start_controls_tabs( 'tabs_icon_style' );
+
+        $this->start_controls_tab(
+            'tab_icon_normal',
+            [
+                'label' => __( 'Normal', 'custom' ),
+            ]
+        );
+
+        $this->add_control(
+            'icon_color',
+            [
+                'label' => __( 'Icon Color', 'custom' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .divider-icon' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
-                    'divider_icon[value]!' => '',
+                    'add_element' => 'icon',
                 ],
             ]
         );
@@ -150,7 +246,7 @@ class Custom_Divider extends Widget_Base {
         $this->add_control(
             'icon_size',
             [
-                'label' => __( 'Icon Size', 'custom-elementor' ),
+                'label' => __( 'Icon Size', 'custom' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -158,161 +254,121 @@ class Custom_Divider extends Widget_Base {
                         'max' => 100,
                     ],
                 ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 24,
+                ],
                 'selectors' => [
-                    '{{WRAPPER}} .divider-icon' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .divider-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .divider-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
-                    'divider_icon[value]!' => '',
+                    'add_element' => 'icon',
                 ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        // Style Tab: Divider Style Section
-        $this->start_controls_section(
-            'section_divider_style',
-            [
-                'label' => __( 'Divider', 'custom-elementor' ),
-                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
-            'divider_color',
+            'icon_position_style',
             [
-                'label' => __( 'Color', 'custom-elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'selectors' => [
-                    '{{WRAPPER}} .divider-line' => 'border-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'divider_gap',
-            [
-                'label' => __( 'Gap', 'custom-elementor' ),
-                'type' => Controls_Manager::SLIDER,
-                'default' => [
-                    'size' => 15,
-                ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 50,
+                'label' => __( 'Icon Position', 'custom' ),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __( 'Left', 'custom' ),
+                        'icon' => 'eicon-arrow-left',
+                    ],
+                    'center' => [
+                        'title' => __( 'Center', 'custom' ),
+                        'icon' => 'eicon-arrow-right',
+                    ],
+                    'right' => [
+                        'title' => __( 'Right', 'custom' ),
+                        'icon' => 'eicon-arrow-right',
                     ],
                 ],
+                'default' => 'center',
                 'selectors' => [
-                    '{{WRAPPER}} .divider' => 'margin: {{SIZE}}{{UNIT}} 0;',
+                    '{{WRAPPER}} .divider-icon' => 'text-align: {{VALUE}};',
                 ],
-            ]
-        );
-
-        $this->add_control(
-            'icon_style_heading',
-            [
-                'label' => __( 'Icon', 'custom-elementor' ),
-                'type' => Controls_Manager::HEADING,
                 'condition' => [
-                    'divider_icon[value]!' => '',
+                    'add_element' => 'icon',
                 ],
-                'separator' => 'before',
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab(
+            'tab_icon_hover',
+            [
+                'label' => __( 'Hover', 'custom' ),
             ]
         );
 
         $this->add_control(
-            'icon_color',
+            'icon_hover_color',
             [
-                'label' => __( 'Color', 'custom-elementor' ),
+                'label' => __( 'Icon Hover Color', 'custom' ),
                 'type' => Controls_Manager::COLOR,
-                'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .divider-icon' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .divider-icon svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .divider-icon:hover' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
-                    'divider_icon[value]!' => '',
+                    'add_element' => 'icon',
                 ],
             ]
         );
 
-        $this->add_responsive_control(
-            'icon_spacing',
-            [
-                'label' => __( 'Spacing', 'custom-elementor' ),
-                'type' => Controls_Manager::SLIDER,
-                'default' => [
-                    'size' => 15,
-                ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 50,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .divider-icon' => 'padding: 0 {{SIZE}}{{UNIT}};',
-                ],
-                'condition' => [
-                    'divider_icon[value]!' => '',
-                ],
-            ]
-        );
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
 
         $this->end_controls_section();
     }
 
     protected function render() {
         $settings = $this->get_settings_for_display();
-
-        $this->add_render_attribute( 'divider', 'class', 'divider' );
-
         $icon_html = '';
-        if ( ! empty( $settings['divider_icon']['value'] ) ) {
-            $icon_html = '<span class="divider-icon">';
-            $icon_html .= Icons_Manager::render_icon( $settings['divider_icon'], [ 'aria-hidden' => 'true' ] );
-            $icon_html .= '</span>';
+
+        if ( ! empty( $settings['icon']['value'] ) ) {
+            $icon_html = '<div class="divider-icon" style="text-align: ' . esc_attr( $settings['icon_position'] ) . ';">' . Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ) . '</div>';
+        }
+
+        $text_html = '';
+        if ( ! empty( $settings['text_content'] ) ) {
+            $text_html = '<div class="divider-text" style="text-align: ' . esc_attr( $settings['icon_position'] ) . ';">' . esc_html( $settings['text_content'] ) . '</div>';
         }
 
         ?>
-        <div <?php echo $this->get_render_attribute_string( 'divider' ); ?>>
-            <?php if ( $settings['icon_position'] === 'left' ) : ?>
-                <?php echo $icon_html; ?>
-            <?php endif; ?>
-            <span class="divider-line" style="border-top-style: <?php echo $settings['style']; ?>; border-top-width: <?php echo $settings['weight']['size']; ?>px; border-color: <?php echo $settings['color']; ?>; width: <?php echo $settings['width']['size']; ?>%;"></span>
-            <?php if ( $settings['icon_position'] === 'center' ) : ?>
-                <?php echo $icon_html; ?>
-            <?php endif; ?>
-            <span class="divider-line" style="border-top-style: <?php echo $settings['style']; ?>; border-top-width: <?php echo $settings['weight']['size']; ?>px; border-color: <?php echo $settings['color']; ?>; width: <?php echo $settings['width']['size']; ?>%;"></span>
-            <?php if ( $settings['icon_position'] === 'right' ) : ?>
-                <?php echo $icon_html; ?>
-            <?php endif; ?>
+        <div class="custom-divider">
+            <div class="divider-line" style="border-style: <?php echo esc_attr( $settings['style'] ); ?>; width: <?php echo esc_attr( $settings['width']['size'] . $settings['width']['unit'] ); ?>;"></div>
+            <?php echo $text_html; ?>
+            <?php echo $icon_html; ?>
         </div>
         <?php
     }
 
     protected function _content_template() {
         ?>
-        <# var iconHTML = elementor.helpers.renderIcon( view, settings.divider_icon, { 'aria-hidden': true }, 'i' , 'object' ); #>
-        <div class="divider">
-            <# if ( settings.icon_position === 'left' && settings.divider_icon.value ) { #>
-                {{{ iconHTML.value }}}
-            <# } #>
-            <span class="divider-line" style="border-top-style: {{ settings.style }}; border-top-width: {{ settings.weight.size }}px; border-color: {{ settings.color }}; width: {{ settings.width.size }}{{ settings.width.unit }};"></span>
-            <# if ( settings.icon_position === 'center' && settings.divider_icon.value ) { #>
-                {{{ iconHTML.value }}}
-            <# } #>
-            <span class="divider-line" style="border-top-style: {{ settings.style }}; border-top-width: {{ settings.weight.size }}px; border-color: {{ settings.color }}; width: {{ settings.width.size }}{{ settings.width.unit }};"></span>
-            <# if ( settings.icon_position === 'right' && settings.divider_icon.value ) { #>
-                {{{ iconHTML.value }}}
-            <# } #>
+        <#
+        var iconHtml = '';
+        if ( settings.icon.value ) {
+            iconHtml = '<div class="divider-icon" style="text-align: ' + settings.icon_position + ';">' + elementor.helpers.renderIcon( view, settings.icon, { 'aria-hidden': 'true' }, 'i' ) + '</div>';
+        }
+
+        var textHtml = '';
+        if ( settings.text_content ) {
+            textHtml = '<div class="divider-text" style="text-align: ' + settings.icon_position + ';">' + settings.text_content + '</div>';
+        }
+        #>
+        <div class="custom-divider">
+            <div class="divider-line" style="border-style: {{ settings.style }}; width: {{ settings.width.size + settings.width.unit }};"></div>
+            {{{ textHtml }}}
+            {{{ iconHtml }}}
         </div>
         <?php
     }
 }
 
-// Register the widget
-Plugin::instance()->widgets_manager->register( new Custom_Divider() );
+// Register the Custom Divider widget
+Plugin::instance()->widgets_manager->register_widget_type( new Custom_Divider() );
