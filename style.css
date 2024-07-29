@@ -757,13 +757,14 @@ mark, ins {
   font-weight: 600 !important;
   font-size: 16px !important;
   line-height: 30px !important;
-  text-transform: uppercase;
-  background: #c19977;
-  border: 0;
-  padding: 3px 20px;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  text-transform: uppercase !important;
+  background: #c19977 !important;
+  border: 0 !important;
+  padding: 3px 20px !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  clip-path: polygon(100% 0%, calc(100% - 0.75rem) 50%, 100% 100%, 0 100%, 0.75rem 50%, 0 0) !important;
 }
 .slide-rev-subtitle span {
 }
