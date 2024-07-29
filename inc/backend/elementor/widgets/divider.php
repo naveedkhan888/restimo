@@ -4,16 +4,16 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Widget Name: XP Divider
+ * Widget Name: Custom Divider
  */
-class Restimo_Divider extends Widget_Base {
+class Custom_Divider extends Widget_Base {
 
     public function get_name() {
-        return 'restimo_divider';
+        return 'custom_divider';
     }
 
     public function get_title() {
-        return __( 'XP Divider', 'restimo' );
+        return __( 'Custom Divider', 'custom-elementor' );
     }
 
     public function get_icon() {
@@ -21,36 +21,40 @@ class Restimo_Divider extends Widget_Base {
     }
 
     public function get_categories() {
-        return [ 'category_restimo' ];
+        return [ 'general' ];
     }
 
     protected function register_controls() {
-        // Divider Section
+
         $this->start_controls_section(
-            'divider_section',
+            'section_divider',
             [
-                'label' => __( 'Divider', 'restimo' ),
+                'label' => __( 'Divider', 'custom-elementor' ),
             ]
         );
 
         $this->add_control(
-            'divider_style',
+            'style',
             [
-                'label' => __( 'Style', 'restimo' ),
+                'label' => __( 'Style', 'custom-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'solid',
                 'options' => [
-                    'solid' => __( 'Solid', 'restimo' ),
-                    'dashed' => __( 'Dashed', 'restimo' ),
-                    'dotted' => __( 'Dotted', 'restimo' ),
+                    'solid' => __( 'Solid', 'custom-elementor' ),
+                    'double' => __( 'Double', 'custom-elementor' ),
+                    'dotted' => __( 'Dotted', 'custom-elementor' ),
+                    'dashed' => __( 'Dashed', 'custom-elementor' ),
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider' => 'border-top-style: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'divider_weight',
+            'weight',
             [
-                'label' => __( 'Weight', 'restimo' ),
+                'label' => __( 'Weight', 'custom-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 1,
@@ -62,96 +66,110 @@ class Restimo_Divider extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .divider' => 'border-width: {{SIZE}}px;',
+                    '{{WRAPPER}} .divider' => 'border-top-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'divider_color',
+            'color',
             [
-                'label' => __( 'Color', 'restimo' ),
+                'label' => __( 'Color', 'custom-elementor' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333',
                 'selectors' => [
-                    '{{WRAPPER}} .divider' => 'border-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'divider_width',
-            [
-                'label' => __( 'Width', 'restimo' ),
-                'type' => Controls_Manager::SLIDER,
-                'default' => [
-                    'size' => 100,
-                ],
-                'range' => [
-                    'px' => [
-                        'min' => 1,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .divider' => 'width: {{SIZE}}%;',
+                    '{{WRAPPER}} .divider' => 'border-top-color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_responsive_control(
-            'divider_alignment',
+            'width',
             [
-                'label' => __( 'Alignment', 'restimo' ),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    'left' => [
-                        'title' => __( 'Left', 'restimo' ),
-                        'icon' => 'eicon-text-align-left',
+                'label' => __( 'Width', 'custom-elementor' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 100,
                     ],
-                    'center' => [
-                        'title' => __( 'Center', 'restimo' ),
-                        'icon' => 'eicon-text-align-center',
-                    ],
-                    'right' => [
-                        'title' => __( 'Right', 'restimo' ),
-                        'icon' => 'eicon-text-align-right',
+                    'vw' => [
+                        'min' => 1,
+                        'max' => 100,
                     ],
                 ],
+                'size_units' => [ '%', 'px', 'vw' ],
                 'selectors' => [
-                    '{{WRAPPER}} .divider' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .divider' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
 
-        $this->end_controls_section();
-
-        // Icon Section
-        $this->start_controls_section(
-            'icon_section',
+        $this->add_responsive_control(
+            'alignment',
             [
-                'label' => __( 'Icon', 'restimo' ),
+                'label' => __( 'Alignment', 'custom-elementor' ),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __( 'Left', 'custom-elementor' ),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __( 'Center', 'custom-elementor' ),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __( 'Right', 'custom-elementor' ),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider' => 'margin-left: auto; margin-right: auto;',
+                    '{{WRAPPER}}.elementor-align-left .divider' => 'margin-left: 0; margin-right: auto;',
+                    '{{WRAPPER}}.elementor-align-right .divider' => 'margin-right: 0; margin-left: auto;',
+                ],
             ]
         );
 
         $this->add_control(
             'divider_icon',
             [
-                'label' => __( 'Icon', 'restimo' ),
+                'label' => __( 'Icon', 'custom-elementor' ),
                 'type' => Controls_Manager::ICONS,
                 'fa4compatibility' => 'icon',
             ]
         );
 
         $this->add_control(
+            'icon_position',
+            [
+                'label' => __( 'Icon Position', 'custom-elementor' ),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'center',
+                'options' => [
+                    'left' => __( 'Left', 'custom-elementor' ),
+                    'center' => __( 'Center', 'custom-elementor' ),
+                    'right' => __( 'Right', 'custom-elementor' ),
+                ],
+                'condition' => [
+                    'divider_icon[value]!' => '',
+                ],
+            ]
+        );
+
+        $this->add_control(
             'icon_color',
             [
-                'label' => __( 'Icon Color', 'restimo' ),
+                'label' => __( 'Icon Color', 'custom-elementor' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333',
                 'selectors' => [
                     '{{WRAPPER}} .divider-icon i' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .divider-icon svg' => 'fill: {{VALUE}};',
+                ],
+                'condition' => [
+                    'divider_icon[value]!' => '',
                 ],
             ]
         );
@@ -159,7 +177,7 @@ class Restimo_Divider extends Widget_Base {
         $this->add_control(
             'icon_size',
             [
-                'label' => __( 'Icon Size', 'restimo' ),
+                'label' => __( 'Icon Size', 'custom-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -171,6 +189,9 @@ class Restimo_Divider extends Widget_Base {
                     '{{WRAPPER}} .divider-icon' => 'font-size: {{SIZE}}{{UNIT}};',
                     '{{WRAPPER}} .divider-icon svg' => 'width: {{SIZE}}{{UNIT}};',
                 ],
+                'condition' => [
+                    'divider_icon[value]!' => '',
+                ],
             ]
         );
 
@@ -179,12 +200,28 @@ class Restimo_Divider extends Widget_Base {
 
     protected function render() {
         $settings = $this->get_settings_for_display();
+
+        $this->add_render_attribute( 'divider', 'class', 'divider' );
+
+        $icon_html = '';
+        if ( ! empty( $settings['divider_icon']['value'] ) ) {
+            $icon_html = '<span class="divider-icon">';
+            $icon_html .= Icons_Manager::render_icon( $settings['divider_icon'], [ 'aria-hidden' => 'true' ] );
+            $icon_html .= '</span>';
+        }
+
         ?>
-        <div class="divider" style="border-style: <?php echo esc_attr($settings['divider_style']); ?>; border-width: <?php echo esc_attr($settings['divider_weight']['size']); ?>px; border-color: <?php echo esc_attr($settings['divider_color']); ?>; width: <?php echo esc_attr($settings['divider_width']['size']); ?>%; text-align: <?php echo esc_attr($settings['divider_alignment']); ?>;">
-            <?php if ( ! empty( $settings['divider_icon']['value'] ) ) : ?>
-                <span class="divider-icon">
-                    <?php Icons_Manager::render_icon( $settings['divider_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                </span>
+        <div <?php echo $this->get_render_attribute_string( 'divider' ); ?>>
+            <?php if ( $settings['icon_position'] === 'left' ) : ?>
+                <?php echo $icon_html; ?>
+            <?php endif; ?>
+            <span class="divider-line"></span>
+            <?php if ( $settings['icon_position'] === 'center' ) : ?>
+                <?php echo $icon_html; ?>
+            <?php endif; ?>
+            <span class="divider-line"></span>
+            <?php if ( $settings['icon_position'] === 'right' ) : ?>
+                <?php echo $icon_html; ?>
             <?php endif; ?>
         </div>
         <?php
@@ -192,11 +229,18 @@ class Restimo_Divider extends Widget_Base {
 
     protected function _content_template() {
         ?>
-        <div class="divider" style="border-style: {{{ settings.divider_style }}}; border-width: {{{ settings.divider_weight.size }}}px; border-color: {{{ settings.divider_color }}}; width: {{{ settings.divider_width.size }}}%; text-align: {{{ settings.divider_alignment }}};">
-            <# if ( settings.divider_icon.value ) { #>
-                <span class="divider-icon">
-                    <i class="{{{ settings.divider_icon.value }}}"></i>
-                </span>
+        <# var iconHTML = elementor.helpers.renderIcon( view, settings.divider_icon, { 'aria-hidden': true }, 'i' , 'object' ); #>
+        <div class="divider">
+            <# if ( settings.icon_position === 'left' && settings.divider_icon.value ) { #>
+                {{{ iconHTML.value }}}
+            <# } #>
+            <span class="divider-line"></span>
+            <# if ( settings.icon_position === 'center' && settings.divider_icon.value ) { #>
+                {{{ iconHTML.value }}}
+            <# } #>
+            <span class="divider-line"></span>
+            <# if ( settings.icon_position === 'right' && settings.divider_icon.value ) { #>
+                {{{ iconHTML.value }}}
             <# } #>
         </div>
         <?php
@@ -204,5 +248,4 @@ class Restimo_Divider extends Widget_Base {
 }
 
 // Register the widget
-Plugin::instance()->widgets_manager->register( new Restimo_Divider() );
-
+Plugin::instance()->widgets_manager->register( new Custom_Divider() );
