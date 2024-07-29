@@ -44,7 +44,6 @@ class Custom_Divider extends Widget_Base {
                     'dotted' => __( 'Dotted', 'custom' ),
                     'dashed' => __( 'Dashed', 'custom' ),
                     'double' => __( 'Double', 'custom' ),
-                    'groove' => __( 'Groove', 'custom' ),
                 ],
                 'default' => 'solid',
             ]
@@ -64,6 +63,9 @@ class Custom_Divider extends Widget_Base {
                 'default' => [
                     'unit' => 'px',
                     'size' => 100,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -220,12 +222,72 @@ class Custom_Divider extends Widget_Base {
             ]
         );
 
-        $this->start_controls_tabs( 'tabs_icon_style' );
-
-        $this->start_controls_tab(
-            'tab_icon_normal',
+        // Text Styles
+        $this->start_controls_section(
+            'text_style',
             [
-                'label' => __( 'Normal', 'custom' ),
+                'label' => __( 'Text Style', 'custom' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'add_element' => 'text',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'text_color',
+            [
+                'label' => __( 'Text Color', 'custom' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .divider-text' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'text_typography',
+            [
+                'label' => __( 'Typography', 'custom' ),
+                'type' => Controls_Manager::TYPOGRAPHY,
+                'selectors' => [
+                    '{{WRAPPER}} .divider-text' => 'typography: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'text_spacing',
+            [
+                'label' => __( 'Text Spacing', 'custom' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 50,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 10,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider-text' => 'margin-top: {{SIZE}}{{UNIT}}; margin-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Icon Styles
+        $this->start_controls_section(
+            'icon_style',
+            [
+                'label' => __( 'Icon Style', 'custom' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'add_element' => 'icon',
+                ],
             ]
         );
 
@@ -235,10 +297,7 @@ class Custom_Divider extends Widget_Base {
                 'label' => __( 'Icon Color', 'custom' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .divider-icon' => 'color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'add_element' => 'icon',
+                    '{{WRAPPER}} .divider-icon i' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -261,75 +320,54 @@ class Custom_Divider extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .divider-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
-                'condition' => [
-                    'add_element' => 'icon',
+            ]
+        );
+
+        $this->add_control(
+            'icon_spacing',
+            [
+                'label' => __( 'Icon Spacing', 'custom' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 50,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 10,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider-icon' => 'margin-top: {{SIZE}}{{UNIT}}; margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'icon_position_style',
+            'icon_rotation',
             [
-                'label' => __( 'Icon Position', 'custom' ),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    'left' => [
-                        'title' => __( 'Left', 'custom' ),
-                        'icon' => 'eicon-arrow-left',
-                    ],
-                    'center' => [
-                        'title' => __( 'Center', 'custom' ),
-                        'icon' => 'eicon-arrow-right',
-                    ],
-                    'right' => [
-                        'title' => __( 'Right', 'custom' ),
-                        'icon' => 'eicon-arrow-right',
+                'label' => __( 'Icon Rotation', 'custom' ),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'deg' => [
+                        'min' => 0,
+                        'max' => 360,
                     ],
                 ],
-                'default' => 'center',
                 'selectors' => [
-                    '{{WRAPPER}} .divider-icon' => 'text-align: {{VALUE}};',
-                ],
-                'condition' => [
-                    'add_element' => 'icon',
+                    '{{WRAPPER}} .divider-icon i' => 'transform: rotate({{SIZE}}deg);',
                 ],
             ]
         );
-
-        $this->end_controls_tab();
-
-        $this->start_controls_tab(
-            'tab_icon_hover',
-            [
-                'label' => __( 'Hover', 'custom' ),
-            ]
-        );
-
-        $this->add_control(
-            'icon_hover_color',
-            [
-                'label' => __( 'Icon Hover Color', 'custom' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .divider-icon:hover' => 'color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'add_element' => 'icon',
-                ],
-            ]
-        );
-
-        $this->end_controls_tab();
-
-        $this->end_controls_tabs();
 
         $this->end_controls_section();
     }
 
     protected function render() {
         $settings = $this->get_settings_for_display();
-        $icon_html = '';
 
+        $icon_html = '';
         if ( ! empty( $settings['icon']['value'] ) ) {
             $icon_html = '<div class="divider-icon" style="text-align: ' . esc_attr( $settings['icon_position'] ) . ';">' . Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ) . '</div>';
         }
