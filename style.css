@@ -5549,6 +5549,10 @@ object {
 .xp-team h6 a:hover {
   color: #131E30;
 }
+.fab {
+  font-family: "fontawesome";
+  font-style: normal;
+}
 
 /* team 1 */
 .team-1 .team-social {
