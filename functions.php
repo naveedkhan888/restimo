@@ -229,8 +229,7 @@ require get_template_directory() . '/inc/backend/customizer/customizer.php';
  * Register the required plugins for this theme.
  */
 require get_template_directory() . '/inc/backend/plugin-requires.php';
-//require get_template_directory() . '/inc/backend/importer.php';
-require get_template_directory() . '/inc/backend/restimo-demo-import.php';
+require get_template_directory() . '/inc/backend/importer.php';
 
 /**
  * Customizer additions.
