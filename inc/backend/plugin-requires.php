@@ -21,6 +21,11 @@ function restimo_register_required_plugins() {
 			'required'           => true,
 		),
 		array(
+			'name'               => esc_html__( 'One Click Demo Import', 'restimo' ),
+			'slug'               => 'one-click-demo-import',
+			'required'           => true,
+		),
+		array(
 			'name'               => esc_html__( 'Elementor Page Builder', 'restimo' ),
 			'slug'               => 'elementor',
 			'required'           => true,
