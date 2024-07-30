@@ -7612,6 +7612,10 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
   margin-bottom: 0 !important;
 }
 
+.food-price-menu .menu-item > * {
+  flex: 0 0 80px;
+}
+
 /* Title, separator, and price container */
 .food-price-menu .menu-item .content .title_priccce {
     display: flex;
