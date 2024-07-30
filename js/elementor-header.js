@@ -22,7 +22,7 @@
     * toggle search
     * --------------------------------------------------*/
     var tgSearch  = function($scope, $){
-      $scope.find('.octf-search').each( function(){
+      $scope.find('.xptf-search').each( function(){
         var selector = $(this);
         selector.find('.toggle_search').on("click", function(){
           $(this).toggleClass( "active" );

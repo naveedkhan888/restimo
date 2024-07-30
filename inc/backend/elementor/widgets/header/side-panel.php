@@ -132,9 +132,9 @@ class Restimo_Sidepanel extends Widget_Base{
 		$settings = $this->get_settings_for_display();
 		?>
 			
-	    	<div class="octf-sidepanel octf-cta-header">
+	    	<div class="xptf-sidepanel xptf-cta-header">
 				<div class="site-overlay panel-overlay"></div>
-				<div id="panel-btn" class="panel-btn octf-cta-icons">
+				<div id="panel-btn" class="panel-btn xptf-cta-icons">
 					<i class="xp-flaticon-menu"></i>
 				</div>
 			</div>

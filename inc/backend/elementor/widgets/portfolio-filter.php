@@ -711,7 +711,7 @@ class Restimo_PortfolioGrid extends Widget_Base{
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .xptf-btn' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -732,7 +732,7 @@ class Restimo_PortfolioGrid extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
 				],
 			]
 		);
@@ -743,7 +743,7 @@ class Restimo_PortfolioGrid extends Widget_Base{
 				'label' => __( 'Background Color', 'restimo' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -763,7 +763,7 @@ class Restimo_PortfolioGrid extends Widget_Base{
 				'label' => __( 'Text Color', 'restimo' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn:hover, {{WRAPPER}} .octf-btn:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn:hover, {{WRAPPER}} .xptf-btn:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -774,7 +774,7 @@ class Restimo_PortfolioGrid extends Widget_Base{
 				'label' => __( 'Background Color', 'restimo' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn:hover, {{WRAPPER}} .octf-btn:focus' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn:hover, {{WRAPPER}} .xptf-btn:focus' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -886,7 +886,7 @@ class Restimo_PortfolioGrid extends Widget_Base{
 	            endwhile; wp_reset_postdata(); ?>
 			</div>
 
-			<?php if( $settings['load_more'] && $count >= $settings['project_num'] ) echo '<div class="btn-block"><span class="btn-loadmore octf-btn" data-category="'.$cat_ids.'" data-loaded="'.$settings['load_more'].'" data-loading="'.$settings['loading_more'].'" data-style="'.$settings['style'].'">'.$settings['load_more'].'</span></div>'; ?>
+			<?php if( $settings['load_more'] && $count >= $settings['project_num'] ) echo '<div class="btn-block"><span class="btn-loadmore xptf-btn" data-category="'.$cat_ids.'" data-loaded="'.$settings['load_more'].'" data-loading="'.$settings['loading_more'].'" data-style="'.$settings['style'].'">'.$settings['load_more'].'</span></div>'; ?>
 	    </div>
 										
 	    <?php

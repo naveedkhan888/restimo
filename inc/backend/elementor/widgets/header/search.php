@@ -187,8 +187,8 @@ class Restimo_Search extends Widget_Base{
 		$settings = $this->get_settings_for_display();
 		?>
 			
-	    	<div class="octf-search octf-cta-header">
-				<div class="toggle_search octf-cta-icons">
+	    	<div class="xptf-search xptf-cta-header">
+				<div class="toggle_search xptf-cta-icons">
 					<i class="xp-flaticon-search-1"></i>
 				</div>
 				<!-- Form Search on Header -->

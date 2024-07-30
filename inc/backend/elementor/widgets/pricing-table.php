@@ -453,7 +453,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'btn_typography',
-				'selector' => '{{WRAPPER}} .xp-pricing-table .octf-btn',
+				'selector' => '{{WRAPPER}} .xp-pricing-table .xptf-btn',
 				'condition' => [
 					'label_link!' => '',
 				],
@@ -478,7 +478,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .xp-pricing-table .octf-btn' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .xp-pricing-table .xptf-btn' => 'background: {{VALUE}};',
 				],
 				'condition' => [
 					'label_link!' => '',
@@ -492,7 +492,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .xp-pricing-table .octf-btn' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .xp-pricing-table .xptf-btn' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'label_link!' => '',
@@ -506,7 +506,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .xp-pricing-table .octf-btn' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .xp-pricing-table .xptf-btn' => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
 					'label_link!' => '',
@@ -531,7 +531,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .xp-pricing-table .octf-btn:hover' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .xp-pricing-table .xptf-btn:hover' => 'background: {{VALUE}};',
 				],
 				'condition' => [
 					'label_link!' => '',
@@ -545,7 +545,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .xp-pricing-table .octf-btn:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .xp-pricing-table .xptf-btn:hover' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'label_link!' => '',
@@ -559,7 +559,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .xp-pricing-table .octf-btn:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .xp-pricing-table .xptf-btn:hover' => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
 					'label_link!' => '',
@@ -589,7 +589,7 @@ class Restimo_Pricing_Table extends Widget_Base{
 				$this->add_render_attribute( 'button', 'rel', 'nofollow' );
 			}
 		}
-		$this->add_render_attribute( 'button', 'class', 'octf-btn octf-btn-border' );
+		$this->add_render_attribute( 'button', 'class', 'xptf-btn xptf-btn-border' );
 
 		?>
 

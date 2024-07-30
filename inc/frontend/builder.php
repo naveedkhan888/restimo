@@ -93,7 +93,7 @@ if ( ! function_exists( 'restimo_404_builder' ) ) {
                     <div class="page-content">
                         <p><?php esc_html_e( 'Oops! The page you are looking for does not exist. Please return to the site’s homepage.', 'restimo' ); ?></p>
                         <?php get_search_form(); ?>
-                        <a class="octf-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'take me home', 'restimo' ); ?></a>
+                        <a class="xptf-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'take me home', 'restimo' ); ?></a>
                     </div>
                 </div>
             </div>

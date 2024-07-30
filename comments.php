@@ -62,7 +62,7 @@ if ( post_password_required() ) {
                 '<p class="comment-form-email col-md-6"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
                 '" size="30" placeholder="'. esc_attr__( 'Email*', 'restimo' ) .'" required /></p></div>',
         )),
-        'class_submit' => 'octf-btn',
+        'class_submit' => 'xptf-btn',
         'format'       => 'xhtml'
     );
     comment_form( $comments_args );

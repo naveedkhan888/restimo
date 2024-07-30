@@ -48,7 +48,7 @@ class Restimo_Cart extends Widget_Base{
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .octf-cart i:before' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .xptf-cart i:before' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -59,7 +59,7 @@ class Restimo_Cart extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .octf-cart i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-cart i' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -71,7 +71,7 @@ class Restimo_Cart extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .octf-cart .count' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .xptf-cart .count' => 'background: {{VALUE}};',
 				],
 				'separator' => 'before',
 			]
@@ -83,7 +83,7 @@ class Restimo_Cart extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .octf-cart .count' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-cart .count' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -102,7 +102,7 @@ class Restimo_Cart extends Widget_Base{
 		$widget_cart_is_hidden = apply_filters( 'woocommerce_widget_cart_is_hidden', false );
 		?>
 		<?php if ( ! $widget_cart_is_hidden ) : ?>
-			<div class="octf-cart octf-cta-header">
+			<div class="xptf-cart xptf-cta-header">
 				<a class="cart-contents xp-minicart" href="<?php echo $cart_url; ?>" title="<?php esc_attr_e( 'View your shopping cart', 'restimo' ); ?>"><i class="xp-flaticon-business"></i> <span class="count"><?php echo $product_count; ?></span>
 				</a>
 				<?php if( !is_cart() && !is_checkout() ) { ?>

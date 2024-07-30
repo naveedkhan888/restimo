@@ -1,17 +1,17 @@
 <!-- Main header start -->
-<div class="octf-main-header">
-	<div class="octf-area-wrap">
-		<div class="container octf-mainbar-container">
-			<div class="octf-mainbar">
-				<div class="octf-mainbar-row octf-row">
-					<div class="octf-col logo-col">
+<div class="xptf-main-header">
+	<div class="xptf-area-wrap">
+		<div class="container xptf-mainbar-container">
+			<div class="xptf-mainbar">
+				<div class="xptf-mainbar-row xptf-row">
+					<div class="xptf-col logo-col">
 						<div id="site-logo" class="site-logo">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<img  src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 							</a>
 						</div>
 					</div>
-					<div class="octf-col menu-col">
+					<div class="xptf-col menu-col">
 						<nav id="site-navigation" class="main-navigation">			
 							<?php
 								$menus = wp_get_nav_menus();

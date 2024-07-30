@@ -131,7 +131,7 @@ class Restimo_Button extends Widget_Base{
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .xptf-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -142,7 +142,7 @@ class Restimo_Button extends Widget_Base{
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .xptf-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
         );
@@ -150,7 +150,7 @@ class Restimo_Button extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'btn_typography',
-				'selector' => '{{WRAPPER}} .octf-btn',
+				'selector' => '{{WRAPPER}} .xptf-btn',
 			]
 		);
         
@@ -171,7 +171,7 @@ class Restimo_Button extends Widget_Base{
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
 				],
 			]
 		);
@@ -182,7 +182,7 @@ class Restimo_Button extends Widget_Base{
 				'label' => __( 'Background Color', 'restimo' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -191,7 +191,7 @@ class Restimo_Button extends Widget_Base{
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'button_border',
-				'selector' => '{{WRAPPER}} .octf-btn',
+				'selector' => '{{WRAPPER}} .xptf-btn',
 			]
 		);
 
@@ -210,7 +210,7 @@ class Restimo_Button extends Widget_Base{
 				'label' => __( 'Text Color', 'restimo' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn:hover, {{WRAPPER}} .octf-btn:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn:hover, {{WRAPPER}} .xptf-btn:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -221,7 +221,7 @@ class Restimo_Button extends Widget_Base{
 				'label' => __( 'Background Color', 'restimo' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn:hover, {{WRAPPER}} .octf-btn:focus' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn:hover, {{WRAPPER}} .xptf-btn:focus' => 'background-color: {{VALUE}};',
 				],
 			]
         );
@@ -231,7 +231,7 @@ class Restimo_Button extends Widget_Base{
 				'label' => __( 'Border Color', 'restimo' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .octf-btn:hover, {{WRAPPER}} .octf-btn:focus' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .xptf-btn:hover, {{WRAPPER}} .xptf-btn:focus' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -269,9 +269,9 @@ class Restimo_Button extends Widget_Base{
 		}
 
 		if( $settings['btn_style'] != 'arrow' ){
-			$this->add_render_attribute( 'button', 'class', 'octf-btn' );
+			$this->add_render_attribute( 'button', 'class', 'xptf-btn' );
 
-			$this->add_render_attribute( 'button', 'class', 'octf-btn-'.$settings['btn_style'] );
+			$this->add_render_attribute( 'button', 'class', 'xptf-btn-'.$settings['btn_style'] );
 		}
 
 		if ( $settings['hover_animation'] ) {

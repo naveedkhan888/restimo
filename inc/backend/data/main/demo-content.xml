@@ -12177,7 +12177,7 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<guid isPermaLink="false">https://dpsample.com/wp_themes/restimo/?post_type=wpcf7_contact_form&#038;p=36</guid>
 		<description></description>
 		<content:encoded><![CDATA[<div class="cs-form flex-middle">
-[email* your-email placeholder "Your Email *"]<button class="octf-btn">Sign Up</button>
+[email* your-email placeholder "Your Email *"]<button class="xptf-btn">Sign Up</button>
 </div>
 1
 [_site_title] "[your-subject]"
@@ -12248,7 +12248,7 @@ Please enter a telephone number.]]></content:encoded>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_form]]></wp:meta_key>
 		<wp:meta_value><![CDATA[<div class="cs-form flex-middle">
-[email* your-email placeholder "Your Email *"]<button class="octf-btn">Sign Up</button>
+[email* your-email placeholder "Your Email *"]<button class="xptf-btn">Sign Up</button>
 </div>]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
@@ -12301,7 +12301,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 </div>
 <p>[text your-site placeholder "Website"]</p>
 <p>[textarea your-message placeholder "Message..."]</p>
-<button type="submit" class="octf-btn">Send Message</button>
+<button type="submit" class="xptf-btn">Send Message</button>
 </div>
 1
 [_site_title] "[your-subject]"
@@ -12378,7 +12378,7 @@ Please enter a telephone number.]]></content:encoded>
 </div>
 <p>[text your-site placeholder "Website"]</p>
 <p>[textarea your-message placeholder "Message..."]</p>
-<button type="submit" class="octf-btn">Send Message</button>
+<button type="submit" class="xptf-btn">Send Message</button>
 </div>]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
@@ -12434,7 +12434,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <p class="col-md-6">[select* your-time placeholder "Select Time *" "11:00 AM" "11:30 AM" "12:00 PM" "12:30 PM" "1:00 PM" "1:30 PM" "2:00 PM" "2:30 PM" "3:00 PM" "3:30 PM" "4:00 PM" "4:30 PM" "5:00 PM" "5:30 PM" "6:00 PM" "6:30 PM" "7:00 PM" "7:30 PM" "8:00 PM" "8:30 PM" "9:00 PM"]</p>
 <p class="col-md-6">[select* persons placeholder "Number of Persons *" "1 Person" "2 Persons" "3 Persons" "4 Persons" "5 Persons"]</p>
 </div>
-<button type="submit" class="octf-btn">Book Now</button>
+<button type="submit" class="xptf-btn">Book Now</button>
 </div>
 1
 [_site_title] "[your-subject]"
@@ -12514,7 +12514,7 @@ Please enter a telephone number.]]></content:encoded>
 <p class="col-md-6">[select* your-time placeholder "Select Time *" "11:00 AM" "11:30 AM" "12:00 PM" "12:30 PM" "1:00 PM" "1:30 PM" "2:00 PM" "2:30 PM" "3:00 PM" "3:30 PM" "4:00 PM" "4:30 PM" "5:00 PM" "5:30 PM" "6:00 PM" "6:30 PM" "7:00 PM" "7:30 PM" "8:00 PM" "8:30 PM" "9:00 PM"]</p>
 <p class="col-md-6">[select* persons placeholder "Number of Persons *" "1 Person" "2 Persons" "3 Persons" "4 Persons" "5 Persons"]</p>
 </div>
-<button type="submit" class="octf-btn">Book Now</button>
+<button type="submit" class="xptf-btn">Book Now</button>
 </div>]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
@@ -12567,7 +12567,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 		<content:encoded><![CDATA[<div class="team-form flex-middle wpcf7-placeholder-light">
 [text* your-name placeholder "Your Name *"]
 [email* your-email placeholder "Your Email *"]
-<button type="submit" class="octf-btn">Subscribe Now</button>
+<button type="submit" class="xptf-btn">Subscribe Now</button>
 </div>
 1
 [_site_title] "[your-subject]"
@@ -12640,7 +12640,7 @@ Please enter a telephone number.]]></content:encoded>
 		<wp:meta_value><![CDATA[<div class="team-form flex-middle wpcf7-placeholder-light">
 [text* your-name placeholder "Your Name *"]
 [email* your-email placeholder "Your Email *"]
-<button type="submit" class="octf-btn">Subscribe Now</button>
+<button type="submit" class="xptf-btn">Subscribe Now</button>
 </div>]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>

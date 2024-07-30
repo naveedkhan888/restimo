@@ -181,7 +181,7 @@ class Restimo_Menu_Mobile extends Widget_Base{
 		$settings = $this->get_settings_for_display();
 		?>
 			
-	    	<div class="octf-menu-mobile octf-cta-header">
+	    	<div class="xptf-menu-mobile xptf-cta-header">
 				<div id="mmenu-toggle" class="mmenu-toggle">
 					<button><i class="xp-flaticon-menu"></i></button>
 				</div>
