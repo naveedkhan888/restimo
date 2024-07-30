@@ -13,6 +13,7 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Background Color*/
 			.bg-primary,
+			.elementor-social-icons-wrapper a.elementor-social-icon,
 			.octf-btn.octf-btn-dark:hover,
 			.octf-btn.octf-btn-dark:focus,
 			.features-service-wrapper .btn-details:hover,

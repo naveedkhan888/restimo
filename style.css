@@ -883,6 +883,9 @@ td {
 }
 .border_clr.elementor-widget-divider {
   --divider-color: #C19977; }
+.elementor-social-icons-wrapper a.elementor-social-icon {
+  background: #C19977;
+}
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
