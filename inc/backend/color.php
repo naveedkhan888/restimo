@@ -154,6 +154,14 @@ if(!function_exists('restimo_color_scheme')){
 			.xp-counter-2.icounter .c-number.font-second span.num + span,
 			.woocommerce div.product p.price,.woocommerce div.product span.price{ color: '.restimo_get_option('main_color').'; }
 
+			.main-navigation > ul > li:hover > a,
+			.main-navigation ul li li a:hover,.main-navigation ul ul.sub-menu li.current-menu-item > a,.main-navigation ul ul.sub-menu li.current-menu-ancestor > a,
+			.main-navigation ul > li.menu-item-has-children:hover > a,
+			.main-navigation ul > li.menu-item-has-children:hover > a:after,
+			.main-navigation ul > li.menu-item-has-children > a:hover:after{
+				color:'.restimo_get_option('main_color').' !important;
+			}
+
 			/*Other*/
 			.border_clr.elementor-widget-divider.elementor-view-framed .elementor-icon, 
 			.border_clr.elementor-widget-divider.elementor-view-default .elementor-icon svg {
