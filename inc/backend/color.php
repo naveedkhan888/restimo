@@ -66,7 +66,8 @@ if(!function_exists('restimo_color_scheme')){
 			}
 			.post-box .entry-meta .btn-details:hover, 
 			.widget .tagcloud a:hover,
-			.icon-box-1 .icon-main{background: '.hex2rgba(restimo_get_option('main_color'), 0.1).';}
+			.elementor-widget-icon.elementor-view-stacked .elementor-icon,
+			.icon-box-1 .icon-main{background: '.hex2rgba(restimo_get_option('main_color'), 0.1).' !important;}
 			.team-3 .team-thumb a:before{background: '.hex2rgba(restimo_get_option('main_color'), 0.8).';}
 			.projects-grid .projects-box .portfolio-info,
 			.projects-grid.style-3 .projects-thumbnail .overlay{background: '.hex2rgba(restimo_get_option('main_color'), 0.9).';}
