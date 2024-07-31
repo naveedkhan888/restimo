@@ -74,7 +74,7 @@ WooCommerce styles override
   font-family: "Merienda", sans-serif;
   text-align: center;
   margin-bottom: 35px;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border: 1px solid #dbdbdb;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -195,6 +195,7 @@ WooCommerce styles override
 .woocommerce ul.products li.product:hover .wrapper-add-to-cart, .woocommerce-page ul.products li.product:hover .wrapper-add-to-cart {
   visibility: visible;
   opacity: 1;
+  bottom: 0;
 }
 .woocommerce ul.products li.product:hover .add_to_cart_button, .woocommerce-page ul.products li.product:hover .add_to_cart_button {
   -webkit-transform: translateY(0px);
