@@ -1090,11 +1090,18 @@ function restimo_customize_settings() {
             'default'  => '#C19977',
             'priority' => 10,
         ),
-        'secondary_colorrrr'   => array(
+        'heading_color'   => array(
             'type'     => 'color',
-            'label'    => esc_html__( 'Secondary Colorrrr', 'restimo' ),
+            'label'    => esc_html__( 'Heading Color', 'restimo' ),
             'section'  => 'color_scheme',
-            'default'  => '#cccccc',
+            'default'  => '#131E30',
+            'priority' => 10,
+        ),
+        'btn_hover_dark'   => array(
+            'type'     => 'color',
+            'label'    => esc_html__( 'Button Hover & Dark', 'restimo' ),
+            'section'  => 'color_scheme',
+            'default'  => '#131E30',
             'priority' => 10,
         ),
 

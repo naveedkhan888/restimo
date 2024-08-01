@@ -5,13 +5,33 @@ if(!function_exists('restimo_color_scheme')){
     function restimo_color_scheme(){
 	  	$color_scheme = '';
 
-	  	//Secondary Color
-	  	if( restimo_get_option('secondary_colorrrr') != '#cccccc' ){
+	  	//Heading Color
+	  	if( restimo_get_option('heading_color') != '#131E30' ){
+			$color_scheme = 
+			'
+			/****Heading Color****/
+			.icon-box .title-box a,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6{ color: '.restimo_get_option('heading_color').';}
+				';
+		}
+
+		if( !empty($color_scheme) ){
+			echo '<style type="text/css">'.$color_scheme.'</style>';
+		}
+
+		//Button Hover and Dark Color
+	  	if( restimo_get_option('btn_hover_dark') != '#131E30' ){
 			$color_scheme = 
 			'
 			/****Secondary Color****/
-			.xp-heading .main-head,
-			.xp-heading .main-head{ color: '.restimo_get_option('secondary_colorrrr').';}
+			.xptf-btn.xptf-btn-dark,
+			.xptf-btn:hover,
+			.xptf-btn:focus{ background: '.restimo_get_option('btn_hover_dark').';}
 				';
 		}
 
