@@ -1090,9 +1090,9 @@ function restimo_customize_settings() {
             'default'  => '#C19977',
             'priority' => 10,
         ),
-        'secondary_color'   => array(
+        'secondary_colorrrr'   => array(
             'type'     => 'color',
-            'label'    => esc_html__( 'Secondary Color', 'restimo' ),
+            'label'    => esc_html__( 'Secondary Colorrrr', 'restimo' ),
             'section'  => 'color_scheme',
             'default'  => '#cccccc',
             'priority' => 10,

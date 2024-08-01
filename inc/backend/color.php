@@ -6,12 +6,12 @@ if(!function_exists('restimo_color_scheme')){
 	  	$color_scheme = '';
 
 	  	//Secondary Color
-	  	if( restimo_get_option('secondary_color') != '#cccccc' ){
+	  	if( restimo_get_option('secondary_colorrrr') != '#cccccc' ){
 			$color_scheme = 
 			'
 			/****Secondary Color****/
 			.xp-heading .main-head {
-				color: '.restimo_get_option('secondary_color').';}
+				color: '.restimo_get_option('secondary_colorrrr').';}
 				';
 		}
 			
