@@ -14,6 +14,10 @@ if(!function_exists('restimo_color_scheme')){
 			.xp-heading .main-head{ color: '.restimo_get_option('secondary_colorrrr').';}
 				';
 		}
+
+		if( !empty($color_scheme) ){
+			echo '<style type="text/css">'.$color_scheme.'</style>';
+		}
 			
 
 
