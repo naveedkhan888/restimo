@@ -1094,7 +1094,7 @@ function restimo_customize_settings() {
             'type'     => 'color',
             'label'    => esc_html__( 'Secondary Color', 'restimo' ),
             'section'  => 'color_scheme',
-            'default'  => '#ccc',
+            'default'  => '#cccccc',
             'priority' => 10,
         ),
 
