@@ -7153,6 +7153,9 @@ div.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 .header-mobile .is-stuck {
   background-color: #131E30;
 }
+.is-fixed.is-stuck {
+  box-shadow: 15px 15px 38px 0px rgba(0, 0, 0, 0.09);
+}
 
 .mmenu-toggle button {
   background: none;
