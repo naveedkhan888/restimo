@@ -5,7 +5,7 @@ if(!function_exists('restimo_color_scheme')){
     function restimo_color_scheme(){
 	  	$color_scheme = '';
 
-	  	//Main Color
+	  	//Secondary Color
 	  	if( restimo_get_option('secondary_color') != '#ccc' ){
 			$color_scheme = 
 			'
