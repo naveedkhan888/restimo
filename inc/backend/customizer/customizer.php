@@ -1090,6 +1090,13 @@ function restimo_customize_settings() {
             'default'  => '#C19977',
             'priority' => 10,
         ),
+        'secondary_color'   => array(
+            'type'     => 'color',
+            'label'    => esc_html__( 'Secondary Color', 'restimo' ),
+            'section'  => 'color_scheme',
+            'default'  => '#ccc',
+            'priority' => 10,
+        ),
 
         /*google atlantic*/
         'js_code'  => array(

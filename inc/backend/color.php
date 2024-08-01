@@ -6,6 +6,18 @@ if(!function_exists('restimo_color_scheme')){
 	  	$color_scheme = '';
 
 	  	//Main Color
+	  	if( restimo_get_option('secondary_color') != '#ccc' ){
+			$color_scheme = 
+			'
+			/****Secondary Color****/
+			.xp-heading .main-head {
+				color: '.restimo_get_option('secondary_color').';}
+				';
+		}
+			
+
+
+	  	//Main Color
 	  	if( restimo_get_option('main_color') != '#C19977' ){
 			$color_scheme = 
 			'
@@ -176,9 +188,11 @@ if(!function_exists('restimo_color_scheme')){
 				';
 		}
 
+
 	  	if( !empty($color_scheme) ){
 			echo '<style type="text/css">'.$color_scheme.'</style>';
 		}
+
     }
 }
 add_action('wp_head', 'restimo_color_scheme');
