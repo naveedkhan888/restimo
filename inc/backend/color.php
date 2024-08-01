@@ -10,7 +10,8 @@ if(!function_exists('restimo_color_scheme')){
 			$color_scheme = 
 			'
 			/****Secondary Color****/
-			.xp-heading .main-head {
+			.xp-heading .main-head,
+			.xp-heading .main-head{
 				color: '.restimo_get_option('secondary_colorrrr').';}
 				';
 		}
