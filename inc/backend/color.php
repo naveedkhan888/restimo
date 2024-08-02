@@ -11,6 +11,12 @@ if(!function_exists('restimo_color_scheme')){
 			'
 			/****Heading Color****/
 			.icon-box .title-box a,
+			.panel-btn i,
+			.xptf-cta-header .toggle_search i,
+			.xp-minicart:hover,
+			.xp-minicart:visited,
+			.xp-minicart:focus,
+			.xp-minicart,
 			h1,
 			h2,
 			h3,
@@ -43,14 +49,7 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce button.button.alt.disabled:hover,
 			.xptf-btn:hover,
 			.xptf-btn:focus{ background: '.restimo_get_option('btn_hover_dark').';}
-			.panel-btn i,
-			.xptf-cta-header .toggle_search i,
-			.xp-minicart:hover,
-			.xp-minicart:visited,
-			.xp-minicart:focus,
-			.xp-minicart{ color: '.restimo_get_option('btn_hover_dark').';}
 				';
-			}
 		}
 
 		if( !empty($color_scheme) ){
