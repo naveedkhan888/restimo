@@ -13,6 +13,7 @@ if(!function_exists('restimo_color_scheme')){
 			a { color: '.restimo_get_option('heading_color').';}
 			.icon-box .title-box a,
 			.xp-switcher > span,
+			.woocommerce table.shop_table,
 			.post-box .entry-title a,
 			.post-box .entry-meta .btn-details,
 			.xp-counter-2 .c-number,
@@ -46,6 +47,7 @@ if(!function_exists('restimo_color_scheme')){
 			'
 			/****Secondary Color****/
 			.xptf-btn.xptf-btn-dark,
+			.woocommerce button.button:hover,
 			.post-box .post-cat a:hover,
 			.search-form .search-submit:hover,
 			.woocommerce-mini-cart__buttons a.button.checkout.wc-forward,
