@@ -48,6 +48,8 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce input.button:hover,
 			.woocommerce button.button.alt.disabled:hover,
 			.xptf-btn:hover,
+			.woocommerce ul.products li.product .add_to_cart_button:hover,
+			.woocommerce-page ul.products li.product .add_to_cart_button:hover,
 			.xptf-btn:focus{ background: '.restimo_get_option('btn_hover_dark').';}
 				';
 		}
