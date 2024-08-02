@@ -17,6 +17,7 @@ if(!function_exists('restimo_color_scheme')){
 			.xp-minicart:visited,
 			.xp-minicart:focus,
 			.xp-minicart,
+			.mmenu-toggle button,
 			h1,
 			h2,
 			h3,
@@ -222,6 +223,10 @@ if(!function_exists('restimo_color_scheme')){
 			.border_clr.elementor-widget-divider.elementor-view-framed .elementor-icon, 
 			.border_clr.elementor-widget-divider.elementor-view-default .elementor-icon svg {
 			  fill: '.restimo_get_option('main_color').';
+			}
+			.border_clr.elementor-widget-divider.elementor-view-framed .elementor-icon, 
+			.border_clr.elementor-widget-divider.elementor-view-default .elementor-icon {
+			  color: '.restimo_get_option('main_color').';
 			}
 			.border_clr.elementor-widget-divider {
 			  --divider-color: '.restimo_get_option('main_color').'; }
