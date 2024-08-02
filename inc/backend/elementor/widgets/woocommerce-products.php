@@ -60,7 +60,7 @@ class Restimo_WooCommerce_Products extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .woocommerce-products .product-title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .woocommerce-products .product-title a' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -73,6 +73,18 @@ class Restimo_WooCommerce_Products extends Widget_Base {
                 'default' => '',
                 'selectors' => [
                     '{{WRAPPER}} .woocommerce-products .product-price' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'button_color',
+            [
+                'label' => __( 'Button Color', 'restimo' ),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#000000',
+                'selectors' => [
+                    '{{WRAPPER}} .woocommerce-products .add-to-cart-button' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -99,16 +111,33 @@ class Restimo_WooCommerce_Products extends Widget_Base {
         $settings = $this->get_settings_for_display();
 
         if ( ! empty( $settings['products'] ) ) {
-            echo '<div class="woocommerce-products">';
+            $column_class = 'columns-' . $settings['product_grid_columns'];
+            echo '<div class="woocommerce-products ' . esc_attr( $column_class ) . '">';
             foreach ( $settings['products'] as $product_id ) {
                 $product_id = intval( $product_id );
                 $product_obj = wc_get_product( $product_id );
 
                 if ( $product_obj ) {
-                    echo '<div class="product">';
-                    echo '<h3 class="product-title">' . esc_html( $product_obj->get_name() ) . '</h3>';
-                    echo '<p class="product-price">' . wp_kses_post( $product_obj->get_price_html() ) . '</p>';
-                    echo '</div>';
+                    $product_link = get_permalink( $product_id );
+                    $product_image = wp_get_attachment_image_src( $product_obj->get_image_id(), 'full' );
+                    ?>
+                    <div class="product">
+                        <?php if ( $product_image ) : ?>
+                            <a href="<?php echo esc_url( $product_link ); ?>" class="product-image">
+                                <img src="<?php echo esc_url( $product_image[0] ); ?>" alt="<?php echo esc_attr( $product_obj->get_name() ); ?>">
+                            </a>
+                        <?php endif; ?>
+                        <h3 class="product-title">
+                            <a href="<?php echo esc_url( $product_link ); ?>"><?php echo esc_html( $product_obj->get_name() ); ?></a>
+                        </h3>
+                        <p class="product-price"><?php echo wp_kses_post( $product_obj->get_price_html() ); ?></p>
+                        <?php if ( function_exists( 'wc_get_cart_url' ) ) : ?>
+                            <a href="?add-to-cart=<?php echo esc_attr( $product_id ); ?>" class="add-to-cart-button">
+                                <?php _e( 'Add to Cart', 'restimo' ); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <?php
                 }
             }
             echo '</div>';
