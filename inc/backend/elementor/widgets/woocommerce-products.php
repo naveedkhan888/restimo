@@ -34,16 +34,11 @@ class Restimo_WooCommerce_Products extends Widget_Base {
             'products',
             [
                 'label' => __( 'Products', 'restimo' ),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => [
-                    [
-                        'name' => 'product_id',
-                        'label' => __( 'Product ID', 'restimo' ),
-                        'type' => Controls_Manager::TEXT,
-                        'default' => '',
-                    ],
-                ],
-                'title_field' => '{{{ product_id }}}',
+                'type' => Controls_Manager::SELECT2,
+                'multiple' => true,
+                'options' => $this->get_woocommerce_products(),
+                'default' => [],
+                'label_block' => true,
             ]
         );
 
@@ -82,6 +77,21 @@ class Restimo_WooCommerce_Products extends Widget_Base {
             ]
         );
 
+        $this->add_responsive_control(
+            'product_grid_columns',
+            [
+                'label' => __( 'Columns', 'restimo' ),
+                'type' => Controls_Manager::NUMBER,
+                'default' => 3,
+                'min' => 1,
+                'max' => 6,
+                'step' => 1,
+                'selectors' => [
+                    '{{WRAPPER}} .woocommerce-products' => 'grid-template-columns: repeat({{VALUE}}, 1fr);',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
     }
 
@@ -90,8 +100,8 @@ class Restimo_WooCommerce_Products extends Widget_Base {
 
         if ( ! empty( $settings['products'] ) ) {
             echo '<div class="woocommerce-products">';
-            foreach ( $settings['products'] as $item ) {
-                $product_id = intval( $item['product_id'] );
+            foreach ( $settings['products'] as $product_id ) {
+                $product_id = intval( $product_id );
                 $product_obj = wc_get_product( $product_id );
 
                 if ( $product_obj ) {
@@ -106,7 +116,21 @@ class Restimo_WooCommerce_Products extends Widget_Base {
     }
 
     public function get_keywords() {
-        return [ 'woocommerce', 'products', 'gallery' ];
+        return [ 'woocommerce', 'products', 'grid', 'gallery' ];
+    }
+
+    private function get_woocommerce_products() {
+        $products = wc_get_products( array(
+            'status' => 'publish',
+            'limit'  => -1,
+        ) );
+
+        $options = [];
+        foreach ( $products as $product ) {
+            $options[ $product->get_id() ] = $product->get_name();
+        }
+
+        return $options;
     }
 }
 
