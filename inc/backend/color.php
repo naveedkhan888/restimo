@@ -11,7 +11,11 @@ if(!function_exists('restimo_color_scheme')){
 			'
 			/****Heading Color****/
 			.icon-box .title-box a,
+			.post-box .entry-title a,
+			.post-box .entry-meta .btn-details,
 			.panel-btn i,
+			.widget .recent-news h6 a,
+			.widget-area .widget ul:not(.recent-news) > li a,
 			.xptf-cta-header .toggle_search i,
 			.xp-minicart:hover,
 			.xp-minicart:visited,
