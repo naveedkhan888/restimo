@@ -12,8 +12,10 @@ if(!function_exists('restimo_color_scheme')){
 			/****Heading Color****/
 			a { color: '.restimo_get_option('heading_color').';}
 			.icon-box .title-box a,
+			.xp-switcher > span,
 			.post-box .entry-title a,
 			.post-box .entry-meta .btn-details,
+			.xp-counter-2 .c-number,
 			.panel-btn i,
 			.xp-tabs .tab-link,
 			.xp-accordions .acc-item .acc-toggle,
