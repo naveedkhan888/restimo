@@ -30,7 +30,20 @@ if(!function_exists('restimo_color_scheme')){
 			'
 			/****Secondary Color****/
 			.xptf-btn.xptf-btn-dark,
+			.panel-btn i,
+			.xptf-cta-header .toggle_search i,
+			.xp-minicart:hover,
+			.xp-minicart:visited,
+			.xp-minicart:focus,
+			.xp-minicart,
 			.post-box .post-cat a:hover,
+			.search-form .search-submit:hover,
+			.woocommerce-mini-cart__buttons a.button.checkout.wc-forward,
+			.woocommerce #respond input#submit.alt:hover,
+			.woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover,
+			.woocommerce input.button.alt:hover, .woocommerce #respond input#submit:hover,
+			.woocommerce a.button:hover, .woocommerce input.button:hover,
+			.woocommerce button.button.alt.disabled:hover,
 			.xptf-btn:hover,
 			.xptf-btn:focus{ background: '.restimo_get_option('btn_hover_dark').';}
 				';
