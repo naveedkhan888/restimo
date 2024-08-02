@@ -30,6 +30,7 @@ if(!function_exists('restimo_color_scheme')){
 			'
 			/****Secondary Color****/
 			.xptf-btn.xptf-btn-dark,
+			.post-box .post-cat a:hover,
 			.xptf-btn:hover,
 			.xptf-btn:focus{ background: '.restimo_get_option('btn_hover_dark').';}
 				';
