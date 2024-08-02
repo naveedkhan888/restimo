@@ -43,8 +43,6 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce button.button.alt.disabled:hover,
 			.xptf-btn:hover,
 			.xptf-btn:focus{ background: '.restimo_get_option('btn_hover_dark').';}
-
-			/***** Colors ***/
 			.panel-btn i,
 			.xptf-cta-header .toggle_search i,
 			.xp-minicart:hover,
