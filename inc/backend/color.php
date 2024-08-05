@@ -80,7 +80,6 @@ if(!function_exists('restimo_color_scheme')){
 
 			/*Background Color*/
 			.bg-primary,
-			.slide-rev-subtitle,
 			.elementor-social-icons-wrapper a.elementor-social-icon,
 			.xptf-btn.xptf-btn-dark:hover,
 			.xptf-btn.xptf-btn-dark:focus,
@@ -129,7 +128,9 @@ if(!function_exists('restimo_color_scheme')){
 			.woocommerce button.button,
 			.woocommerce-mini-cart__buttons a.button.wc-forward,
 			.woocommerce-mini-cart__buttons a.button.wc-forward:hover{ background: '.restimo_get_option('main_color').'; }
-			.tab-titles .title-item a.tab-active, .tab-titles .title-item a:hover {
+			.tab-titles .title-item a.tab-active,
+			.tab-titles .title-item a:hover,
+			.slide-rev-subtitle {
 				background: '.restimo_get_option('main_color').' !important;
 			}
 			.post-box .entry-meta .btn-details:hover, 
