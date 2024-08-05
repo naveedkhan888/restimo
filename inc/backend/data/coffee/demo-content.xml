@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.6.1" created="2024-08-05 08:59" -->
+	<!-- generator="WordPress/6.6.1" created="2024-08-05 10:10" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -26,10 +26,10 @@
 >
 
 <channel>
-	<title>Coffee</title>
+	<title>Restimo</title>
 	<link>https://dpsample.com/wp_themes/restimo/coffee</link>
-	<description>Restimo Restaurant Wordpress Theme</description>
-	<pubDate>Mon, 05 Aug 2024 08:59:32 +0000</pubDate>
+	<description>Restaurant Wordpress Theme</description>
+	<pubDate>Mon, 05 Aug 2024 10:10:34 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dpsample.com/wp_themes/restimo/coffee</wp:base_site_url>
@@ -326,7 +326,7 @@
 
 <image>
 	<url>https://dpsample.com/wp_themes/restimo/coffee/wp-content/uploads/2024/08/facicon.png</url>
-	<title>Coffee</title>
+	<title>Restimo</title>
 	<link>https://dpsample.com/wp_themes/restimo/coffee</link>
 	<width>32</width>
 	<height>32</height>
@@ -2344,8 +2344,8 @@
 		<wp:post_id>7</wp:post_id>
 		<wp:post_date><![CDATA[2024-08-01 06:21:44]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-08-01 06:21:44]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2024-08-05 06:26:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2024-08-05 06:26:10]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2024-08-05 09:46:14]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2024-08-05 09:46:14]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[default-kit]]></wp:post_name>
@@ -2369,7 +2369,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:2:{s:9:"site_name";s:6:"Coffee";s:16:"site_description";s:34:"Restimo Restaurant Wordpress Theme";}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:2:{s:9:"site_name";s:7:"Restimo";s:16:"site_description";s:26:"Restaurant Wordpress Theme";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -7477,8 +7477,8 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -8522,8 +8522,8 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -8664,8 +8664,8 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -8806,8 +8806,8 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -8950,8 +8950,8 @@ This new sixth edition has been revised to address current challenges, and inclu
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -9086,8 +9086,8 @@ This new sixth edition has been revised to address current challenges, and inclu
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -9222,8 +9222,8 @@ This new sixth edition has been revised to address current challenges, and inclu
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -9358,8 +9358,8 @@ This new sixth edition has been revised to address current challenges, and inclu
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -9494,8 +9494,8 @@ This new sixth edition has been revised to address current challenges, and inclu
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -9630,8 +9630,8 @@ This new sixth edition has been revised to address current challenges, and inclu
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -10234,8 +10234,8 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -10396,8 +10396,8 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>
@@ -10558,8 +10558,8 @@ Duis maximus ipsum id arcu euismod ultricies. Donec tincidunt enim eu leo sodale
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="product_tag" nicename="breakfast"><![CDATA[Breakfast]]></category>
 		<category domain="product_tag" nicename="dinner"><![CDATA[Dinner]]></category>
-		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="food"><![CDATA[Food]]></category>
+		<category domain="product_cat" nicename="food"><![CDATA[Food]]></category>
 		<category domain="product_tag" nicename="lunch"><![CDATA[Lunch]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 						<wp:postmeta>

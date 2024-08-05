@@ -53,7 +53,7 @@ function restimo_importer() {
 			)
 		),
 		array(
-			'name'       => 'Coffee',
+			'name'       => 'Coffee 1',
 			'preview'    => get_template_directory_uri().'/inc/backend/data/coffee/home1.jpg',
 			'content'    => get_template_directory_uri().'/inc/backend/data/coffee/demo-content.xml',
 			'customizer' => get_template_directory_uri().'/inc/backend/data/coffee/customizer.dat',
