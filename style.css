@@ -1226,6 +1226,11 @@ a:hover, a:active {
 }
 
 /* Main Menu */
+
+.main-navigation > ul > li.current_page_item > a, 
+.main-navigation > ul > li.current-menu-parent > a {
+  color: #C19977;
+}
 .main-navigation {
   position: relative;
   display: inline-block;
