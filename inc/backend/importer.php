@@ -71,6 +71,25 @@ function restimo_importer() {
 				'primary'   => 'main-menu',
 			)
 		),
+		array(
+			'name'       => 'Pizza',
+			'preview'    => get_template_directory_uri().'/inc/backend/data/pizza/home1.jpg',
+			'content'    => get_template_directory_uri().'/inc/backend/data/pizza/demo-content.xml',
+			'customizer' => get_template_directory_uri().'/inc/backend/data/pizza/customizer.dat',
+			'widgets'    => get_template_directory_uri().'/inc/backend/data/pizza/widgets.wie',
+			'sliders'    => get_template_directory_uri().'/inc/backend/data/pizza/sliders.zip',
+			'pages'      => array(
+				'front_page' => 'Home',
+				'blog'       => 'Blog',
+				'shop'       => 'Shop',
+				'cart'       => 'Cart',
+				'checkout'   => 'Checkout',
+				'my_account' => 'My Account',
+			),
+			'menus'      => array(
+				'primary'   => 'main-menu',
+			)
+		),
 	);
 }
 
