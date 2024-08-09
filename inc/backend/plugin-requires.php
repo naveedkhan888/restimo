@@ -11,16 +11,6 @@ function restimo_register_required_plugins() {
 	$protocol = is_ssl() ? 'https' : 'http';
 	$plugins = array(
 		array(
-			'name'               => esc_html__( 'Widget Importer & Exporter', 'restimo' ),
-			'slug'               => 'widget-importer-exporter',
-			'required'           => true,
-		),
-		array(
-			'name'               => esc_html__( 'Customizer Export/Import', 'restimo' ),
-			'slug'               => 'customizer-export-import',
-			'required'           => true,
-		),
-		array(
 			'name'               => esc_html__( 'Meta Box', 'restimo' ),
 			'slug'               => 'meta-box',
 			'required'           => true,
