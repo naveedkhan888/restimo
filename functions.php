@@ -131,12 +131,12 @@ function restimo_fonts_url() {
 	$body_font = restimo_get_option( 'body_typo', [] );
 	$second_font = restimo_get_option( 'second_font', [] );
 
-	if ( is_array($body_font) && isset($body_font['font-family']) && $body_font['font-family'] == '' ) {
-    $font_families[] = 'Open Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
+	if ( $body_font['font-family'] == '' ) {
+		$font_families[] = 'Open Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
 	}
 
-	if ( is_array($second_font) && isset($second_font['font-family']) && $second_font['font-family'] == '' ) {
-    $font_families[] = 'Merienda:300,400,500,600,700,800,900';
+	if ( $second_font['font-family'] == '' ) {
+		$font_families[] = 'Merienda:300,400,500,600,700,800,900';
 	}
 
 	if ( $font_families ) {
