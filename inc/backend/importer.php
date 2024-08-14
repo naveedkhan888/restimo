@@ -17,10 +17,10 @@ function restimo_importer() {
 		array(
 			'name'       => 'Home Main',
 			'preview'    => get_template_directory_uri().'/inc/backend/data/main/home1.jpg',
-			'content'    => get_template_directory_uri().'/inc/backend/data/main/demo-content.xml',
-			'customizer' => get_template_directory_uri().'/inc/backend/data/main/customizer.dat',
-			'widgets'    => get_template_directory_uri().'/inc/backend/data/main/widgets.wie',
-			'sliders'    => get_template_directory_uri().'/inc/backend/data/main/sliders.zip',
+			'content'    => get_template_directory_uri().'/inc/backend/data/main/demo-content-main.xml',
+			'customizer' => get_template_directory_uri().'/inc/backend/data/main/customizer-new.dat',
+			'widgets'    => get_template_directory_uri().'/inc/backend/data/main/widgets-main.wie',
+			//'sliders'    => get_template_directory_uri().'/inc/backend/data/main/sliders.zip',
 			'pages'      => array(
 				'front_page' => 'Home',
 				'blog'       => 'Blog',
