@@ -34,6 +34,25 @@ function restimo_importer() {
 			)
 		),
 		array(
+			'name'       => 'Home Main',
+			'preview'    => get_template_directory_uri().'/inc/backend/data/maintheme/home1.jpg',
+			'content'    => get_template_directory_uri().'/inc/backend/data/maintheme/demo-content.xml',
+			'customizer' => get_template_directory_uri().'/inc/backend/data/maintheme/customizer.dat',
+			'widgets'    => get_template_directory_uri().'/inc/backend/data/maintheme/widgets.wie',
+			//'sliders'    => get_template_directory_uri().'/inc/backend/data/main/sliders.zip',
+			'pages'      => array(
+				'front_page' => 'Home',
+				'blog'       => 'Blog',
+				'shop'       => 'Shop',
+				'cart'       => 'Cart',
+				'checkout'   => 'Checkout',
+				'my_account' => 'My Account',
+			),
+			'menus'      => array(
+				'primary'   => 'main-menu',
+			)
+		),
+		array(
 			'name'       => 'Restaurant 1',
 			'preview'    => get_template_directory_uri().'/inc/backend/data/restaurant/home1.jpg',
 			'content'    => get_template_directory_uri().'/inc/backend/data/restaurant/demo-content.xml',
