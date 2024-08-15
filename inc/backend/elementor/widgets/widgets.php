@@ -24,8 +24,8 @@ require_once( get_template_directory() . '/inc/backend/elementor/widgets/switche
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/pricing-table.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/tab-titles.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/post-carousel.php' );
-require_once( get_template_directory() . '/inc/backend/elementor/widgets/portfolio-filter.php' );
-require_once( get_template_directory() . '/inc/backend/elementor/widgets/portfolio-carousel.php' );
+//require_once( get_template_directory() . '/inc/backend/elementor/widgets/portfolio-filter.php' );
+//require_once( get_template_directory() . '/inc/backend/elementor/widgets/portfolio-carousel.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/video-button.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/message-box.php' );
 require_once( get_template_directory() . '/inc/backend/elementor/widgets/contact-form7.php' );
