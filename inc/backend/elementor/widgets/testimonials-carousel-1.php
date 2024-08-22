@@ -610,14 +610,22 @@ class Restimo_Testimonials extends Widget_Base{
 
 		?>
 
-		<div class="xp-testimonials xp-testimonials-carousel <?php if( $settings['is_reverse'] == 'yes' ) echo 'is-reverse'; ?>" data-loop="<?php echo $settings['loop']; ?>" data-auto="<?php echo $settings['autoplay']; ?>" data-time="<?php echo $settings['timeout']['size']; ?>" data-arrows="<?php echo $settings['arrows']; ?>" data-dots="<?php echo $settings['dots']; ?>" data-show="<?php echo esc_attr( $shows ); ?>" data-tshow="<?php echo esc_attr( $tshows ); ?>" data-mshow="<?php echo esc_attr( $mshows ); ?>">
+		<div class="xp-testimonials xp-testimonials-carousel <?php echo esc_attr( $settings['is_reverse'] == 'yes' ? 'is-reverse' : '' ); ?>" 
+     data-loop="<?php echo esc_attr( $settings['loop'] ); ?>" 
+     data-auto="<?php echo esc_attr( $settings['autoplay'] ); ?>" 
+     data-time="<?php echo esc_attr( $settings['timeout']['size'] ); ?>" 
+     data-arrows="<?php echo esc_attr( $settings['arrows'] ); ?>" 
+     data-dots="<?php echo esc_attr( $settings['dots'] ); ?>" 
+     data-show="<?php echo esc_attr( $shows ); ?>" 
+     data-tshow="<?php echo esc_attr( $tshows ); ?>" 
+     data-mshow="<?php echo esc_attr( $mshows ); ?>">
 			<div class="owl-carousel owl-theme">
 				<?php if ( ! empty( $settings['testi_slider'] ) ) : foreach ( $settings['testi_slider'] as $testi ) : ?>
 				<div class="testi-item">
 					<?php if($testi['tcontent']) { echo '<div class="ttext">' .$testi['tcontent']. '</div>'; } ?>			
 					<div class="t-head flex-middle">
 						<?php if($testi['timage']['url']) { ?>
-							<div class="tphoto"><img src="<?php echo $testi['timage']['url']; ?>" alt="<?php echo $testi['tname']; ?>"></div>
+							<div class="tphoto"><img src="<?php echo esc_url( $testi['timage']['url'] ); ?>" alt="<?php echo esc_attr( $testi['tname'] ); ?>"></div>
 						<?php } ?>
 						<div class="tinfo">
 							<?php if($testi['tname']) { echo '<h6>' .$testi['tname']. '</h6>'; } ?>

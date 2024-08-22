@@ -44,7 +44,7 @@ class Restimo_Menu_Mobile extends Widget_Base{
 				'type' => Controls_Manager::SELECT,
 				'multiple' => false,
 				'options' => $menus,
-				'default' => array_keys( $menus )[0],
+				'default' => array_keys( $menus ),
 				'save_default' => true,
 
 			]
@@ -186,7 +186,7 @@ class Restimo_Menu_Mobile extends Widget_Base{
 					<button><i class="xp-flaticon-menu"></i></button>
 				</div>
 				<div class="site-overlay mmenu-overlay"></div>
-				<div id="mmenu-wrapper" class="mmenu-wrapper <?php echo $settings['pos_menu']; ?>">
+				<div id="mmenu-wrapper" class="mmenu-wrapper <?php echo esc_attr( $settings['pos_menu'] ); ?>">
 					<div class="mmenu-inner">
 						<a class="mmenu-close" href="#"><i class="xp-flaticon-arrowsoutline"></i></a>
 						<div class="mobile-nav">

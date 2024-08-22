@@ -96,14 +96,16 @@ class Restimo_Cart extends Widget_Base{
 		if ( null === WC()->cart ) {
 			return;
 		}
-		$product_count = sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() );
+		$product_count = sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count(), 'restimo' ), WC()->cart->get_cart_contents_count() );
 		$cart_url = esc_url( wc_get_cart_url() );
 
 		$widget_cart_is_hidden = apply_filters( 'woocommerce_widget_cart_is_hidden', false );
 		?>
 		<?php if ( ! $widget_cart_is_hidden ) : ?>
 			<div class="xptf-cart xptf-cta-header">
-				<a class="cart-contents xp-minicart" href="<?php echo $cart_url; ?>" title="<?php esc_attr_e( 'View your shopping cart', 'restimo' ); ?>"><i class="xp-flaticon-business"></i> <span class="count"><?php echo $product_count; ?></span>
+				<a class="cart-contents xp-minicart" href="<?php echo esc_url( $cart_url ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'restimo' ); ?>">
+				    <i class="xp-flaticon-business"></i>
+				    <span class="count"><?php echo esc_html( $product_count ); ?></span>
 				</a>
 				<?php if( !is_cart() && !is_checkout() ) { ?>
 				<div class="site-header-cart">
