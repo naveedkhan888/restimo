@@ -254,3 +254,5 @@ require get_template_directory() . '/inc/frontend/builder.php';
 if ( class_exists( 'woocommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce/woocommerce.php';
 }
+
+
