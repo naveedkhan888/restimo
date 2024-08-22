@@ -58,7 +58,7 @@ class Restimo_Post_Carousel extends Widget_Base{
 		$this->add_control(
 			'exc',
 			[
-				'label' => esc_html__( 'Excerpt Length', 'theratio' ),
+				'label' => esc_html__( 'Excerpt Length', 'restimo' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => '0',
 			]
