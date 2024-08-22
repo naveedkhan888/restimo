@@ -30,11 +30,11 @@ class restimo_recent_news extends WP_Widget {
 
     // before and after widget arguments are defined by themes
 
-    echo htmlspecialchars_decode($args['before_widget']);
+    echo wp_specialchars_decode($args['before_widget']);
 
     if ( ! empty( $title ) ){
 
-    	echo htmlspecialchars_decode($args['before_title']) . $title . htmlspecialchars_decode($args['after_title']); 
+    	echo wp_specialchars_decode($args['before_title']) . $title . wp_specialchars_decode($args['after_title']); 
 
     }?>
             <ul class="recent-news clearfix">
@@ -71,19 +71,19 @@ class restimo_recent_news extends WP_Widget {
                 <?php
                     $post_title   = get_the_title( $recent_post->ID );
                     $post_thumb   = get_the_post_thumbnail( $recent_post->ID, 'thumbnail' );
-                    $title        = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)' );
+                    $title        = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)', 'restimo' );
                 ?>
                 <li class="clearfix"> 
                     <?php if( $post_thumb ) { ?>
                     <div class="thumb">
                         <a href="<?php the_permalink( $recent_post->ID ); ?>">
-                            <?php echo $post_thumb; ?>
+                            <?php echo wp_kses_post( $post_thumb ); ?>
                         </a>
                     </div>
                     <?php } ?>
                     <div class="entry-header">
                         <h6>
-                            <a href="<?php the_permalink( $recent_post->ID ); ?>"><?php echo $title; ?></a>
+                            <a href='<?php echo esc_url( get_permalink( $recent_post->ID ) ); ?>'><?php echo esc_html( $title ); ?></a>
                         </h6>
                         <?php if($date) { ?>
                         <span class="post-on">
@@ -97,7 +97,7 @@ class restimo_recent_news extends WP_Widget {
 
     <?php 
 
-    echo htmlspecialchars_decode($args['after_widget']);
+    echo wp_specialchars_decode($args['after_widget']);
 
     }
 
