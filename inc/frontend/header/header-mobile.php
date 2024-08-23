@@ -22,7 +22,6 @@
 						wp_nav_menu( array(
 							'menu' 			 => array_keys( $options )[0],
 							'menu_class'     => 'mobile_mainmenu none-style',
-							'theme_location' => 'primary',
 							'container'      => '',
 						) );
 					}

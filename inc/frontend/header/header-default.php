@@ -21,7 +21,7 @@
 										$options[ $menu->slug ] = $menu->name;
 									}
 									wp_nav_menu( array(
-										'menu' 			 => array_keys( $options ),
+										'menu' 			 => array_keys( $options )[0],
 										'menu_id'        => 'primary-menu',
 										'container'      => 'ul',
 									) );
