@@ -77,7 +77,7 @@ class restimo_recent_news extends WP_Widget {
                     <?php if( $post_thumb ) { ?>
                     <div class="thumb">
                         <a href="<?php the_permalink( $recent_post->ID ); ?>">
-                            <?php echo wp_kses_post( $post_thumb ); ?>
+                            <?php echo $post_thumb; ?>
                         </a>
                     </div>
                     <?php } ?>
