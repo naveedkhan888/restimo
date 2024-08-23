@@ -157,16 +157,18 @@ class restimo_recent_news extends WP_Widget {
 
 } // Class wpb_widget ends here
 
-// Check if the Restimo theme is active before registering the widget
-if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
-    
-    // Function to register the Restimo Recent News Widget
+if ( ! function_exists( 'restimo_wpb_recent_news' ) ) {
+
     function restimo_wpb_recent_news() {
+        // Register the Restimo Recent News Widget
         register_widget( 'restimo_recent_news' );
     }
 
-    // Hook the registration function into widgets_init
+    // Ensure the function is only executed after the theme is set up
     add_action( 'after_setup_theme', function() {
-        add_action( 'widgets_init', 'restimo_wpb_recent_news' );
+        if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
+            add_action( 'widgets_init', 'restimo_wpb_recent_news' );
+        }
     });
 }
+

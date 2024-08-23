@@ -174,16 +174,17 @@ class Restimo_Author_Widget extends WP_Widget {
     }  
  
 }
-// Check if the Restimo theme is active before registering the widget
-if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
-    
-    // Function to register the Restimo Author Widget
+if ( ! function_exists( 'restimo_author_register_widgets' ) ) {
+
     function restimo_author_register_widgets() {
+        // Register the Restimo Author Widget
         register_widget( 'Restimo_Author_Widget' );
     }
 
-    // Hook the registration function into widgets_init
+    // Ensure the function is only executed after the theme is set up
     add_action( 'after_setup_theme', function() {
-        add_action( 'widgets_init', 'restimo_author_register_widgets' );
+        if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
+            add_action( 'widgets_init', 'restimo_author_register_widgets' );
+        }
     });
 }
