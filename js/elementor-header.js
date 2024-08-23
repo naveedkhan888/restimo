@@ -27,10 +27,10 @@
         selector.find('.toggle_search').on("click", function(){
           $(this).toggleClass( "active" );
           selector.find('.h-search-form-field').toggleClass('show');
-          if ($(this).find('i').hasClass( "xp-webicon-search-1" )) {
-            $(this).find('i').removeClass( "xp-webicon-search-1" ).addClass("xp-webicon-cancel");
+          if ($(this).find('i').hasClass( "xp-flaticon-search-1" )) {
+            $(this).find('i').removeClass( "xp-flaticon-search-1" ).addClass("xp-flaticon-cancel");
           }else{
-            $(this).find('i').removeClass( "xp-webicon-cancel" ).addClass("xp-webicon-search-1");
+            $(this).find('i').removeClass( "xp-flaticon-cancel" ).addClass("xp-flaticon-search-1");
           }
         });
       });
@@ -54,7 +54,7 @@
   
           $('#mmenu-toggle, .mmenu-close, .mmenu-overlay').on('click', mmenu_handler);
   
-          $('.mmenu-wrapper li:has(ul)').prepend('<span class="arrow"><i class="xp-webicon-next"></i></span>');
+          $('.mmenu-wrapper li:has(ul)').prepend('<span class="arrow"><i class="xp-flaticon-next"></i></span>');
           $(".mmenu-wrapper .mobile_mainmenu > li span.arrow").on('click',function() {
               $(this).parent().find("> ul").stop(true, true).slideToggle()
               $(this).toggleClass( "active" ); 

@@ -125,11 +125,11 @@ msgid "5 Column"
 msgstr ""
 
 #: inc/backend/elementor/widgets/flip-box.php:92
-msgid "<i class=\"xp-webicon-trajectory\"></i> Explore More"
+msgid "<i class=\"xp-flaticon-trajectory\"></i> Explore More"
 msgstr ""
 
 #: inc/backend/elementor/widgets/icon-box-1.php:132
-msgid "<i class=\"xp-webicon-trajectory\"></i> Learn More"
+msgid "<i class=\"xp-flaticon-trajectory\"></i> Learn More"
 msgstr ""
 
 #: inc/backend/elementor/widgets/pricing-table.php:67

@@ -502,7 +502,7 @@ class Restimo_Features_Service extends Widget_Base{
 							<div class="flex-middle features-service-link">
 								<a <?php echo wp_kses_post($this->get_render_attribute_string('link' . $key)); ?>>
 									<span class="btn-text"><?php echo esc_html($settings['btn_text']); ?></span>
-									<i class="xp-webicon-trajectory"></i>
+									<i class="xp-flaticon-trajectory"></i>
 								</a>
 							</div>
 							<?php } ?>

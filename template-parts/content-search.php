@@ -27,7 +27,7 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php if( restimo_get_option( 'post_entry_meta' ) ) { restimo_post_meta(); } ?>
-	        <a href="<?php the_permalink(); ?>" class="btn-details"><i class="xp-webicon-trajectory"></i></a>
+	        <a href="<?php the_permalink(); ?>" class="btn-details"><i class="xp-flaticon-trajectory"></i></a>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
     </div>

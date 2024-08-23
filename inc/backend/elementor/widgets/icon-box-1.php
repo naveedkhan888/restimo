@@ -129,7 +129,7 @@ class Restimo_IconBox1 extends Widget_Base{
 			[
 				'label' => __( 'Label Button', 'restimo' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __( '<i class="xp-webicon-trajectory"></i> Learn More', 'restimo' ),
+				'default' => __( '<i class="xp-flaticon-trajectory"></i> Learn More', 'restimo' ),
 				'condition' => [
 					'link[url]!' => '',
 				]

@@ -273,7 +273,7 @@ class Restimo_MessageBox extends Widget_Base{
 	            <h6><?php echo esc_html( $settings['title'] ); ?></h6>
 	            <p><?php echo esc_html( $settings['des'] ); ?></p>
 	        </div>
-	        <i class="xp-webicon-cancel"></i>
+	        <i class="xp-flaticon-cancel"></i>
 	    </div>
 	    <?php
 	}

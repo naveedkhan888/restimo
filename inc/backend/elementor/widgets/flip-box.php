@@ -89,7 +89,7 @@ class Restimo_Flip_Box extends Widget_Base{
 			[
 				'label' => 'Label Button',
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __( '<i class="xp-webicon-trajectory"></i> Explore More', 'restimo' ),
+				'default' => __( '<i class="xp-flaticon-trajectory"></i> Explore More', 'restimo' ),
 			]
 		);
 

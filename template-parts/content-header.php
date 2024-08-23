@@ -14,7 +14,7 @@
 <!-- #side-panel-open -->
 <?php if ( !empty( restimo_get_option('is_sidepanel') ) && restimo_get_option('sidepanel_layout') != '' ) { ?>
     <div id="side-panel" class="side-panel <?php if( restimo_get_option('panel_left') ) echo 'on-left'; ?>">
-        <a href="#" class="side-panel-close"><i class="xp-webicon-cancel"></i></a>
+        <a href="#" class="side-panel-close"><i class="xp-flaticon-cancel"></i></a>
         <div class="side-panel-block">
             <?php if ( did_action( 'elementor/loaded' ) ) restimo_sidepanel_builder(); ?>	
         </div>

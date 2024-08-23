@@ -40,7 +40,7 @@
 			},
 			type : 'POST',
 			beforeSend : function ( xhr ) { 
-				btn.text(loading).append('<i class="xp-webicon-refresh fas fa-spin"></i>'); // some type of preloader
+				btn.text(loading).append('<i class="xp-flaticon-refresh fas fa-spin"></i>'); // some type of preloader
 			},
 			success : function( data ){
 				if( data ) {

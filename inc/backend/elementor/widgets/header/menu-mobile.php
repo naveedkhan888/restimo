@@ -183,12 +183,12 @@ class Restimo_Menu_Mobile extends Widget_Base{
 			
 	    	<div class="xptf-menu-mobile xptf-cta-header">
 				<div id="mmenu-toggle" class="mmenu-toggle">
-					<button><i class="xp-webicon-menu"></i></button>
+					<button><i class="xp-flaticon-menu"></i></button>
 				</div>
 				<div class="site-overlay mmenu-overlay"></div>
 				<div id="mmenu-wrapper" class="mmenu-wrapper <?php echo esc_attr( $settings['pos_menu'] ); ?>">
 					<div class="mmenu-inner">
-						<a class="mmenu-close" href="#"><i class="xp-webicon-arrowsoutline"></i></a>
+						<a class="mmenu-close" href="#"><i class="xp-flaticon-arrowsoutline"></i></a>
 						<div class="mobile-nav">
 							<?php
 								wp_nav_menu( array(
