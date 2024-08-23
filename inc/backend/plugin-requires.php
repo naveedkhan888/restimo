@@ -54,6 +54,12 @@ function restimo_register_required_plugins() {
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
         ),
         array(            
+            'name'               => esc_html__( 'Core Code Restimo', 'restimo' ), // The plugin name.
+            'slug'               => 'core-code-restimo', // The plugin slug (typically the folder name).
+            'source'             => esc_url($protocol.'://dpsample.com/core-code-restimo.zip'), // The plugin source.
+            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+        ),
+        array(            
             'name'               => esc_html__( 'Revolution Slider', 'restimo' ), // The plugin name.
             'slug'               => 'revslider', // The plugin slug (typically the folder name).
             'source'             => esc_url($protocol.'://dpsample.com/revslider.zip'), // The plugin source.
