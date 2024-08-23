@@ -161,7 +161,7 @@ function restimo_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '4.0', 'all');
 	
 	/** load fonts icons **/
-    wp_enqueue_style( 'restimo-flaticon', get_template_directory_uri().'/css/flaticon.css');
+    wp_enqueue_style( 'restimo-flaticon', get_template_directory_uri().'/css/xpflaticon.css');
 
     /** Owl slider **/
 	wp_enqueue_style( 'owl-slider', get_template_directory_uri().'/css/owl.carousel.min.css');
