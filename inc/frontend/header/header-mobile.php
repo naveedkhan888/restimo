@@ -22,12 +22,13 @@
 						wp_nav_menu( array(
 							'menu' 			 => array_keys( $options )[0],
 							'menu_class'     => 'mobile_mainmenu none-style',
+							'theme_location' => 'primary',
 							'container'      => '',
 						) );
 					}
 					else{
 						wp_nav_menu( array(
-							'theme_location' => 'wp_page_menu()',
+							'theme_location' => 'primary',
 							'menu_class'     => 'mobile_mainmenu none-style',
 							'container'      => '',
 						) );
