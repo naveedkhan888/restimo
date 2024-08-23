@@ -76,77 +76,7 @@ function restimo_unfiltered_files_upload() {
 }
 add_action( 'elementor/init', 'restimo_unfiltered_files_upload' );
 
-// Header post type
-add_action( 'init', 'restimo_create_header_builder' ); 
-function restimo_create_header_builder() {
-    register_post_type( 'xp_header_builders',
-        array(
-            'labels' => array(
-                'name' => 'Header Builders',
-                'singular_name' => 'Header Builder',
-                'add_new' => 'Add New',
-                'add_new_item' => 'Add New Header Builder',
-                'edit' => 'Edit',
-                'edit_item' => 'Edit Header Builder',
-                'new_item' => 'New Header Builder',
-                'view' => 'View',
-                'view_item' => 'View Header Builder',
-                'search_items' => 'Search Header Builders',
-                'not_found' => 'No Header Builders found',
-                'not_found_in_trash' => 'No Header Builders found in Trash',
-                'parent' => 'Parent Header Builder'
-            ),
-            'hierarchical' => false,
-            'public' => false,
-            'show_ui' => true,
-            'menu_position' => 60,
-            'supports' => array( 'title', 'editor' ),
-            'menu_icon' => 'dashicons-editor-kitchensink',
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'has_archive' => false,
-            'query_var' => true,
-            'can_export' => true,
-            'capability_type' => 'post'
-        )
-    );
-}
 
-// Footer post type
-add_action( 'init', 'restimo_create_footer_builder' ); 
-function restimo_create_footer_builder() {
-    register_post_type( 'xp_footer_builders',
-        array(
-            'labels' => array(
-                'name' => 'Footer Builders',
-                'singular_name' => 'Footer Builder',
-                'add_new' => 'Add New',
-                'add_new_item' => 'Add New Footer Builder',
-                'edit' => 'Edit',
-                'edit_item' => 'Edit Footer Builder',
-                'new_item' => 'New Footer Builder',
-                'view' => 'View',
-                'view_item' => 'View Footer Builder',
-                'search_items' => 'Search Footer Builders',
-                'not_found' => 'No Footer Builders found',
-                'not_found_in_trash' => 'No Footer Builders found in Trash',
-                'parent' => 'Parent Footer Builder'
-            ),
-            'hierarchical' => false,
-            'public' => false,
-            'show_ui' => true,
-            'menu_position' => 60,
-            'supports' => array( 'title', 'editor' ),
-            'menu_icon' => 'dashicons-editor-kitchensink',
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'has_archive' => false,
-            'query_var' => true,
-            'can_export' => true,
-            'capability_type' => 'post'
-        )
-    );
-}
 
 /*Fix Elementor Pro*/
 function restimo_register_elementor_locations( $elementor_theme_manager ) {
