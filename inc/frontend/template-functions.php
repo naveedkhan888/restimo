@@ -272,7 +272,7 @@ function xpertpoin8_date_func( $atts ) {
 
     return $gmt_timestamp;
 }
-add_shortcode( 'xpertpoin8_date', 'xpertpoin8_date_func' );
+//add_shortcode( 'xpertpoin8_date', 'xpertpoin8_date_func' );
 
 /* Convert hexdec color string to rgb(a) string */
  

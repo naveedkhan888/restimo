@@ -18,7 +18,7 @@ function restimo_mime_types($mimes) {
   $mimes['svgz'] = 'image/svg+xml';
   return $mimes;
 }
-add_filter('upload_mimes', 'restimo_mime_types', 10, 1);
+//add_filter('upload_mimes', 'restimo_mime_types', 10, 1);
 
 /**
  * add group fonts

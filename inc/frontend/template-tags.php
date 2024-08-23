@@ -334,7 +334,7 @@ function restimo_user_contact_methods( $user_contact ) {
     $user_contact['github']     = esc_html__( 'Github Profile', 'restimo' ); 
     return $user_contact; 
 };
-add_filter( 'user_contactmethods', 'restimo_user_contact_methods' );
+//add_filter( 'user_contactmethods', 'restimo_user_contact_methods' );
 
 function restimo_author_info_box() {
 
@@ -414,7 +414,7 @@ function restimo_author_info_box() {
     echo '<div class="author-bio" >' . $author_details . '</div>';
 }
 /** Allow HTML in author bio section **/
-remove_filter('pre_user_description', 'wp_filter_kses');
+//remove_filter('pre_user_description', 'wp_filter_kses');
 
 /** Related Posts **/
 function restimo_related_posts() {
