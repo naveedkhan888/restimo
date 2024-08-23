@@ -193,6 +193,7 @@ class Restimo_Menu_Mobile extends Widget_Base{
 							<?php
 								wp_nav_menu( array(
 									'menu' 			 => $settings['nav_menu'],
+									'theme_location' => 'primary',
 									'menu_class'     => 'mobile_mainmenu none-style',
 									'container'      => '',
 								) );
