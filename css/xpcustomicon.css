@@ -4,27 +4,27 @@
   	*/
 
 @font-face {
-  font-family: "xpFlaticon";
-  src: url("../fonts/xpFlaticon.eot");
-  src: url("../fonts/xpFlaticon.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/xpFlaticon.woff2") format("woff2"),
-       url("../fonts/xpFlaticon.woff") format("woff"),
-       url("../fonts/xpFlaticon.ttf") format("truetype"),
-       url("../fonts/xpFlaticon.svg#Flaticon") format("svg");
+  font-family: "xpcustomicon";
+  src: url("../fonts/xpcustomicon.eot");
+  src: url("../fonts/xpcustomicon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/xpcustomicon.woff2") format("woff2"),
+       url("../fonts/xpcustomicon.woff") format("woff"),
+       url("../fonts/xpcustomicon.ttf") format("truetype"),
+       url("../fonts/xpcustomicon.svg#Flaticon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: "xpFlaticon";
-    src: url("../fonts/xpFlaticon.svg#Flaticon") format("svg");
+    font-family: "xpcustomicon";
+    src: url("../fonts/xpcustomicon.svg#Flaticon") format("svg");
   }
 }
 
 [class^="xp-flaticon-"]:before, [class*=" xp-flaticon-"]:before,
 [class^="xp-flaticon-"]:after, [class*=" xp-flaticon-"]:after {   
-  font-family: xpFlaticon;
+  font-family: xpcustomicon;
   font-style: normal;
 }
 
