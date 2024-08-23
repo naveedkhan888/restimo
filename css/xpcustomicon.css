@@ -1,5 +1,5 @@
 	/*
-  	xpFlaticon icon font: xpFlaticon
+  	xpcustomicon icon font: xpcustomicon
   	Creation date: 02/06/2020 23:39
   	*/
 
@@ -10,7 +10,7 @@
        url("../fonts/xpcustomicon.woff2") format("woff2"),
        url("../fonts/xpcustomicon.woff") format("woff"),
        url("../fonts/xpcustomicon.ttf") format("truetype"),
-       url("../fonts/xpcustomicon.svg#Flaticon") format("svg");
+       url("../fonts/xpcustomicon.svg#xpcustomicon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +18,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "xpcustomicon";
-    src: url("../fonts/xpcustomicon.svg#Flaticon") format("svg");
+    src: url("../fonts/xpcustomicon.svg#xpcustomicon") format("svg");
   }
 }
 
