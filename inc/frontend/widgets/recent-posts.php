@@ -160,9 +160,13 @@ class restimo_recent_news extends WP_Widget {
 // Check if the Restimo theme is active before registering the widget
 if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
     
-    // Register and load the Restimo Recent News Widget
+    // Function to register the Restimo Recent News Widget
     function restimo_wpb_recent_news() {
         register_widget( 'restimo_recent_news' );
     }
-    add_action( 'widgets_init', 'restimo_wpb_recent_news' );
+
+    // Hook the registration function into widgets_init
+    add_action( 'after_setup_theme', function() {
+        add_action( 'widgets_init', 'restimo_wpb_recent_news' );
+    });
 }

@@ -177,9 +177,13 @@ class Restimo_Author_Widget extends WP_Widget {
 // Check if the Restimo theme is active before registering the widget
 if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
     
-    // Register the Restimo Author Widget
+    // Function to register the Restimo Author Widget
     function restimo_author_register_widgets() {
         register_widget( 'Restimo_Author_Widget' );
     }
-    add_action( 'widgets_init', 'restimo_author_register_widgets' );
+
+    // Hook the registration function into widgets_init
+    add_action( 'after_setup_theme', function() {
+        add_action( 'widgets_init', 'restimo_author_register_widgets' );
+    });
 }
