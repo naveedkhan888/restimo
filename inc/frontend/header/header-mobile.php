@@ -27,7 +27,7 @@
 					}
 					else{
 						wp_nav_menu( array(
-							'theme_location' => 'primary',
+							'theme_location' => 'wp_page_menu()',
 							'menu_class'     => 'mobile_mainmenu none-style',
 							'container'      => '',
 						) );
