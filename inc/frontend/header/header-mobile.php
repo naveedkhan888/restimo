@@ -20,7 +20,7 @@
 							$options[ $menu->slug ] = $menu->name;
 						}
 						wp_nav_menu( array(
-							'menu' 			 => array_keys( $options )[0],
+							'theme_location' => 'primary',
 							'menu_class'     => 'mobile_mainmenu none-style',
 							'container'      => '',
 						) );
