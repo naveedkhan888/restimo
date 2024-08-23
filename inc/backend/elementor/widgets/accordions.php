@@ -262,7 +262,7 @@ class Restimo_Accordions extends Widget_Base{
 			<div class="acc-item">
 				<div class="acc-toggle flex-middle" data-default="<?php echo esc_attr( $settings['item_active'] == $key + 1 ? 'yes' : '' ); ?>">
 				     <?php echo esc_html( $accs['acc_title'] ); ?>
-				    <i class="xp-flaticon-arrowsoutline"></i>
+				    <i class="xp-webicon-arrowsoutline"></i>
 				</div>
 				<div class="acc-content">
 					<?php echo wp_kses_post( $accs['acc_content'] ); ?>

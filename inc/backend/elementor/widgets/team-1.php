@@ -564,7 +564,7 @@ class Restimo_Team extends Widget_Base{
 							</a>
 						<?php endif; ?>
 					<?php endforeach; ?>
-					<span class="xp-flaticon-signs"></span>
+					<span class="xp-webicon-signs"></span>
 				</div>
 				<?php endif; ?>
 			</div>

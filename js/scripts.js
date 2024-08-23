@@ -61,7 +61,7 @@
     /* --------------------------------------------------
     * mobile menu
     * --------------------------------------------------*/
-    $('.mmenu_wrapper li:has(ul)').prepend('<span class="arrow"><i class="xp-flaticon-signs-1"></i></span>');
+    $('.mmenu_wrapper li:has(ul)').prepend('<span class="arrow"><i class="xp-webicon-signs-1"></i></span>');
     $(".mmenu_wrapper .mobile_mainmenu > li span.arrow").on('click',function() {
         $(this).parent().find("> ul").stop(true, true).slideToggle()
         $(this).toggleClass( "active" ); 
@@ -92,7 +92,7 @@
 			items:1,
 			dots:true,
 			nav:false,
-			navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-arrowsoutline"></i>']
+			navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-arrowsoutline"></i>']
 		});
 	});
 
@@ -179,7 +179,7 @@
 			},
 			type : 'POST',
 			beforeSend : function ( xhr ) {
-				btn.text(loading).append('<i class="xp-flaticon-refresh fas fa-spin"></i>'); // some type of preloader
+				btn.text(loading).append('<i class="xp-webicon-refresh fas fa-spin"></i>'); // some type of preloader
 			},
 			success : function( data ){
 				if( data ) {
@@ -210,7 +210,7 @@
 			responsiveClass:true,
 			dots:true,
 			nav:false,
-			navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-arrowsoutline"></i>'],
+			navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-arrowsoutline"></i>'],
 			responsive : {
 				0 : {
 					margin:0,

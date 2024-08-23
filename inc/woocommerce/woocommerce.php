@@ -195,7 +195,7 @@ if ( ! function_exists( 'restimo_woocommerce_cart_link' ) ) {
 	function restimo_woocommerce_cart_link() {
 		?>
 		<a class="cart-contents xp-minicart" href="<?php echo wc_get_cart_url(); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'restimo' ); ?>">
-			<i class="xp-flaticon-business"></i>
+			<i class="xp-webicon-business"></i>
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */

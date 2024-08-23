@@ -141,7 +141,7 @@ endif;
 
 /** Posts Navigation **/
 if ( ! function_exists( 'restimo_posts_navigation' ) ) :
-    function restimo_posts_navigation($prev = '<i class="xp-flaticon-arrow-pointing-to-left"></i>', $next = '<i class="xp-flaticon-arrowsoutline"></i>', $pages='') {
+    function restimo_posts_navigation($prev = '<i class="xp-webicon-arrow-pointing-to-left"></i>', $next = '<i class="xp-webicon-arrowsoutline"></i>', $pages='') {
         global $wp_query, $wp_rewrite;
         $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
         if($pages==''){
@@ -226,7 +226,7 @@ function restimo_search_form( $form ) {
     $form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '" >
     <label><span class="screen-reader-text">Search for:</span>
     <input type="search" class="search-field" placeholder="' . esc_attr__( 'Search&hellip;', 'restimo' ) . '" value="' . get_search_query() . '" name="s" /></label>
-	<button type="submit" class="search-submit"><i class="xp-flaticon-search-1"></i></button>
+	<button type="submit" class="search-submit"><i class="xp-webicon-search-1"></i></button>
     </form>';
 
     return $form;
@@ -436,7 +436,7 @@ function restimo_related_posts() {
                 </div>
                 <div class="entry-meta">
                     <?php if( restimo_get_option( 'post_entry_meta' ) ) { restimo_post_meta(); } ?>
-                    <a href="<?php the_permalink(); ?>" class="btn-details"><i class="xp-flaticon-trajectory"></i></a>
+                    <a href="<?php the_permalink(); ?>" class="btn-details"><i class="xp-webicon-trajectory"></i></a>
                 </div>
             </div>
         </div>
