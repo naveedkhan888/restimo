@@ -175,7 +175,7 @@ class Restimo_Author_Widget extends WP_Widget {
  
 }
 // Register the Restimo Author Widget
-function restimo_author_register_widgets() {
-    register_widget( 'Restimo_Author_Widget' );
-}
-add_action( 'widgets_init', 'restimo_author_register_widgets' );
+//function restimo_author_register_widgets() {
+    //register_widget( 'Restimo_Author_Widget' );
+//}
+//add_action( 'widgets_init', 'restimo_author_register_widgets' );
