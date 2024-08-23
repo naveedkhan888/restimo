@@ -322,18 +322,7 @@ if ( ! function_exists( 'restimo_single_post_nav' ) ) :
 endif;
 
 /** Add Contact Methods in the User Profile **/
-function restimo_user_contact_methods( $user_contact ) {
-    $user_contact['facebook']   = esc_html__( 'Facebook URL', 'restimo' );
-    $user_contact['skype']      = esc_html__( 'Skype Username', 'restimo' );
-    $user_contact['twitter']    = esc_html__( 'Twitter Handle', 'restimo' );
-    $user_contact['youtube']    = esc_html__( 'Youtube Channel', 'restimo' );
-    $user_contact['linkedin']   = esc_html__( 'LinkedIn', 'restimo' );
-    $user_contact['googleplus'] = esc_html__( 'Google +', 'restimo' );
-    $user_contact['pinterest']  = esc_html__( 'Pinterest', 'restimo' );
-    $user_contact['instagram']  = esc_html__( 'Instagram', 'restimo' );
-    $user_contact['github']     = esc_html__( 'Github Profile', 'restimo' ); 
-    return $user_contact; 
-};
+
 //add_filter( 'user_contactmethods', 'restimo_user_contact_methods' );
 
 function restimo_author_info_box() {

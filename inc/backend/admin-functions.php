@@ -13,11 +13,7 @@ if ( ! function_exists( 'restimo_custom_wp_admin_style' ) ) :
 endif;
 
 /* upload SVG file */
-function restimo_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  $mimes['svgz'] = 'image/svg+xml';
-  return $mimes;
-}
+
 //add_filter('upload_mimes', 'restimo_mime_types', 10, 1);
 
 /**

@@ -262,16 +262,7 @@ add_action('wp_head', 'restimo_hook_javascript');
 /**
  * Render date-time in Copyright
  */
-function xpertpoin8_date_func( $atts ) {
-    $date_format = shortcode_atts( array(
-        'time_custom' => 'Y',        
-    ), $atts );
 
-    $dt = new DateTime("now");
-    $gmt_timestamp = $dt->format("{$date_format['time_custom']}");
-
-    return $gmt_timestamp;
-}
 //add_shortcode( 'xpertpoin8_date', 'xpertpoin8_date_func' );
 
 /* Convert hexdec color string to rgb(a) string */
