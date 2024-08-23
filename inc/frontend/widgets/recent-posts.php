@@ -157,8 +157,12 @@ class restimo_recent_news extends WP_Widget {
 
 } // Class wpb_widget ends here
 
-// Register and load the widget
-function restimo_wpb_recent_news() {
-	register_widget( 'restimo_recent_news' );
+// Check if the Restimo theme is active before registering the widget
+if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
+    
+    // Register and load the Restimo Recent News Widget
+    function restimo_wpb_recent_news() {
+        register_widget( 'restimo_recent_news' );
+    }
+    add_action( 'widgets_init', 'restimo_wpb_recent_news' );
 }
-add_action( 'widgets_init', 'restimo_wpb_recent_news' );

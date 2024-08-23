@@ -174,8 +174,12 @@ class Restimo_Author_Widget extends WP_Widget {
     }  
  
 }
-// Register the Restimo Author Widget
-function restimo_author_register_widgets() {
-    register_widget( 'Restimo_Author_Widget' );
+// Check if the Restimo theme is active before registering the widget
+if ( wp_get_theme()->get( 'TextDomain' ) === 'restimo' ) {
+    
+    // Register the Restimo Author Widget
+    function restimo_author_register_widgets() {
+        register_widget( 'Restimo_Author_Widget' );
+    }
+    add_action( 'widgets_init', 'restimo_author_register_widgets' );
 }
-add_action( 'widgets_init', 'restimo_author_register_widgets' );
