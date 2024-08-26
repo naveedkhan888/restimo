@@ -221,7 +221,7 @@ if ( ! function_exists( 'restimo_comment_list' ) ) :
     }
 endif;
 
-// Generate custom search form
+//Generate custom search form
 function restimo_search_form( $form ) {
     $form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '" >
     <label><span class="screen-reader-text">' . _x( 'Search for:', 'label', 'restimo' ) . '</span>
@@ -232,6 +232,8 @@ function restimo_search_form( $form ) {
     return $form;
 }
 add_filter( 'get_search_form', 'restimo_search_form' );
+
+
 
 //Add span to category post count
 function restimo_cat_count_span($links) {
