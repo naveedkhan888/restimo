@@ -266,7 +266,7 @@ if(!function_exists('restimo_second_font')){
 		$second_font = restimo_get_option( 'second_font', [] );
 		$data_font = '';
 
-		if ( $second_font['font-family'] != '' && $second_font['font-family'] != 'Merienda' ) {
+		if ( is_array($second_font) && !empty($second_font['font-family']) && $second_font['font-family'] != 'Merienda' ) {
 			$data_font = 
 			'h1, h2, h3, h4, h5, h6,
 			blockquote,
