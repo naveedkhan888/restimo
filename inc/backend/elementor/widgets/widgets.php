@@ -1,7 +1,7 @@
 <?php
 
-get_template_part( '/inc/backend/elementor/widgets/heading.php' );
-get_template_part( '/inc/backend/elementor/widgets/button.php' );
+get_template_part( '/inc/backend/elementor/widgets/heading' );
+get_template_part( '/inc/backend/elementor/widgets/button' );
 get_template_part( '/inc/backend/elementor/widgets/tabs.php' );
 get_template_part( '/inc/backend/elementor/widgets/accordions.php' );
 get_template_part( '/inc/backend/elementor/widgets/icon-box-1.php' );
