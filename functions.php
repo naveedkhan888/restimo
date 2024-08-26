@@ -256,3 +256,49 @@ if ( class_exists( 'woocommerce' ) ) {
 }
 
 
+function restimo_register_block_styles() {
+    // Add custom styles to core paragraph block
+    register_block_style('core/paragraph', array(
+        'name'  => 'custom-style',
+        'label' => __('Custom Style', 'restimo'),
+    ));
+}
+add_action('init', 'restimo_register_block_styles');
+
+function restimo_register_block_patterns() {
+    register_block_pattern(
+        'restimo/custom-pattern',
+        array(
+            'title'   => __('Custom Pattern', 'restimo'),
+            'content' => '<!-- wp:paragraph --><p>' . __('Hello World!', 'restimo') . '</p><!-- /wp:paragraph -->',
+        )
+    );
+}
+add_action('init', 'restimo_register_block_patterns');
+
+add_theme_support('wp-block-styles');
+
+add_theme_support('responsive-embeds');
+
+add_theme_support('custom-logo', array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-width'  => true,
+    'flex-height' => true,
+));
+
+add_theme_support('custom-header', array(
+    'default-image' => get_template_directory_uri() . '/images/default-header.jpg',
+    'width'          => 1920,
+    'height'         => 1080,
+    'flex-height'    => true,
+    'flex-width'     => true,
+));
+
+add_theme_support('custom-background', array(
+    'default-color' => 'ffffff',
+    'default-image' => '',
+));
+
+add_theme_support('align-wide');
+
