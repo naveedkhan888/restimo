@@ -236,7 +236,7 @@ function restimo_loadmore_ajax_handler(){
 if( !function_exists('restimo_custom_back_to_top') ) {
     function restimo_custom_back_to_top() {     
 	    if( restimo_get_option('backtotop') != false ){
-	    	echo '<a id="back-to-top" href="#" class="show"><i class="xp-flaticon-left-arrow-2"></i></a>';
+	    	echo '<a id="back-to-top" href="#" class="show"><i class="xp-webicon-left-arrow-2"></i></a>';
 	    }
     }
 }

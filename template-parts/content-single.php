@@ -69,7 +69,7 @@
                 <?php if($images){ ?>     
                     <div class="video-popup">        
                         <a class="btn-play" href="<?php echo esc_url( $link_video ); ?>">
-                            <i class="xp-flaticon-play"></i>
+                            <i class="xp-webicon-play"></i>
                         </a> 
                     </div>
                     <?php  foreach ( $images as $image ) {  ?>
@@ -82,14 +82,14 @@
     <?php }elseif( $format == 'link' ){ ?>
 
         <div class="link-box padding-box">
-            <i class="xp-flaticon-multimedia"></i>
+            <i class="xp-webicon-multimedia"></i>
             <a href="<?php echo esc_url( $link_link ); ?>"><?php echo esc_html( $text_link ); ?></a>
         </div>
 
         <?php }elseif( $format == 'quote' ){ ?>
 
         <div class="quote-box padding-box font-second">
-            <i class="xp-flaticon-left-quote"></i>
+            <i class="xp-webicon-left-quote"></i>
             <div class="quote-text">
                 <?php echo esc_html( $quote_text ); ?>
                 <span><?php echo esc_html( $quote_name ); ?></span>

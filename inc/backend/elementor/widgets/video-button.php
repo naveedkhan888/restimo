@@ -319,7 +319,7 @@ class Restimo_VideoPopup extends Widget_Base{
 		
 		<div class="xp-video-button flex-middle">
 	        <a <?php echo wp_kses_post($this->get_render_attribute_string( 'button' )); ?> href="<?php echo esc_url( $settings['vlink'] ); ?>">
-				<i class="xp-flaticon-play"></i>
+				<i class="xp-webicon-play"></i>
 				<?php if( $settings['animate'] ) { echo '<span class="circle-1"></span>'; } ?>
 	        </a>
 	        <?php if( $settings['caption'] ) echo '<span class="font-second">' .$settings['caption']. '</span>'; ?>

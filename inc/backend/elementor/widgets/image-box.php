@@ -434,7 +434,7 @@ class Restimo_Image_Box extends Widget_Base{
 				<?php if ( $settings['title'] ) { echo wp_kses_post( $title_html ); } ?>
 				<?php if( $settings['des'] ) { echo '<p>' .$settings['des']. '</p>'; } ?>
 			</div>
-			<?php if( $settings['label_link'] ){ echo '<a ' .$this->get_render_attribute_string( 'button' ). '><span>' .$settings['label_link']. '</span><i class="xp-flaticon-trajectory"></i></a>'; } ?>
+			<?php if( $settings['label_link'] ){ echo '<a ' .$this->get_render_attribute_string( 'button' ). '><span>' .$settings['label_link']. '</span><i class="xp-webicon-trajectory"></i></a>'; } ?>
 	    </div>
 
 	    <?php

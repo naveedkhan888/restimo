@@ -189,7 +189,7 @@ class Restimo_Search extends Widget_Base{
 			
 	    	<div class="xptf-search xptf-cta-header">
 				<div class="toggle_search xptf-cta-icons">
-					<i class="xp-flaticon-search-1"></i>
+					<i class="xp-webicon-search-1"></i>
 				</div>
 				<!-- Form Search on Header -->
 				<div class="h-search-form-field">

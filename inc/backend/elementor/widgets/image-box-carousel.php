@@ -719,7 +719,7 @@ class Restimo_Image_Box_Carousel extends Widget_Base{
 						<?php if( $boxes['title_box'] ) { echo wp_kses_post( $tbox_html ); } ?>
 						<?php if( $boxes['content_box'] ) { echo '<p>' .$boxes['content_box']. '</p>'; } ?>
 					</div>
-					<?php if( $settings['label_link'] && $boxes['link_box']['url'] !== '' ){ echo '<a ' .$this->get_render_attribute_string( 'm_link'. $key ). '><span>' .$settings['label_link']. '</span><i class="xp-flaticon-trajectory"></i></a>'; } ?>
+					<?php if( $settings['label_link'] && $boxes['link_box']['url'] !== '' ){ echo '<a ' .$this->get_render_attribute_string( 'm_link'. $key ). '><span>' .$settings['label_link']. '</span><i class="xp-webicon-trajectory"></i></a>'; } ?>
 				</div>
 				<?php endforeach; ?>
 			</div>

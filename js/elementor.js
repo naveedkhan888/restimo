@@ -158,7 +158,7 @@
                 responsiveClass:true,
                 dots:$dots,
                 nav:$nav,
-                navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-trajectory"></i>'],
+                navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-trajectory"></i>'],
                 responsive : {
                     0 : {
                         margin:$mgaps,
@@ -201,7 +201,7 @@
                 margin:30,
                 dots:$dots,
                 nav:$nav,
-                navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-trajectory"></i>'],
+                navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-trajectory"></i>'],
                 responsive : {
                     0 : {
                         items:$mitems,
@@ -241,7 +241,7 @@
                 items:1,
                 dots:$dots,
                 nav:$nav,
-                navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-trajectory"></i>'],
+                navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-trajectory"></i>'],
             });
         });
     };
@@ -409,7 +409,7 @@
                 responsiveClass:true,
                 dots:$dots,
                 nav:$nav,
-                navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-trajectory"></i>'],
+                navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-trajectory"></i>'],
                 responsive : {
                     0 : {
                         margin:$mgaps,
@@ -454,7 +454,7 @@
                 responsiveClass:true,
                 dots:$dots,
                 nav:$nav,
-                navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-trajectory"></i>'],
+                navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-trajectory"></i>'],
                 responsive : {
                     0 : {
                         margin:$mgaps,
@@ -499,7 +499,7 @@
                 responsiveClass:true,
                 dots:$dots,
                 nav:$nav,
-                navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-trajectory"></i>'],
+                navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-trajectory"></i>'],
                 responsive : {
                     0 : {
                         margin:$mgaps,
@@ -544,7 +544,7 @@
                 responsiveClass:true,
                 dots:$dots,
                 nav:$nav,
-                navText:['<i class="xp-flaticon-left-arrow-2"></i>', '<i class="xp-flaticon-trajectory"></i>'],
+                navText:['<i class="xp-webicon-left-arrow-2"></i>', '<i class="xp-webicon-trajectory"></i>'],
                 responsive : {
                     0 : {
                         margin:$mgaps,

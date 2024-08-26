@@ -34,12 +34,12 @@
 					}
 				?>
 			</a>
-			<span class="overlay"><i class="xp-flaticon-signs"></i></span>
+			<span class="overlay"><i class="xp-webicon-signs"></i></span>
 		</div>
 		<div class="portfolio-info">
 			<a href="<?php the_permalink(); ?>" class="overlay"></a>
 			<div class="portfolio-info-inner">
-				<a href="<?php the_permalink(); ?>" class="plus"><i class="xp-flaticon-signs"></i></a>
+				<a href="<?php the_permalink(); ?>" class="plus"><i class="xp-webicon-signs"></i></a>
 				<h5><a class="title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 				<?php 
 					if ( ! is_wp_error( $cates ) && ! empty( $cates ) ) :
