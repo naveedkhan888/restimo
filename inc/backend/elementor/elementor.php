@@ -4,8 +4,8 @@
 add_action( 'elementor/widgets/register', 'restimo_register_elementor_widgets' );
 function restimo_register_elementor_widgets() {
 
-    require_once( get_template_directory() . '/inc/backend/elementor/widgets/widgets.php' );
-    require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/widgets.php' );
+    my_get_template_part( '/inc/backend/elementor/widgets/widgets.php' );
+    my_get_template_part( '/inc/backend/elementor/widgets/header/widgets.php' );
 
 }
 
