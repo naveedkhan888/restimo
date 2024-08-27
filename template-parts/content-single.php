@@ -57,11 +57,7 @@
     <?php }elseif( $format == 'audio' ){ ?>
 
         <div class="audio-box padding-box">
-            <?php
-            // Embed audio content securely using an iframe with sandbox attribute
-            // Only allow necessary scripts to run within the iframe
-            ?>
-        <iframe scrolling="no" frameborder="no" src="<?php echo esc_url( $link_audio ); ?>" sandbox="allow-scripts"></iframe>
+        <iframe scrolling="no" frameborder="no" src="<?php echo esc_url( $link_audio ); ?>"></iframe>
         </div>
 
     <?php }elseif( $format == 'video' ){ ?>
