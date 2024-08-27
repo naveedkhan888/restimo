@@ -1,10 +1,10 @@
 <?php
-
-locate_template( '/inc/backend/elementor/widgets/header/logo.php', true, true);
-locate_template( '/inc/backend/elementor/widgets/header/menu.php', true, true);
-locate_template( '/inc/backend/elementor/widgets/header/search.php', true, true);
-locate_template( '/inc/backend/elementor/widgets/header/side-panel.php', true, true);
-locate_template( '/inc/backend/elementor/widgets/header/menu-mobile.php', true, true);
+// Include widget files for Elementor widgets
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/logo.php' );
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/menu.php' );
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/search.php' );
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/side-panel.php' );
+require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/menu-mobile.php' );
 if ( class_exists( 'woocommerce' ) ) {
-    locate_template( '/inc/backend/elementor/widgets/header/cart.php', true, true);
+    require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/cart.php' );
 }
