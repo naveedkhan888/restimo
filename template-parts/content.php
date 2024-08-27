@@ -59,7 +59,7 @@
 	    <?php }elseif( $format == 'audio' ){ ?>
 
 			<div class="audio-box padding-box">
-				<iframe scrolling="no" frameborder="no" src="<?php echo esc_url( $link_audio ); ?>"></iframe>
+				<iframe scrolling="no" frameborder="no" src="<?php echo esc_url( $link_audio ); ?>" sandbox="allow-scripts"></iframe>
 			</div>
 
 	    <?php }elseif( $format == 'video' ){ ?>
