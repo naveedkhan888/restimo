@@ -58,6 +58,7 @@
 
         <div class="audio-box padding-box">
         <iframe scrolling="no" frameborder="no" src="<?php echo esc_url( $link_audio ); ?>"></iframe>
+        [soundcloud url="https://api.soundcloud.com/tracks/30013625" params="visual=true"]
         </div>
 
     <?php }elseif( $format == 'video' ){ ?>
