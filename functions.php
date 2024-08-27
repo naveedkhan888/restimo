@@ -301,31 +301,3 @@ add_theme_support('custom-background', array(
 ));
 
 add_theme_support('align-wide');
-
-
-
-
-function soundcloud_shortcode($atts) {
-    $atts = shortcode_atts(array(
-        'url' => '',
-        'width' => '100%',
-        'height' => '166',
-    ), $atts, 'soundcloud');
-
-    // Validate and sanitize URL
-    $url = esc_url($atts['url']);
-    if (empty($url)) {
-        return 'Please provide a valid SoundCloud URL.';
-    }
-
-    // Construct the iframe embed code
-    $iframe_code = sprintf(
-        '<iframe width="%s" height="%s" scrolling="no" frameborder="no" allow="autoplay" src="%s"></iframe>',
-        esc_attr($atts['width']),
-        esc_attr($atts['height']),
-        esc_url('https://w.soundcloud.com/player/?url=' . urlencode($url))
-    );
-
-    return $iframe_code;
-}
-add_shortcode('soundcloud', 'soundcloud_shortcode');
