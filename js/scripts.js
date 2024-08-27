@@ -160,44 +160,44 @@
 	});
 
 	/* load more button */    
-	$('#btn-loadmore').on('click',function(){
-		var btn		= $(this),
-			grid    = $(this).parents('.project-filter-wrapper').find('.projects-grid'),
-			offset  = grid.find('.project-item').length,
-			more    = grid.data('load'),
-			loaded  = $(this).data('loaded'),
-			loading = $(this).data('loading'),
-			cat 	= $(this).data('category'),
-			count   = grid.data('count');
-		$.ajax({
-			url : restimo_loadmore_params.ajaxurl, // AJAX handler
-			data : {
-				'action': 'loadmore', // the parameter for admin-ajax.php
-				'ppp'	: more,
-				'cat'	: cat,
-				'offset': offset,
-			},
-			type : 'POST',
-			beforeSend : function ( xhr ) {
-				btn.text(loading).append('<i class="xp-webicon-refresh fas fa-spin"></i>'); // some type of preloader
-			},
-			success : function( data ){
-				if( data ) {
-					var items = $(data);
-					btn.text(loaded);
-					grid.append(items).isotope('appended', items); // insert new posts
-					updateFilter();
-				} else {
-					btn.hide(); // if no data, HIDE the button as well
-				}
-			}
-		});
-		offset += more;
-		if( count <= offset ){
-			btn.fadeOut(1000);
-		}
-		return false;
-	});
+	//$('#btn-loadmore').on('click',function(){
+		//var btn		= $(this),
+			//grid    = $(this).parents('.project-filter-wrapper').find('.projects-grid'),
+			//offset  = grid.find('.project-item').length,
+			//more    = grid.data('load'),
+			//loaded  = $(this).data('loaded'),
+			//loading = $(this).data('loading'),
+			//cat 	= $(this).data('category'),
+			//count   = grid.data('count');
+		//$.ajax({
+			//url : restimo_loadmore_params.ajaxurl, // AJAX handler
+			//data : {
+				//'action': 'loadmore', // the parameter for admin-ajax.php
+				//'ppp'	: more,
+				//'cat'	: cat,
+				//'offset': offset,
+			//},
+			//type : 'POST',
+			//beforeSend : function ( xhr ) {
+				//btn.text(loading).append('<i class="xp-webicon-refresh fas fa-spin"></i>'); // some type of preloader
+			//},
+			//success : function( data ){
+				//if( data ) {
+					//var items = $(data);
+					//btn.text(loaded);
+					//grid.append(items).isotope('appended', items); // insert new posts
+					//updateFilter();
+				//} else {
+					//btn.hide(); // if no data, HIDE the button as well
+				//}
+			//}
+		//});
+		//offset += more;
+		//if( count <= offset ){
+			//btn.fadeOut(1000);
+		//}
+		//return false;
+	//});
 
 	/* --------------------------------------------------
     * related projects
