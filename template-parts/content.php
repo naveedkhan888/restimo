@@ -59,7 +59,8 @@
 	    <?php }elseif( $format == 'audio' ){ ?>
 
 			<div class="audio-box padding-box">
-				<iframe scrolling="no" frameborder="no" src="<?php echo esc_url( $link_audio ); ?>" sandbox="allow-same-origin allow-scripts"></iframe>
+				
+				[soundcloud url="<?php echo esc_url( $link_audio ); ?>" width="100%" height="166"]
 			</div>
 
 	    <?php }elseif( $format == 'video' ){ ?>
