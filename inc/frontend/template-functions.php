@@ -183,7 +183,7 @@ function restimo_script_and_styles() {
 	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
 	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
 	wp_localize_script( 'restimo_scripts', 'restimo_loadmore_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'ajaxurl' => home_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 	) );
 
  	wp_enqueue_script( 'restimo_scripts' );
