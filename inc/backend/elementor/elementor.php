@@ -5,8 +5,8 @@ add_action( 'elementor/widgets/register', 'restimo_register_elementor_widgets' )
 function restimo_register_elementor_widgets() {
     // Include PHP files for Elementor widgets
     // These files contain registration logic for custom Elementor widgets
-    require_once( get_template_directory() . '/inc/backend/elementor/widgets/widgets.php' );
-    require_once( get_template_directory() . '/inc/backend/elementor/widgets/header/widgets.php' );
+    locate_template('/inc/backend/elementor/widgets/widgets.php', true, true);
+    locate_template('/inc/backend/elementor/widgets/header/widgets.php', true, true);
 
 }
 
