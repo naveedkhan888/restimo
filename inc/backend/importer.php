@@ -90,6 +90,44 @@ function restimo_importer() {
 				'primary'   => 'main-menu',
 			)
 		),
+		array(
+			'name'       => 'Juice',
+			'preview'    => get_template_directory_uri().'/inc/backend/data/juice/home1.jpg',
+			'content'    => get_template_directory_uri().'/inc/backend/data/juice/demo-content.xml',
+			'customizer' => get_template_directory_uri().'/inc/backend/data/juice/customizer.dat',
+			'widgets'    => get_template_directory_uri().'/inc/backend/data/juice/widgets.wie',
+			//'sliders'    => '://dpsample.com/sliders-coffee.zip',
+			'pages'      => array(
+				'front_page' => 'Home',
+				'blog'       => 'Blog',
+				'shop'       => 'Shop',
+				'cart'       => 'Cart',
+				'checkout'   => 'Checkout',
+				'my_account' => 'My Account',
+			),
+			'menus'      => array(
+				'primary'   => 'main-menu',
+			)
+		),
+		array(
+			'name'       => 'Ice Cream',
+			'preview'    => get_template_directory_uri().'/inc/backend/data/ice/home1.jpg',
+			'content'    => get_template_directory_uri().'/inc/backend/data/ice/demo-content.xml',
+			'customizer' => get_template_directory_uri().'/inc/backend/data/ice/customizer.dat',
+			'widgets'    => get_template_directory_uri().'/inc/backend/data/ice/widgets.wie',
+			//'sliders'    => '://dpsample.com/sliders-coffee.zip',
+			'pages'      => array(
+				'front_page' => 'Home',
+				'blog'       => 'Blog',
+				'shop'       => 'Shop',
+				'cart'       => 'Cart',
+				'checkout'   => 'Checkout',
+				'my_account' => 'My Account',
+			),
+			'menus'      => array(
+				'primary'   => 'main-menu',
+			)
+		),
 	);
 }
 
