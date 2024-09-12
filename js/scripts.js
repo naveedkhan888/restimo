@@ -176,6 +176,7 @@
 				'ppp'	: more,
 				'cat'	: cat,
 				'offset': offset,
+				'nonce' : restimo_loadmore_params.nonce // Pass nonce here
 			},
 			type : 'POST',
 			beforeSend : function ( xhr ) {
